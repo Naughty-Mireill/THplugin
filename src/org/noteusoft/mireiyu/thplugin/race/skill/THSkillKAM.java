@@ -1,5 +1,6 @@
 ﻿package org.noteusoft.mireiyu.thplugin.race.skill;
 
+<<<<<<< HEAD
 import org.bukkit.ChatColor;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.entity.Player;
@@ -8,11 +9,15 @@ import org.bukkit.event.entity.EntityDamageByBlockEvent;
 import org.bukkit.event.entity.EntityDamageByEntityEvent;
 import org.bukkit.event.entity.EntityDamageEvent;
 import org.bukkit.plugin.Plugin;
+=======
+import org.bukkit.event.Listener;
+>>>>>>> origin/master
 
 public class THSkillKAM implements Listener {
 	//移動スキル系
 
 	//攻撃スキル系
+<<<<<<< HEAD
 	///パッシブ系
 	//ダメージ系
 	public static void kami_faith_attack(Player pl, final Plugin plugin,EntityDamageByEntityEvent event,int boost, FileConfiguration conf) 
@@ -94,4 +99,7 @@ public class THSkillKAM implements Listener {
 		    }
 		}
 	}
+=======
+
+>>>>>>> origin/master
 }

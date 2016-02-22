@@ -15,8 +15,12 @@ import org.bukkit.entity.Player;
 import org.bukkit.entity.TNTPrimed;
 import org.bukkit.event.Listener;
 import org.bukkit.event.entity.EntityDamageByBlockEvent;
+<<<<<<< HEAD
 import org.bukkit.event.entity.EntityDamageEvent.DamageCause;
 import org.bukkit.event.player.PlayerInteractEvent;
+=======
+import org.bukkit.event.player.PlayerMoveEvent;
+>>>>>>> origin/master
 import org.bukkit.event.player.PlayerRespawnEvent;
 import org.bukkit.event.player.PlayerToggleSneakEvent;
 import org.bukkit.metadata.FixedMetadataValue;
@@ -26,21 +30,31 @@ import org.bukkit.util.Vector;
 public class THSkillYUM  implements Listener {
 	////アクティブスキル系
 	///移動スキル系
+<<<<<<< HEAD
 	public static void tenngu_kamikaze(Player pl, final Plugin plugin, final String pluginpre,PlayerInteractEvent event, int boost) 
+=======
+	public static void tenngu_kamikaze(Player pl, final Plugin plugin, final String pluginpre,PlayerMoveEvent event, int boost) 
+>>>>>>> origin/master
 	{
 		if (boost > 0 && boost < 15)
 		{
 		    pl.getWorld().playSound(pl.getLocation(), Sound.ENDERDRAGON_WINGS, 1.0F, 1.0F);
 		    pl.getWorld().playSound(pl.getLocation(), Sound.ENDERDRAGON_WINGS, 1.0F, 0.0F); 
 		    pl.setVelocity(pl.getLocation().getDirection().multiply(8.0D));
+<<<<<<< HEAD
 		    pl.setFallDistance(-30F);
+=======
+>>>>>>> origin/master
 		}
 		else
 		{
 		    pl.getWorld().playSound(pl.getLocation(), Sound.ENDERDRAGON_WINGS, 1.0F, 0.0F);
 		    pl.getWorld().playSound(pl.getLocation(), Sound.ENDERDRAGON_WINGS, 1.0F, -1.0F);   
 		    pl.setVelocity(pl.getLocation().getDirection().multiply(14.0D));
+<<<<<<< HEAD
 		    pl.setFallDistance(-10F);
+=======
+>>>>>>> origin/master
 		}
 	}
 	///攻撃スキル系
@@ -110,6 +124,10 @@ public class THSkillYUM  implements Listener {
 	///耐性
 	public static void kappa_anti_drawn(Player pl, final Plugin plugin, String pluginpre, final EntityDamageByBlockEvent event)
 	{
+<<<<<<< HEAD
 		if (event.getCause() == DamageCause.DROWNING) event.setCancelled(true);
+=======
+		event.setCancelled(true);
+>>>>>>> origin/master
 	}
 }

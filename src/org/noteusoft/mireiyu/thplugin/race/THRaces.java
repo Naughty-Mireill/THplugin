@@ -2,6 +2,7 @@ package org.noteusoft.mireiyu.thplugin.race;
 
 import java.io.File;
 import java.io.IOException;
+<<<<<<< HEAD
 import java.util.UUID;
 
 import org.bukkit.ChatColor;
@@ -13,6 +14,13 @@ import org.bukkit.entity.Player;
 import org.bukkit.entity.Villager;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.EventPriority;
+=======
+
+import org.bukkit.ChatColor;
+import org.bukkit.Material;
+import org.bukkit.configuration.file.FileConfiguration;
+import org.bukkit.entity.Player;
+>>>>>>> origin/master
 import org.bukkit.event.Listener;
 import org.bukkit.event.block.Action;
 import org.bukkit.event.entity.EntityDamageByBlockEvent;
@@ -27,6 +35,7 @@ import org.bukkit.event.player.PlayerRespawnEvent;
 import org.bukkit.event.player.PlayerToggleSneakEvent;
 import org.bukkit.plugin.Plugin;
 import org.noteusoft.mireiyu.thplugin.THPlugin;
+<<<<<<< HEAD
 import org.noteusoft.mireiyu.thplugin.race.skill.THSkillAKM;
 import org.noteusoft.mireiyu.thplugin.race.skill.THSkillGlobal;
 import org.noteusoft.mireiyu.thplugin.race.skill.THSkillKAM;
@@ -34,11 +43,19 @@ import org.noteusoft.mireiyu.thplugin.race.skill.THSkillNNG;
 import org.noteusoft.mireiyu.thplugin.race.skill.THSkillSIR;
 import org.noteusoft.mireiyu.thplugin.race.skill.THSkillYUM;
 import org.noteusoft.mireiyu.thplugin.race.skill.THSkillYUS;
+=======
+import org.noteusoft.mireiyu.thplugin.race.skill.THSkillGlobal;
+import org.noteusoft.mireiyu.thplugin.race.skill.THSkillNNG;
+import org.noteusoft.mireiyu.thplugin.race.skill.THSkillYUM;
+>>>>>>> origin/master
 import org.noteusoft.mireiyu.thplugin.race.skill.THSkillYUZ;
 import org.bukkit.metadata.MetadataValue;
 import org.bukkit.metadata.FixedMetadataValue;
 
+<<<<<<< HEAD
 @SuppressWarnings("unused")
+=======
+>>>>>>> origin/master
 public class THRaces implements Listener 
 {
     static Plugin plugin = THPlugin.plugin;
@@ -104,6 +121,7 @@ public class THRaces implements Listener
 	    		}
 			}
         }
+<<<<<<< HEAD
     }
     
     @SuppressWarnings("deprecation")
@@ -118,6 +136,16 @@ public class THRaces implements Listener
 	        if (!pl.isOnGround() && pl.isSneaking())
 	        {
         		THSkillYUS.yousei_feather(pl, plugin, event);
+=======
+        //天狗神風書き込み有）（前置詞有（ブースター処有
+        mana = 40;
+        if (race.equalsIgnoreCase("tenngu") && conf.getDouble("user." + pl.getUniqueId() + ".spilit") > mana) {
+            int boost = 0;
+            if (pl.getMetadata("spilituse").get(0).asInt() > 0)
+            {
+            	boost = pl.getMetadata("spilituse").get(0).asInt();
+            	THSkillYUM.tenngu_kamikaze(pl, plugin,pluginpre, event , boost);
+>>>>>>> origin/master
 	            conf.set("user." + pl.getUniqueId() + ".spilit", conf.getDouble("user." + pl.getUniqueId() + ".spilit") - mana);
 	            try {
 	    			conf.save(file);
@@ -125,6 +153,7 @@ public class THRaces implements Listener
 	    			e.printStackTrace();
 	    		}
         		pl.sendMessage(pluginpre + ChatColor.GREEN + "霊力" + ChatColor.LIGHT_PURPLE + conf.getDouble(new StringBuilder("user.").append(pl.getUniqueId()).append(".spilit").toString()));
+<<<<<<< HEAD
 	        }
 	    }
         //仙人の壁抜
@@ -139,6 +168,19 @@ public class THRaces implements Listener
 	    			e.printStackTrace();
 	    		}
         		pl.sendMessage(pluginpre + ChatColor.GREEN + "霊力" + ChatColor.LIGHT_PURPLE + conf.getDouble(new StringBuilder("user.").append(pl.getUniqueId()).append(".spilit").toString()));
+=======
+            }
+        }
+    }
+    
+    @SuppressWarnings("deprecation")
+    public void togglesneak(final PlayerToggleSneakEvent event) {
+        Player pl = event.getPlayer();
+        //仙人の壁抜
+        if (conf.getString("user." + pl.getUniqueId() + ".race").toString().contains("sennnin")) {
+            if ((!pl.isOnGround()) && (pl.isSneaking()) && conf.getDouble("user." + pl.getUniqueId() + ".spilit") >= 20.0D) {
+                THSkillNNG.sennnin_passthough(pl, plugin,event);
+>>>>>>> origin/master
             }
         }
     }
@@ -146,6 +188,7 @@ public class THRaces implements Listener
     ///クリク系
     public void interactentity(final PlayerInteractEntityEvent event) {
         //非人間村人規制前置詞有
+<<<<<<< HEAD
     	int mana = 0;
         final String pluginpre = THPlugin.thrpre;
         final Player pl = event.getPlayer();
@@ -205,6 +248,13 @@ public class THRaces implements Listener
                     }
                 }, 50L);
             }
+=======
+        String pluginpre = THPlugin.thrpre;
+        Player pl = event.getPlayer();
+        String race = conf.getString("user." + pl.getUniqueId() + ".race").toString();
+        if (race.equalsIgnoreCase("ninngen") == false && race.equalsIgnoreCase("mazyo") == false && race.equalsIgnoreCase("houraizin") == false && race.equalsIgnoreCase("gennzinnsin") == false && race.equalsIgnoreCase("sibito") == false && race.equalsIgnoreCase("sennninn") == false) {
+            THSkillGlobal.global_no_ninngen(pl, plugin, pluginpre, event);
+>>>>>>> origin/master
         }
     }
 
@@ -213,6 +263,7 @@ public class THRaces implements Listener
         Material handitem = pl.getItemInHand().getType();
         String race = conf.getString("user." + pl.getUniqueId() + ".race").toString();
     	int mana = 0;
+<<<<<<< HEAD
         ///右クリ
         if (event.getAction() == Action.RIGHT_CLICK_AIR || event.getAction() == Action.RIGHT_CLICK_BLOCK) {
         	///グローバル
@@ -225,6 +276,14 @@ public class THRaces implements Listener
             if (race.equalsIgnoreCase("mazyo")||race.equalsIgnoreCase("ninngen") ) {
             	mana = 25;
             	if(magic_iscastable(pl , mana,"詠唱！") && handitem == Material.STICK)
+=======
+        ///魔女魔法シリーズ最初は人間も
+        if (event.getAction() == Action.RIGHT_CLICK_AIR || event.getAction() == Action.RIGHT_CLICK_BLOCK) {
+            //人間魔女の回復魔法（書き込み有）（前置詞有
+            if (race.equalsIgnoreCase("mazyo")||race.equalsIgnoreCase("ninngen") ) {
+            	mana = 25;
+            	if(magic_iscastable(pl , mana) && handitem == Material.STICK)
+>>>>>>> origin/master
             	{
 	                MetadataValue casting = new FixedMetadataValue(plugin, Boolean.valueOf(true));
 	                pl.setMetadata("casting", casting);
@@ -234,7 +293,10 @@ public class THRaces implements Listener
 	        		} catch (IOException e) {
 	        			e.printStackTrace();
 	        		}
+<<<<<<< HEAD
 	                pl.getWorld().playSound(pl.getLocation(), Sound.BLAZE_BREATH, 1, 2);
+=======
+>>>>>>> origin/master
 	        		pl.sendMessage(pluginpre + ChatColor.GREEN + "霊力" + ChatColor.LIGHT_PURPLE + conf.getDouble(new StringBuilder("user.").append(pl.getUniqueId()).append(".spilit").toString()));
 	                plugin.getServer().getScheduler().scheduleSyncDelayedTask(plugin, new Runnable() {                	
 	                    public void run() {
@@ -244,9 +306,15 @@ public class THRaces implements Listener
 	                    }
 	                }, 20L);
                 }
+<<<<<<< HEAD
                 //魔女の風魔法（書き込み有）（前置詞有(詠唱有)
             	mana = 30;
             	if(magic_iscastable(pl , mana,"詠唱！") && handitem == Material.WOOD_SWORD) {
+=======
+                //人間魔女の風魔法（書き込み有）（前置詞有
+            	mana = 30;
+            	if(magic_iscastable(pl , mana) && handitem == Material.WOOD_SWORD) {
+>>>>>>> origin/master
                         MetadataValue casting = new FixedMetadataValue(plugin, Boolean.valueOf(true));
                         pl.setMetadata("casting", casting);
     	                conf.set("user." + pl.getUniqueId() + ".spilit", conf.getDouble("user." + pl.getUniqueId() + ".spilit") - mana);
@@ -255,7 +323,10 @@ public class THRaces implements Listener
     	        		} catch (IOException e) {
     	        			e.printStackTrace();
     	        		}
+<<<<<<< HEAD
     	                pl.getWorld().playSound(pl.getLocation(), Sound.BLAZE_BREATH, 1, 2);
+=======
+>>>>>>> origin/master
     	        		pl.sendMessage(pluginpre + ChatColor.GREEN + "霊力" + ChatColor.LIGHT_PURPLE + conf.getDouble(new StringBuilder("user.").append(pl.getUniqueId()).append(".spilit").toString()));
                         plugin.getServer().getScheduler().scheduleSyncDelayedTask(plugin, new Runnable() {
     	                	
@@ -266,9 +337,14 @@ public class THRaces implements Listener
                             }
                         }, 10L);
             	}
+<<<<<<< HEAD
                 //魔女の土魔法（書き込み有）（前置詞有(詠唱有)
             	mana = 45;
                 if (magic_iscastable(pl , mana,"詠唱！") && handitem == Material.STONE_SWORD) {
+=======
+            	mana = 45;
+                if (magic_iscastable(pl , mana) && handitem == Material.STONE_SWORD) {
+>>>>>>> origin/master
                         MetadataValue casting = new FixedMetadataValue(plugin, Boolean.valueOf(true));
                         pl.setMetadata("casting", casting);
     	                conf.set("user." + pl.getUniqueId() + ".spilit", conf.getDouble("user." + pl.getUniqueId() + ".spilit") - mana);
@@ -277,7 +353,10 @@ public class THRaces implements Listener
     	        		} catch (IOException e) {
     	        			e.printStackTrace();
     	        		}
+<<<<<<< HEAD
     	                pl.getWorld().playSound(pl.getLocation(), Sound.BLAZE_BREATH, 1, 2);
+=======
+>>>>>>> origin/master
     	        		pl.sendMessage(pluginpre + ChatColor.GREEN + "霊力" + ChatColor.LIGHT_PURPLE + conf.getDouble(new StringBuilder("user.").append(pl.getUniqueId()).append(".spilit").toString()));
                         plugin.getServer().getScheduler().scheduleSyncDelayedTask(plugin, new Runnable() {
                             public void run() {
@@ -287,9 +366,14 @@ public class THRaces implements Listener
                             }
                         }, 60L);
                 }
+<<<<<<< HEAD
                 //魔女の火魔法（書き込み有）（前置詞有(詠唱有)
             	mana = 30;
                 if (magic_iscastable(pl , mana,"詠唱！") && handitem == Material.IRON_SWORD) {
+=======
+            	mana = 30;
+                if (magic_iscastable(pl , mana) && handitem == Material.IRON_SWORD) {
+>>>>>>> origin/master
                         MetadataValue casting = new FixedMetadataValue(plugin, Boolean.valueOf(true));
                         pl.setMetadata("casting", casting);
     	                conf.set("user." + pl.getUniqueId() + ".spilit", conf.getDouble("user." + pl.getUniqueId() + ".spilit") - mana);
@@ -298,7 +382,10 @@ public class THRaces implements Listener
     	        		} catch (IOException e) {
     	        			e.printStackTrace();
     	        		}
+<<<<<<< HEAD
     	                pl.getWorld().playSound(pl.getLocation(), Sound.BLAZE_BREATH, 1, 2);
+=======
+>>>>>>> origin/master
     	        		pl.sendMessage(pluginpre + ChatColor.GREEN + "霊力" + ChatColor.LIGHT_PURPLE + conf.getDouble(new StringBuilder("user.").append(pl.getUniqueId()).append(".spilit").toString()));
                         plugin.getServer().getScheduler().scheduleSyncDelayedTask(plugin, new Runnable() {
     	                	
@@ -309,9 +396,14 @@ public class THRaces implements Listener
                             }
                         }, 20L);
                 }
+<<<<<<< HEAD
                 //魔女の水魔法（書き込み有）（前置詞有(詠唱有)
             	mana = 60;
                 if (magic_iscastable(pl , mana,"詠唱！") && handitem == Material.DIAMOND_SWORD) {
+=======
+            	mana = 60;
+                if (magic_iscastable(pl , mana) && handitem == Material.DIAMOND_SWORD) {
+>>>>>>> origin/master
                         MetadataValue casting = new FixedMetadataValue(plugin, Boolean.valueOf(true));
                         pl.setMetadata("casting", casting);
     	                conf.set("user." + pl.getUniqueId() + ".spilit", conf.getDouble("user." + pl.getUniqueId() + ".spilit") - mana);
@@ -320,7 +412,10 @@ public class THRaces implements Listener
     	        		} catch (IOException e) {
     	        			e.printStackTrace();
     	        		}
+<<<<<<< HEAD
     	                pl.getWorld().playSound(pl.getLocation(), Sound.BLAZE_BREATH, 1, 2);
+=======
+>>>>>>> origin/master
     	        		pl.sendMessage(pluginpre + ChatColor.GREEN + "霊力" + ChatColor.LIGHT_PURPLE + conf.getDouble(new StringBuilder("user.").append(pl.getUniqueId()).append(".spilit").toString()));
                         plugin.getServer().getScheduler().scheduleSyncDelayedTask(plugin, new Runnable() {
     	                	
@@ -332,9 +427,14 @@ public class THRaces implements Listener
                         }, 50L);
                             
                 }
+<<<<<<< HEAD
                 //魔女の雷魔法（書き込み有）（前置詞有(詠唱有)
             	mana = 70;
                 if (magic_iscastable(pl , mana,"詠唱！") && handitem == Material.GOLD_SWORD) {
+=======
+            	mana = 70;
+                if (magic_iscastable(pl , mana) && handitem == Material.GOLD_SWORD) {
+>>>>>>> origin/master
                         MetadataValue casting = new FixedMetadataValue(plugin, Boolean.valueOf(true));
                         pl.setMetadata("casting", casting);
     	                conf.set("user." + pl.getUniqueId() + ".spilit", conf.getDouble("user." + pl.getUniqueId() + ".spilit") - mana);
@@ -343,7 +443,10 @@ public class THRaces implements Listener
     	        		} catch (IOException e) {
     	        			e.printStackTrace();
     	        		}
+<<<<<<< HEAD
     	                pl.getWorld().playSound(pl.getLocation(), Sound.BLAZE_BREATH, 1, 2);
+=======
+>>>>>>> origin/master
     	        		pl.sendMessage(pluginpre + ChatColor.GREEN + "霊力" + ChatColor.LIGHT_PURPLE + conf.getDouble(new StringBuilder("user.").append(pl.getUniqueId()).append(".spilit").toString()));
                         plugin.getServer().getScheduler().scheduleSyncDelayedTask(plugin, new Runnable() {
                             public void run() {
@@ -354,6 +457,7 @@ public class THRaces implements Listener
                         }, 70L);
                 }
             }
+<<<<<<< HEAD
             ///天狗神風書き込み有）（前置詞有（ブースター処有
             mana = 40;
             if (race.equalsIgnoreCase("tenngu") && conf.getDouble("user." + pl.getUniqueId() + ".spilit") > mana) {
@@ -567,6 +671,14 @@ public class THRaces implements Listener
             	 //妖獣の狼召喚（書き込み有）（前置詞有(詠唱有)
                 mana = 15;
                 if (magic_iscastable(pl , mana,"召喚！！") && handitem == Material.FISHING_ROD) {
+=======
+        }
+        if (event.getAction() == Action.LEFT_CLICK_AIR || event.getAction() == Action.LEFT_CLICK_BLOCK) {
+            //妖獣人魚獣人
+            if (race.equalsIgnoreCase("youzuu") || race.equalsIgnoreCase("ninngyo") || race.equalsIgnoreCase("zyuuzin")) {
+                mana = 15;
+                if (magic_iscastable(pl , mana) && handitem == Material.FISHING_ROD) {
+>>>>>>> origin/master
                         MetadataValue casting = new FixedMetadataValue(plugin, Boolean.valueOf(true));
                         pl.setMetadata("casting", casting);
     	                conf.set("user." + pl.getUniqueId() + ".spilit", conf.getDouble("user." + pl.getUniqueId() + ".spilit") - mana);
@@ -575,7 +687,10 @@ public class THRaces implements Listener
     	        		} catch (IOException e) {
     	        			e.printStackTrace();
     	        		}
+<<<<<<< HEAD
     	                pl.getWorld().playSound(pl.getLocation(), Sound.BLAZE_BREATH, 1, 2);
+=======
+>>>>>>> origin/master
     	        		pl.sendMessage(pluginpre + ChatColor.GREEN + "霊力" + ChatColor.LIGHT_PURPLE + conf.getDouble(new StringBuilder("user.").append(pl.getUniqueId()).append(".spilit").toString()));
                         plugin.getServer().getScheduler().scheduleSyncDelayedTask(plugin, new Runnable() {
     	                	
@@ -587,6 +702,7 @@ public class THRaces implements Listener
                         }, 30L);
                 }
             }
+<<<<<<< HEAD
           //式のネコ召喚（書き込み有）（前置詞有(詠唱有)
             if (race.equalsIgnoreCase("siki") && conf.getDouble("user." + pl.getUniqueId() + ".spilit") > 20.0 ) {
                 mana = 15;
@@ -602,6 +718,16 @@ public class THRaces implements Listener
 	        		}
 	                pl.getWorld().playSound(pl.getLocation(), Sound.BLAZE_BREATH, 1, 2);
 	        		pl.sendMessage(pluginpre + ChatColor.GREEN + "霊力" + ChatColor.LIGHT_PURPLE + conf.getDouble(new StringBuilder("user.").append(pl.getUniqueId()).append(".spilit").toString()));
+=======
+            //
+            if (race.equalsIgnoreCase("siki") && conf.getDouble("user." + pl.getUniqueId() + ".spilit") > 20.0 ) {
+                mana = 15;
+                if (magic_iscastable(pl , mana ) && handitem == Material.FISHING_ROD) 
+            		{
+	                    MetadataValue casting = new FixedMetadataValue(plugin, Boolean.valueOf(true));
+	                    pl.setMetadata("casting", casting);
+	                    conf.set("user." + pl.getUniqueId() + ".spilit", conf.getDouble("user." + pl.getUniqueId() + ".spilit") - 20);
+>>>>>>> origin/master
 	                    plugin.getServer().getScheduler().scheduleSyncDelayedTask(plugin, new Runnable() {
 		                	
 	                        public void run() {
@@ -613,6 +739,7 @@ public class THRaces implements Listener
             		}
  
             }
+<<<<<<< HEAD
             //妖獣の強化（書き込み有）（前置詞有(詠唱有)
             if (race.equalsIgnoreCase("youzyuu") || race.equalsIgnoreCase("zyuuzin") || race.equalsIgnoreCase("ninngyo") || race.equalsIgnoreCase("siki")) {
                 mana = 35;
@@ -628,18 +755,33 @@ public class THRaces implements Listener
 	        		}
 	                pl.getWorld().playSound(pl.getLocation(), Sound.DONKEY_ANGRY, 1, 1);
 	        		pl.sendMessage(pluginpre + ChatColor.GREEN + "霊力" + ChatColor.LIGHT_PURPLE + conf.getDouble(new StringBuilder("user.").append(pl.getUniqueId()).append(".spilit").toString()));
+=======
+            //妖獣全て
+            if (race.equalsIgnoreCase("youzyuu") || race.equalsIgnoreCase("zyuuzin") || race.equalsIgnoreCase("ninngyo") || race.equalsIgnoreCase("siki")) {
+                if (magic_iscastable(pl , mana ) && handitem == Material.BOW) 
+            		{
+                        MetadataValue casting = new FixedMetadataValue(plugin, Boolean.valueOf(true));
+                        pl.setMetadata("casting", casting);
+                        conf.set("user." + pl.getUniqueId() + ".spilit", conf.getDouble("user." + pl.getUniqueId() + ".spilit") - 30);
+>>>>>>> origin/master
                         plugin.getServer().getScheduler().scheduleSyncDelayedTask(plugin, new Runnable() {
     	                	
                             public void run() {
                                 THSkillYUZ.youzyu_gainenergy(pl, plugin,pluginpre, event);
+<<<<<<< HEAD
 	                            MetadataValue casting = new FixedMetadataValue(plugin, Boolean.valueOf(false));
 	                            pl.setMetadata("casting", casting);
                             }
                         }, 15L);
+=======
+                            }
+                        }, 0L);
+>>>>>>> origin/master
             		}
             }
         }
     }
+<<<<<<< HEAD
     //TODO 新クランプラグイン待ち
     /*
 	@EventHandler(priority=EventPriority.HIGH)
@@ -721,10 +863,36 @@ public class THRaces implements Listener
                 THSkillKAM.yakusin_darkside(pl, plugin, race, event);
             //グローバル
             if (conf.getInt("user." + pl.getUniqueId() + ".split") <= mana) THSkillGlobal.global_no_mana_damaged(pl, plugin,pluginpre, event);
+=======
+
+    public void damagebyentity(final EntityDamageByEntityEvent event) {
+        if (event.getDamager() instanceof Player) {
+            Player pl = (Player) event.getDamager();
+            String race = conf.getString("user." + pl.getUniqueId() + ".race").toString();
+            //死人
+            if (race.equalsIgnoreCase("sibito") && conf.getInt("user." + pl.getUniqueId() + ".split") > 20)
+                THSkillNNG.sibito_deadattack(pl, plugin, event);
+            if (race.equalsIgnoreCase("gennzinnsin") && conf.getInt("user." + pl.getUniqueId() + ".split") > 20)
+                THSkillNNG.gennzinnsin_luckyattack(pl, plugin,pluginpre, event);
+            //グローバル
+            if (conf.getInt("user." + pl.getUniqueId() + ".split") <= 20)
+                THSkillGlobal.global_no_mana_attack(pl, plugin,pluginpre, event);
+        }
+        if (event.getEntity() instanceof Player) {
+            Player pl = (Player) event.getEntity();
+            String race = conf.getString("user." + pl.getUniqueId() + ".race").toString();
+            //蓬莱人
+            if (race.equalsIgnoreCase("houraizin") && conf.getInt("user." + pl.getUniqueId() + ".split") > 20)
+                THSkillNNG.houraizin_reverselife_Entity(pl, plugin,pluginpre, event);
+            //グローバル
+            if (conf.getInt("user." + pl.getUniqueId() + ".split") <= 20)
+                THSkillGlobal.global_no_mana_damaged(pl, plugin,pluginpre, event);
+>>>>>>> origin/master
         }
     }
 
     public void damagebyblock(final EntityDamageByBlockEvent event) {
+<<<<<<< HEAD
         int mana = 25;
         Player pl = (Player) event.getDamager();
         int boost = pl.getMetadata("spilituse").get(0).asInt();
@@ -747,6 +915,17 @@ public class THRaces implements Listener
     
     ////冗長防止
     boolean magic_iscastable(Player pl, int mana,String string)
+=======
+        Player pl = (Player) event.getDamager();
+        String race = conf.getString("user." + pl.getUniqueId() + ".race").toString();
+        //蓬莱人
+        if (race.equalsIgnoreCase("houraizin") && conf.getInt("user." + pl.getUniqueId() + ".split") > 20)
+            THSkillNNG.houraizin_reverselife_block(pl, plugin,pluginpre, event);
+    }
+    
+    ////冗長防止
+    boolean magic_iscastable(Player pl, int mana)
+>>>>>>> origin/master
     {
 	        if (((MetadataValue) pl.getMetadata("casting").get(0)).asBoolean()) {
 	            pl.sendMessage(THPlugin.thrpre + ChatColor.RED + "他の魔法を詠唱中です");
@@ -757,7 +936,10 @@ public class THRaces implements Listener
 	        } else {
 	    	    if (conf.getDouble("user." + pl.getUniqueId() + ".spilit") > mana) 
 	    	    {
+<<<<<<< HEAD
 	        		pl.sendMessage(pluginpre + ChatColor.LIGHT_PURPLE + string);
+=======
+>>>>>>> origin/master
 		        	return true;
 	    	    }
 	    	    else

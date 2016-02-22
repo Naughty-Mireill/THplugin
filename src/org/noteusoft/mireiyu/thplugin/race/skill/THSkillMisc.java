@@ -31,7 +31,11 @@ public class THSkillMisc implements Listener {
 		        	Entity damagerentity = ((EntityDamageByEntityEvent) e).getDamager();
 		            Snowball snowball = (Snowball)damagerentity;
 		            if (snowball.hasMetadata("seirei-lightball")) {
+<<<<<<< HEAD
 		            	//精霊�?�弾
+=======
+		            	//精霊�?�弾
+>>>>>>> origin/master
 		            	e.setDamage(6.0D);
 		            }else if (snowball.hasMetadata("hannrei-curseball")) {
 		                p.addPotionEffect(new PotionEffect(PotionEffectType.SLOW, 150, 3));
@@ -54,7 +58,11 @@ public class THSkillMisc implements Listener {
 		                      plugin.getConfig().set("user." + UUID.fromString(((MetadataValue)((EntityDamageByEntityEvent) e).getDamager().getMetadata("hannrei-curseball").get(0)).asString()) + ".spilit", Double.valueOf(100.0D));
 		                    }
 		                  }
+<<<<<<< HEAD
 		                  p.sendMessage(pluginpre + ChatColor.DARK_PURPLE + "霊力を吸い取られた！！！");
+=======
+		                  p.sendMessage(pluginpre + ChatColor.DARK_PURPLE + "霊力を吸�?取られた?�?�?");
+>>>>>>> origin/master
 		                }
 		            }
 		        }

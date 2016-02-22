@@ -105,6 +105,7 @@ public class THSkillGlobal implements Listener {
 	public static void global_charge_mana(Player pl, final Plugin plugin, String pluginpre, final PlayerInteractEvent event)
 	{
 		Material dust_is_ok = pl.getItemInHand().getType() ; 
+<<<<<<< HEAD
 		if (pl.getMetadata("spilituse").get(0).asDouble() != 0)
 		{
 			 MetadataValue spilituse = new FixedMetadataValue(THPlugin.plugin, 0) ;
@@ -132,6 +133,35 @@ public class THSkillGlobal implements Listener {
 				  pl.sendMessage(THPlugin.thrpre + ChatColor.YELLOW + "霊力回復中");
 			}
 		}
+=======
+			if (pl.getMetadata("spilituse").get(0).asDouble() != 0)
+			{
+				 MetadataValue spilituse = new FixedMetadataValue(THPlugin.plugin, 0) ;
+				 pl.setMetadata("spilituse", spilituse);
+				 pl.sendMessage(THPlugin.thrpre + ChatColor.WHITE + "霊力ノーマル");
+			}
+			else
+			{
+				if (dust_is_ok == Material.SUGAR)
+				{
+					  MetadataValue spilituse = new FixedMetadataValue(THPlugin.plugin, 5) ;
+					  pl.setMetadata("spilituse", spilituse);
+					  pl.sendMessage(THPlugin.thrpre + ChatColor.AQUA + "霊力消費小");
+				}
+				else if (dust_is_ok == Material.SULPHUR)
+				{
+					  MetadataValue spilituse = new FixedMetadataValue(THPlugin.plugin, 15) ;
+					  pl.setMetadata("spilituse", spilituse);
+					  pl.sendMessage(THPlugin.thrpre + ChatColor.DARK_GRAY + "霊力消費大");
+				}
+				else if (dust_is_ok == Material.GLOWSTONE_DUST)
+				{
+					  MetadataValue spilituse = new FixedMetadataValue(THPlugin.plugin, -10) ;
+					  pl.setMetadata("spilituse", spilituse);
+					  pl.sendMessage(THPlugin.thrpre + ChatColor.YELLOW + "霊力回復中");
+				}
+			}
+>>>>>>> origin/master
 	}
 	public static void global_no_ninngen(Player pl, final Plugin plugin, String pluginpre, final PlayerInteractEntityEvent event)
 	{

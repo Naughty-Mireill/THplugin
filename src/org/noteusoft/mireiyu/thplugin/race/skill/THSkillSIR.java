@@ -1,5 +1,6 @@
 ﻿package org.noteusoft.mireiyu.thplugin.race.skill;
 
+<<<<<<< HEAD
 import java.util.List;
 
 import net.minecraft.server.v1_8_R3.MathHelper;
@@ -23,10 +24,14 @@ import org.bukkit.potion.PotionEffect;
 import org.bukkit.potion.PotionEffectType;
 import org.bukkit.util.Vector;
 
+=======
+import org.bukkit.event.Listener;
+>>>>>>> origin/master
 
 public class THSkillSIR implements Listener  {
 	//移動スキル系
 
+<<<<<<< HEAD
 	//召喚スキル系
 	public static void seirei_summon(Player pl, final Plugin plugin,final String pluginpre, final PlayerInteractEvent event)
 	{
@@ -232,4 +237,8 @@ public class THSkillSIR implements Listener  {
 		    }
 	    }
 	}
+=======
+	//攻撃スキル系
+
+>>>>>>> origin/master
 }

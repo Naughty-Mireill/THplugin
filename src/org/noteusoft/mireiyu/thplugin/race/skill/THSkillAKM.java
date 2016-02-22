@@ -1,5 +1,6 @@
 ﻿package org.noteusoft.mireiyu.thplugin.race.skill;
 
+<<<<<<< HEAD
 import java.util.List;
 
 import org.bukkit.ChatColor;
@@ -164,4 +165,13 @@ public class THSkillAKM implements Listener {
 	{
 		if (event.getCause() == DamageCause.FIRE || event.getCause() == DamageCause.LAVA) event.setCancelled(true);
 	}
+=======
+import org.bukkit.event.Listener;
+
+public class THSkillAKM implements Listener {
+	//移動スキル系
+
+	//攻撃スキル系
+
+>>>>>>> origin/master
 }

@@ -1,5 +1,6 @@
 ﻿package org.noteusoft.mireiyu.thplugin.race.skill;
 
+<<<<<<< HEAD
 import java.util.List;
 
 import org.bukkit.ChatColor;
@@ -127,4 +128,13 @@ public class THSkillYUS implements Listener  {
 		    pl.setMetadata("satorin0", satorin00);
 		}
 	}
+=======
+import org.bukkit.event.Listener;
+
+public class THSkillYUS implements Listener  {
+	//移動スキル系
+
+	//攻撃スキル系
+
+>>>>>>> origin/master
 }
