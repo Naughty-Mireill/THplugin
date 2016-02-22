@@ -1,9 +1,6 @@
 ﻿package org.noteusoft.mireiyu.thplugin.race.skill;
 
-<<<<<<< HEAD
 import java.util.List;
-
-import net.minecraft.server.v1_8_R3.MathHelper;
 
 import org.bukkit.ChatColor;
 import org.bukkit.Effect;
@@ -24,14 +21,10 @@ import org.bukkit.potion.PotionEffect;
 import org.bukkit.potion.PotionEffectType;
 import org.bukkit.util.Vector;
 
-=======
-import org.bukkit.event.Listener;
->>>>>>> origin/master
 
 public class THSkillSIR implements Listener  {
 	//移動スキル系
 
-<<<<<<< HEAD
 	//召喚スキル系
 	public static void seirei_summon(Player pl, final Plugin plugin,final String pluginpre, final PlayerInteractEvent event)
 	{
@@ -87,9 +80,9 @@ public class THSkillSIR implements Listener  {
 	    Location location = pl.getEyeLocation();
 	    float pitch = location.getPitch() / 180.0F * 3.1415927F;
 	    float yaw = location.getYaw() / 180.0F * 3.1415927F;
-	    double motX = -MathHelper.sin(yaw) * MathHelper.cos(pitch);
-	    double motZ = MathHelper.cos(yaw) * MathHelper.cos(pitch);
-	    double motY = -MathHelper.sin(pitch);
+	    double motX = -Math.sin(yaw) * Math.cos(pitch);
+	    double motZ = Math.cos(yaw) * Math.cos(pitch);
+	    double motY = -Math.sin(pitch);
 	    Vector velocity = new Vector(motX, motY, motZ).multiply(2.0D);
 	    @SuppressWarnings("deprecation")
 		Snowball snowball = pl.throwSnowball();
@@ -149,9 +142,9 @@ public class THSkillSIR implements Listener  {
 	    {
 	      float pitch = location.getPitch() / 180.0F * 3.1415927F;
 	      float yaw = location.getYaw() / 180.0F * 3.1415927F + n * 45;
-	      double motX = -MathHelper.sin(yaw) * MathHelper.cos(pitch);
-	      double motZ = MathHelper.cos(yaw) * MathHelper.cos(pitch);
-	      double motY = -MathHelper.sin(pitch);
+	      double motX = -Math.sin(yaw) * Math.cos(pitch);
+	      double motZ = Math.cos(yaw) * Math.cos(pitch);
+	      double motY = -Math.sin(pitch);
 	      Vector velocity = new Vector(motX, motY, motZ).multiply(2.0D);
 	      @SuppressWarnings("deprecation")
 		  Snowball snowball = pl.throwSnowball();
@@ -237,8 +230,4 @@ public class THSkillSIR implements Listener  {
 		    }
 	    }
 	}
-=======
-	//攻撃スキル系
-
->>>>>>> origin/master
 }

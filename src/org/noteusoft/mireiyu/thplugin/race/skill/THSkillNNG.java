@@ -2,8 +2,6 @@
 
 import java.util.List;
 
-import net.minecraft.server.v1_8_R3.MathHelper;
-
 import org.bukkit.ChatColor;
 import org.bukkit.Effect;
 import org.bukkit.Location;
@@ -98,9 +96,9 @@ public class THSkillNNG implements Listener {
 		Location location =pl.getEyeLocation();
 		float pitch=location.getPitch() / 180.0F * 3.1415927F;
 		float yaw=location.getYaw() / 180.0F * 3.1415927F ;
-		double motX=-MathHelper.sin(yaw) * MathHelper.cos(pitch);
-		double motZ=MathHelper.cos(yaw) * MathHelper.cos(pitch);
-		double motY=-MathHelper.sin(pitch);
+		double motX=-Math.sin(yaw) * Math.cos(pitch);
+		double motZ=Math.cos(yaw) * Math.cos(pitch);
+		double motY=-Math.sin(pitch);
 		Vector velocity=new Vector(motX,motY,motZ).multiply(2D);
 		@SuppressWarnings("deprecation")
 		Snowball snowball=pl.throwSnowball();
