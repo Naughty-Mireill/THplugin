@@ -1,2 +1,12 @@
 eclipse.preferences.version=1
-encoding/<project>=UTF-8
+encoding//src/org/noteusoft/mireiyu/thplugin/THPlugin.java=Shift-jis
+encoding//src/org/noteusoft/mireiyu/thplugin/race/command/THCommand.java=Shift-jis
+encoding//src/org/noteusoft/mireiyu/thplugin/race/schedule/THSchedule.java=Shift-jis
+encoding//src/org/noteusoft/mireiyu/thplugin/race/skill/THSkillAKM.java=Shift-jis
+encoding//src/org/noteusoft/mireiyu/thplugin/race/skill/THSkillGlobal.java=Shift-jis
+encoding//src/org/noteusoft/mireiyu/thplugin/race/skill/THSkillKAM.java=Shift-jis
+encoding//src/org/noteusoft/mireiyu/thplugin/race/skill/THSkillNNG.java=Shift-jis
+encoding//src/org/noteusoft/mireiyu/thplugin/race/skill/THSkillSIR.java=Shift-jis
+encoding//src/org/noteusoft/mireiyu/thplugin/race/skill/THSkillYUM.java=Shift-jis
+encoding//src/org/noteusoft/mireiyu/thplugin/race/skill/THSkillYUS.java=Shift-jis
+encoding/<project>=Shift-jis

@@ -1,6 +1,5 @@
-ï»¿package org.noteusoft.mireiyu.thplugin.race.skill;
+package org.noteusoft.mireiyu.thplugin.race.skill;
 
-<<<<<<< HEAD
 import java.util.List;
 
 import org.bukkit.ChatColor;
@@ -22,18 +21,18 @@ import org.bukkit.potion.PotionEffect;
 import org.bukkit.potion.PotionEffectType;
 
 public class THSkillYUS implements Listener  {
-	///ã‚¢ã‚¯ãƒ†ã‚£ãƒ´ã‚¹ã‚­ãƒ«ç³»
-	//ç§»å‹•ã‚¹ã‚­ãƒ«ç³»
+	///ƒAƒNƒeƒBƒ”ƒXƒLƒ‹Œn
+	//ˆÚ“®ƒXƒLƒ‹Œn
 	public static void yousei_feather(Player pl, final Plugin plugin,PlayerToggleSneakEvent event) 
 	{
 	    pl.setVelocity(pl.getLocation().getDirection().multiply(1.1D));
 	    pl.getWorld().playSound(pl.getLocation(), Sound.SHOOT_ARROW, 1.0F, 1.0F);
 	    pl.getWorld().playEffect(pl.getLocation(), Effect.TILE_DUST, 133, 1);
 	}
-	//æ”»æ’ƒã‚¹ã‚­ãƒ«ç³»
+	//UŒ‚ƒXƒLƒ‹Œn
 	public static void yousei_illusion(Player pl, final Plugin plugin,final String pluginpre,final PlayerInteractEvent event) 
 	{
-		pl.sendMessage(pluginpre + ChatColor.LIGHT_PURPLE + "é‡‘ã®ã‚·ãƒ£ãƒ™ãƒ«ã®è¼ããŒã‚ãŸã‚Šã‚’æƒ‘ã‚ã™ï¼ï¼");
+		pl.sendMessage(pluginpre + ChatColor.LIGHT_PURPLE + "‹à‚ÌƒVƒƒƒxƒ‹‚Ì‹P‚«‚ª‚ ‚½‚è‚ğ˜f‚í‚·II");
 	    pl.getWorld().playSound(pl.getLocation(), Sound.CAT_PURR, 3.0F, -1.0F);
 	    pl.getWorld().playEffect(pl.getLocation(), Effect.HAPPY_VILLAGER, 1, 1);
 	    List<Entity> enemys = pl.getNearbyEntities(14.0D, 14.0D, 14.0D);
@@ -54,13 +53,13 @@ public class THSkillYUS implements Listener  {
 	        Player pl = event.getPlayer();
 	        MetadataValue usingmagic = new FixedMetadataValue(plugin, Boolean.valueOf(false));
 	        pl.setMetadata("using-magic", usingmagic);
-	        pl.sendMessage(pluginpre + ChatColor.BLUE + "è© å”±ã®ã‚¯ãƒ¼ãƒ«ãƒ€ã‚¦ãƒ³ãŒçµ‚ã‚ã‚Šã¾ã—ãŸ");
+	        pl.sendMessage(pluginpre + ChatColor.BLUE + "‰r¥‚ÌƒN[ƒ‹ƒ_ƒEƒ“‚ªI‚í‚è‚Ü‚µ‚½");
 	      }
 	    }, 60L);
 	}
 	public static void kibito_venom(Player pl, final Plugin plugin,final String pluginpre,final PlayerInteractEvent event) 
 	{
-		pl.sendMessage(pluginpre + ChatColor.DARK_GREEN + "æ¨¹äººã¯æ¯’ã‚’ã°ã‚‰ã¾ã„ãŸï¼");
+		pl.sendMessage(pluginpre + ChatColor.DARK_GREEN + "÷l‚Í“Å‚ğ‚Î‚ç‚Ü‚¢‚½I");
 	    pl.getWorld().playSound(pl.getLocation(), Sound.PIG_DEATH, 3.0F, -1.0F);
 	    pl.getWorld().playEffect(pl.getLocation(), Effect.VOID_FOG, 1, 1);
 	    List<Entity> enemys = pl.getNearbyEntities(14.0D, 14.0D, 14.0D);
@@ -78,11 +77,11 @@ public class THSkillYUS implements Listener  {
 	        Player pl = event.getPlayer();
 	        MetadataValue usingmagic = new FixedMetadataValue(plugin, Boolean.valueOf(false));
 	        pl.setMetadata("using-magic", usingmagic);
-	        pl.sendMessage(pluginpre + ChatColor.BLUE + "è© å”±ã®ã‚¯ãƒ¼ãƒ«ãƒ€ã‚¦ãƒ³ãŒçµ‚ã‚ã‚Šã¾ã—ãŸ");
+	        pl.sendMessage(pluginpre + ChatColor.BLUE + "‰r¥‚ÌƒN[ƒ‹ƒ_ƒEƒ“‚ªI‚í‚è‚Ü‚µ‚½");
 	      }
 	    }, 100L);
 	}
-	///ãƒ‘ãƒƒã‚·ãƒ´ã‚¹ã‚­ãƒ«ç³»
+	///ƒpƒbƒVƒ”ƒXƒLƒ‹Œn
 	public static void yousei_glaze(Player pl, final Plugin plugin,EntityDamageByEntityEvent event) 
 	{
 	    double ran = Math.random();
@@ -120,21 +119,12 @@ public class THSkillYUS implements Listener  {
 		if(event.getDamage() >= pl.getHealth() && event.isCancelled() == false) 
 		{
 			plugin.getConfig().set(plugin.getConfig().getString("user." + pl.getUniqueId() + ".spilit"), Double.valueOf(plugin.getConfig().getInt("user." + pl.getUniqueId() + ".spilit") - 50.0D));
-		    pl.sendMessage(event.getDamager().getName() + ":ä½“åŠ›:" + ((Player)event.getDamager()).getHealth());
-		    pl.sendMessage(event.getDamager().getName() + ":åº§æ¨™:" + event.getDamager().getLocation().getBlockX() + "," + event.getDamager().getLocation().getBlockY() + "," + event.getDamager().getLocation().getBlockZ());
-		    pl.sendMessage(ChatColor.DARK_PURPLE + "è¦šã‚Šã¾ã—ãŸãƒ»ãƒ»ãƒ»è¦šãˆã¦ãªã•ã„ãƒ»ãƒ»ãƒ»");
+		    pl.sendMessage(event.getDamager().getName() + ":‘Ì—Í:" + ((Player)event.getDamager()).getHealth());
+		    pl.sendMessage(event.getDamager().getName() + ":À•W:" + event.getDamager().getLocation().getBlockX() + "," + event.getDamager().getLocation().getBlockY() + "," + event.getDamager().getLocation().getBlockZ());
+		    pl.sendMessage(ChatColor.DARK_PURPLE + "Šo‚è‚Ü‚µ‚½EEEŠo‚¦‚Ä‚È‚³‚¢EEE");
 		    String satorin0 = event.getDamager().getName();
 		    MetadataValue satorin00 = new FixedMetadataValue(plugin, satorin0);
 		    pl.setMetadata("satorin0", satorin00);
 		}
 	}
-=======
-import org.bukkit.event.Listener;
-
-public class THSkillYUS implements Listener  {
-	//ç§»å‹•ã‚¹ã‚­ãƒ«ç³»
-
-	//æ”»æ’ƒã‚¹ã‚­ãƒ«ç³»
-
->>>>>>> origin/master
 }

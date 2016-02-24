@@ -1,6 +1,5 @@
-ï»¿package org.noteusoft.mireiyu.thplugin.race.skill;
+package org.noteusoft.mireiyu.thplugin.race.skill;
 
-<<<<<<< HEAD
 import org.bukkit.ChatColor;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.entity.Player;
@@ -9,17 +8,13 @@ import org.bukkit.event.entity.EntityDamageByBlockEvent;
 import org.bukkit.event.entity.EntityDamageByEntityEvent;
 import org.bukkit.event.entity.EntityDamageEvent;
 import org.bukkit.plugin.Plugin;
-=======
-import org.bukkit.event.Listener;
->>>>>>> origin/master
 
 public class THSkillKAM implements Listener {
-	//ç§»å‹•ã‚¹ã‚­ãƒ«ç³»
+	//ˆÚ“®ƒXƒLƒ‹Œn
 
-	//æ”»æ’ƒã‚¹ã‚­ãƒ«ç³»
-<<<<<<< HEAD
-	///ãƒ‘ãƒƒã‚·ãƒ–ç³»
-	//ãƒ€ãƒ¡ãƒ¼ã‚¸ç³»
+	//UŒ‚ƒXƒLƒ‹Œn
+	///ƒpƒbƒVƒuŒn
+	//ƒ_ƒ[ƒWŒn
 	public static void kami_faith_attack(Player pl, final Plugin plugin,EntityDamageByEntityEvent event,int boost, FileConfiguration conf) 
 	{
 		if (boost > 0 && boost < 15)
@@ -47,7 +42,7 @@ public class THSkillKAM implements Listener {
 		      conf.set("user." + pl.getUniqueId() + ".spilit", conf.getDouble("user." + pl.getUniqueId() + ".spilit") - 4);
 		}
 	}
-	//é˜²å¾¡ç³»
+	//–hŒäŒn
 	public static void kami_faith_defence(Player pl, final Plugin plugin,EntityDamageByEntityEvent event,int boost, FileConfiguration conf) 
 	{
 		if (boost > 0 && boost < 15)
@@ -84,7 +79,7 @@ public class THSkillKAM implements Listener {
 		if ((Math.random() >= 0.8D) && ((event.getEntity() instanceof Player)) && boost > 0.0D)
 	    {
 	      ((Player)event.getEntity()).setFoodLevel(((Player)event.getEntity()).getFoodLevel() - 1);
-	      event.getEntity().sendMessage(pluginpre + ChatColor.GOLD + pl.getName() + "ã¯ãŠã„ã—ã„èŠ‹ã‚’è¦‹ã›ã¤ã‘ã¦ããŸï¼ï¼");
+	      event.getEntity().sendMessage(pluginpre + ChatColor.GOLD + pl.getName() + "‚Í‚¨‚¢‚µ‚¢ˆð‚ðŒ©‚¹‚Â‚¯‚Ä‚«‚½II");
 	    }
 	}
 	public static void yakusin_darkside(Player pl, final Plugin plugin,final String pluginpre ,EntityDamageByEntityEvent event) 
@@ -94,12 +89,9 @@ public class THSkillKAM implements Listener {
 			Player killplayer = (Player) event.getDamager();
 		    if (!killplayer.isDead())
 		    {
-		      killplayer.sendMessage(pluginpre + ChatColor.DARK_RED + "ã‚ãªãŸåŽ„ç¥žã®ç¥Ÿã‚Šã‚’å—ã‘ãŸï¼ï¼ï¼");
+		      killplayer.sendMessage(pluginpre + ChatColor.DARK_RED + "‚ ‚È‚½–ï_‚ÌâM‚è‚ðŽó‚¯‚½III");
 		      killplayer.damage(50.0D);
 		    }
 		}
 	}
-=======
-
->>>>>>> origin/master
 }

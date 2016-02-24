@@ -1,6 +1,5 @@
-ï»¿package org.noteusoft.mireiyu.thplugin.race.skill;
+package org.noteusoft.mireiyu.thplugin.race.skill;
 
-<<<<<<< HEAD
 import java.util.List;
 
 import org.bukkit.ChatColor;
@@ -24,10 +23,10 @@ import org.bukkit.potion.PotionEffect;
 import org.bukkit.potion.PotionEffectType;
 
 public class THSkillAKM implements Listener {
-	//ç§»å‹•ã‚¹ã‚­ãƒ«ç³»
-	//å¸è¡€é¬¼ã‚«ãƒ¢ãƒ•ãƒ©ãƒ¼ã‚¸ãƒ¥
+	//ˆÚ“®ƒXƒLƒ‹Œn
+	//‹zŒŒ‹SƒJƒ‚ƒtƒ‰[ƒWƒ…
 	public static void kyuuketuki_vamp(Player pl,final Plugin plugin,final String pluginpre, final PlayerInteractEvent event){
-	    pl.sendMessage(pluginpre + ChatColor.GRAY + "ãƒãƒ³ãƒ—ã‚«ãƒ¢ãƒ•ãƒ©ãƒ¼ã‚¸ãƒ¥ã‚’å”±ãˆãŸ?ï¿½?");
+	    pl.sendMessage(pluginpre + ChatColor.GRAY + "ƒoƒ“ƒvƒJƒ‚ƒtƒ‰[ƒWƒ…‚ğ¥‚¦‚½II");
 	    pl.getWorld().playSound(pl.getLocation(), Sound.BAT_IDLE, 1.0F, 0.0F);
 	    pl.getWorld().playEffect(pl.getLocation(), Effect.SMOKE, 1, 1);
 	    plugin.getServer().getScheduler().scheduleSyncDelayedTask(plugin, new Runnable()
@@ -42,7 +41,7 @@ public class THSkillAKM implements Listener {
 	        pl.setMetadata("batman", batman);
 	        pl.setGameMode(GameMode.SPECTATOR);
 	        pl.getWorld().playSound(pl.getLocation(), Sound.BAT_TAKEOFF, 1.0F, 0.0F);
-	        pl.sendMessage(pluginpre + ChatColor.RED + "ã‚ãªãŸã¯è™è ã«ãªã£ãŸï¼ï¼");
+	        pl.sendMessage(pluginpre + ChatColor.RED + "‚ ‚È‚½‚Íåå•‚É‚È‚Á‚½II");
 	        Entity bat = pl.getWorld().spawnEntity(pl.getEyeLocation(), EntityType.BAT);
 	        MetadataValue invincible = new FixedMetadataValue(plugin, pl.getUniqueId());
 	        bat.setMetadata("invincible", invincible);
@@ -50,10 +49,10 @@ public class THSkillAKM implements Listener {
 	      }
 	    }, 20L);
 	}
-	///æ”»æ’ƒã‚¹ã‚­ãƒ«ç³»
-	//ç´…é­”æ³•
+	///UŒ‚ƒXƒLƒ‹Œn
+	//g–‚–@
 	public static void akuma_red_magic(Player pl,final Plugin plugin,final String pluginpre, final PlayerInteractEvent event){
-		pl.sendMessage(pluginpre + ChatColor.DARK_RED + "ç´…ã®é­”æ³•ã‚’å”±ãˆãŸï¼");
+		pl.sendMessage(pluginpre + ChatColor.DARK_RED + "g‚Ì–‚–@‚ğ¥‚¦‚½I");
 		pl.getLocation().getWorld().playSound(pl.getLocation(), Sound.WITHER_SPAWN, 1.0F, 2.0F);
 		List<Entity> enemys = pl.getNearbyEntities(9.0D, 9.0D, 9.0D);
 		for (Entity enemy : enemys) {
@@ -71,11 +70,11 @@ public class THSkillAKM implements Listener {
 				Player pl = event.getPlayer();
 				MetadataValue usingmagic = new FixedMetadataValue(plugin, Boolean.valueOf(false));
 				pl.setMetadata("using-magic", usingmagic);
-				pl.sendMessage(pluginpre + ChatColor.BLUE + "è© å”±ã®ã‚¯ãƒ¼ãƒ«ãƒ€ã‚¦ãƒ³ãŒçµ‚ã‚ã‚Šã¾ã—ãŸ");
+				pl.sendMessage(pluginpre + ChatColor.BLUE + "‰r¥‚ÌƒN[ƒ‹ƒ_ƒEƒ“‚ªI‚í‚è‚Ü‚µ‚½");
 			}
 		}, 100L);
 	}
-	//é¬¼ã®åŸ‹ã‚è½ã¨ã—
+	//‹S‚Ì–„‚ß—‚Æ‚µ
 	public static void oni_kairiki(Player pl, final Plugin plugin,final String pluginpre, final PlayerInteractEntityEvent event,final LivingEntity entity) 
 	{
 		entity.getWorld().playSound(event.getRightClicked().getLocation(), Sound.DONKEY_ANGRY, 1, -1);
@@ -94,22 +93,22 @@ public class THSkillAKM implements Listener {
 				Player pl = event.getPlayer();
 				MetadataValue usingmagic = new FixedMetadataValue(plugin, Boolean.valueOf(false));
 				pl.setMetadata("using-magic", usingmagic);
-				pl.sendMessage(pluginpre + ChatColor.BLUE + "è© å”±ã®ã‚¯ãƒ¼ãƒ«ãƒ€ã‚¦ãƒ³ãŒçµ‚ã‚ã‚Šã¾ã—ãŸ");
+				pl.sendMessage(pluginpre + ChatColor.BLUE + "‰r¥‚ÌƒN[ƒ‹ƒ_ƒEƒ“‚ªI‚í‚è‚Ü‚µ‚½");
 			}
 		}, 100L);
 	}
-	//å¸è¡€é¬¼ã®å¸è¡€
+	//‹zŒŒ‹S‚Ì‹zŒŒ
 	public static void kyuuketuki_drain(Player pl, final Plugin plugin,final String pluginpre, final PlayerInteractEntityEvent event,final LivingEntity entity) 
 	{
         Entity target = event.getRightClicked();
         if (pl.getLocation().distanceSquared(target.getLocation()) >= 40.0D)
         {
             pl.getWorld().playSound(pl.getLocation(), Sound.SPIDER_IDLE, 2.0F, 1.0F);
-            pl.sendMessage(pluginpre + ChatColor.BLUE + "ã—ã‹ã—é€ƒã’ã‚‰ã‚Œã¦ã—ã¾ã£ãŸï¼ï¼");
+            pl.sendMessage(pluginpre + ChatColor.BLUE + "‚µ‚©‚µ“¦‚°‚ç‚ê‚Ä‚µ‚Ü‚Á‚½II");
         }
         else 
         {
-            pl.sendMessage(pluginpre + ChatColor.DARK_RED + "ã‚ãªãŸå¸è¡€ã—ãŸï¼");
+            pl.sendMessage(pluginpre + ChatColor.DARK_RED + "‚ ‚È‚½‹zŒŒ‚µ‚½I");
             target.getWorld().playSound(pl.getLocation(), Sound.SPIDER_DEATH, 2.0F, 1.0F);
             target.getWorld().playEffect(pl.getLocation(), Effect.TILE_BREAK, 1, 152);
             if (((LivingEntity)target).getHealth() - 30.0D >= 0.0D) {
@@ -129,8 +128,8 @@ public class THSkillAKM implements Listener {
             }
         }
     }
-	///ãƒ‘ãƒƒã‚·ãƒ–ç³»
-	//ãƒ€ãƒ¡ãƒ¼ã‚¸ç³»
+	///ƒpƒbƒVƒuŒn
+	//ƒ_ƒ[ƒWŒn
 	public static void akuma_dark_attack(Player pl, final Plugin plugin,EntityDamageByEntityEvent event) 
 	{
 		if (pl.getLocation().getBlock().getLightLevel() < 8)
@@ -155,23 +154,14 @@ public class THSkillAKM implements Listener {
 			event.getDamager().getWorld().playEffect(event.getEntity().getLocation(), Effect.MOBSPAWNER_FLAMES, 1);
 		}
 	}
-	//é˜²å¾¡ç³»
+	//–hŒäŒn
 	public static void akuma_antiheat_body(Player pl, final Plugin plugin,EntityDamageByBlockEvent event) 
 	{
 		if (event.getCause() == DamageCause.FIRE_TICK) event.setCancelled(true);
 	}
-	//é˜²å¾¡ç³»
+	//–hŒäŒn
 	public static void kyuuketuki_antiallfire_body(Player pl, final Plugin plugin,EntityDamageByBlockEvent event) 
 	{
 		if (event.getCause() == DamageCause.FIRE || event.getCause() == DamageCause.LAVA) event.setCancelled(true);
 	}
-=======
-import org.bukkit.event.Listener;
-
-public class THSkillAKM implements Listener {
-	//ç§»å‹•ã‚¹ã‚­ãƒ«ç³»
-
-	//æ”»æ’ƒã‚¹ã‚­ãƒ«ç³»
-
->>>>>>> origin/master
 }

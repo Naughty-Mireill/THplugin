@@ -1,4 +1,4 @@
-ï»¿package org.noteusoft.mireiyu.thplugin.race.skill;
+package org.noteusoft.mireiyu.thplugin.race.skill;
 
 import org.bukkit.ChatColor;
 import org.bukkit.GameMode;
@@ -46,14 +46,14 @@ public class THSkillGlobal implements Listener {
 	  }
 	  public static void global_join(Player pl, final Plugin plugin, final PlayerJoinEvent event)
 	  {
-	/*ãƒ¡ã‚¿åˆæœŸä»˜ä¸*/
+	/*ƒƒ^‰Šú•t—^*/
 			  MetadataValue casted = new FixedMetadataValue(THPlugin.plugin, false) ;
 			  pl.setMetadata("casting", casted);
 			  MetadataValue usingmagic = new FixedMetadataValue(THPlugin.plugin, false) ;
 			  pl.setMetadata("using-magic", usingmagic);
 			  MetadataValue spilituse = new FixedMetadataValue(THPlugin.plugin, 0) ;
 			  pl.setMetadata("spilituse", spilituse);
-	/*æ–°è¦ç™»éŒ²*/
+	/*V‹K“o˜^*/
 		      if (THPlugin.plugin.getConfig().contains("user." + pl.getUniqueId()) == false){
 		    	  THPlugin.plugin.getConfig().set("user." + pl.getUniqueId() + ".name" , pl.getName());
 		    	  THPlugin.plugin.getConfig().set("user." + pl.getUniqueId() + ".point" , 0);
@@ -96,21 +96,20 @@ public class THSkillGlobal implements Listener {
 			  pl.removeMetadata("freeze", plugin);
 		  }
 	  }
-	//ãƒªã‚¹ãƒãƒ¼ãƒ³ä½“åŠ›èª¿æ•´ã‚°ãƒ­ãƒ¼ãƒãƒ«
+	//ƒŠƒXƒ|[ƒ“‘Ì—Í’²®ƒOƒ[ƒoƒ‹
 	public static void global_respawnhealth(Player pl, final Plugin plugin, final PlayerRespawnEvent event)
 	{
 		pl.setMaxHealth(100D);
 	}
-	//éœŠåŠ›èª¿æ•´ã‚°ãƒ­ãƒ¼ãƒãƒ«
+	//—ì—Í’²®ƒOƒ[ƒoƒ‹
 	public static void global_charge_mana(Player pl, final Plugin plugin, String pluginpre, final PlayerInteractEvent event)
 	{
 		Material dust_is_ok = pl.getItemInHand().getType() ; 
-<<<<<<< HEAD
 		if (pl.getMetadata("spilituse").get(0).asDouble() != 0)
 		{
 			 MetadataValue spilituse = new FixedMetadataValue(THPlugin.plugin, 0) ;
 			 pl.setMetadata("spilituse", spilituse);
-			 pl.sendMessage(THPlugin.thrpre + ChatColor.WHITE + "éœŠåŠ›ãƒãƒ¼ãƒãƒ«");
+			 pl.sendMessage(THPlugin.thrpre + ChatColor.WHITE + "—ì—Íƒm[ƒ}ƒ‹");
 		}
 		else
 		{
@@ -118,54 +117,25 @@ public class THSkillGlobal implements Listener {
 			{
 				  MetadataValue spilituse = new FixedMetadataValue(THPlugin.plugin, 5) ;
 				  pl.setMetadata("spilituse", spilituse);
-				  pl.sendMessage(THPlugin.thrpre + ChatColor.AQUA + "éœŠåŠ›æ¶ˆè²»å°");
+				  pl.sendMessage(THPlugin.thrpre + ChatColor.AQUA + "—ì—ÍÁ”ï¬");
 			}
 			else if (dust_is_ok == Material.SULPHUR)
 			{
 				  MetadataValue spilituse = new FixedMetadataValue(THPlugin.plugin, 15) ;
 				  pl.setMetadata("spilituse", spilituse);
-				  pl.sendMessage(THPlugin.thrpre + ChatColor.DARK_GRAY + "éœŠåŠ›æ¶ˆè²»å¤§");
+				  pl.sendMessage(THPlugin.thrpre + ChatColor.DARK_GRAY + "—ì—ÍÁ”ï‘å");
 			}
 			else if (dust_is_ok == Material.GLOWSTONE_DUST)
 			{
 				  MetadataValue spilituse = new FixedMetadataValue(THPlugin.plugin, -10) ;
 				  pl.setMetadata("spilituse", spilituse);
-				  pl.sendMessage(THPlugin.thrpre + ChatColor.YELLOW + "éœŠåŠ›å›å¾©ä¸­");
+				  pl.sendMessage(THPlugin.thrpre + ChatColor.YELLOW + "—ì—Í‰ñ•œ’†");
 			}
 		}
-=======
-			if (pl.getMetadata("spilituse").get(0).asDouble() != 0)
-			{
-				 MetadataValue spilituse = new FixedMetadataValue(THPlugin.plugin, 0) ;
-				 pl.setMetadata("spilituse", spilituse);
-				 pl.sendMessage(THPlugin.thrpre + ChatColor.WHITE + "éœŠåŠ›ãƒãƒ¼ãƒãƒ«");
-			}
-			else
-			{
-				if (dust_is_ok == Material.SUGAR)
-				{
-					  MetadataValue spilituse = new FixedMetadataValue(THPlugin.plugin, 5) ;
-					  pl.setMetadata("spilituse", spilituse);
-					  pl.sendMessage(THPlugin.thrpre + ChatColor.AQUA + "éœŠåŠ›æ¶ˆè²»å°");
-				}
-				else if (dust_is_ok == Material.SULPHUR)
-				{
-					  MetadataValue spilituse = new FixedMetadataValue(THPlugin.plugin, 15) ;
-					  pl.setMetadata("spilituse", spilituse);
-					  pl.sendMessage(THPlugin.thrpre + ChatColor.DARK_GRAY + "éœŠåŠ›æ¶ˆè²»å¤§");
-				}
-				else if (dust_is_ok == Material.GLOWSTONE_DUST)
-				{
-					  MetadataValue spilituse = new FixedMetadataValue(THPlugin.plugin, -10) ;
-					  pl.setMetadata("spilituse", spilituse);
-					  pl.sendMessage(THPlugin.thrpre + ChatColor.YELLOW + "éœŠåŠ›å›å¾©ä¸­");
-				}
-			}
->>>>>>> origin/master
 	}
 	public static void global_no_ninngen(Player pl, final Plugin plugin, String pluginpre, final PlayerInteractEntityEvent event)
 	{
-		pl.sendMessage(THPlugin.thrpre + ChatColor.GRAY + "ã“ã®ãƒ‹ãƒ³ã‚²ãƒ³ã¯ä½•ã‚’è©±ã—ã¦ã„ã‚‹ã‚“ã ã‚ã†ãƒ»ãƒ»ãƒ»");
+		pl.sendMessage(THPlugin.thrpre + ChatColor.GRAY + "‚±‚Ìƒjƒ“ƒQƒ“‚Í‰½‚ğ˜b‚µ‚Ä‚¢‚é‚ñ‚¾‚ë‚¤EEE");
 		pl.closeInventory();
 		event.setCancelled(true);
 	}
@@ -174,7 +144,7 @@ public class THSkillGlobal implements Listener {
 		event.setDamage(event.getDamage() / 2D);
 		if (pl.isSneaking())
 		{
-			pl.sendMessage(THPlugin.thrpre + ChatColor.RED + pl.getName() + "è²´æ–¹ã¯éœŠåŠ›å†ç”Ÿãƒ¢ãƒ¼ãƒ‰ã®ç‚ºæœ¬æ°—ã‚’å‡ºã›ã¾ã›ã‚“ï¼");
+			pl.sendMessage(THPlugin.thrpre + ChatColor.RED + pl.getName() + "‹M•û‚Í—ì—ÍÄ¶ƒ‚[ƒh‚Ìˆ×–{‹C‚ğo‚¹‚Ü‚¹‚ñI");
 		}
 	}
 	public static void global_no_mana_damaged(Player pl, final Plugin plugin, String pluginpre, final EntityDamageByEntityEvent event)
@@ -182,7 +152,7 @@ public class THSkillGlobal implements Listener {
 		event.setDamage(event.getDamage() * 1.5D);
 		if (pl.isSneaking())
 		{
-			pl.sendMessage(THPlugin.thrpre + ChatColor.RED + pl.getName() + "è²´æ–¹ã¯éœŠåŠ›å†ç”Ÿãƒ¢ãƒ¼ãƒ‰ã®ç‚ºéå¸¸ã«æŸ”ã„ã§ã™ï¼");
+			pl.sendMessage(THPlugin.thrpre + ChatColor.RED + pl.getName() + "‹M•û‚Í—ì—ÍÄ¶ƒ‚[ƒh‚Ìˆ×”ñí‚É_‚¢‚Å‚·I");
 		}
 	}
 }

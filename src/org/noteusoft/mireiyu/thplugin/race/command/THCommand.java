@@ -1,4 +1,4 @@
-ï»¿package org.noteusoft.mireiyu.thplugin.race.command;
+package org.noteusoft.mireiyu.thplugin.race.command;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -32,7 +32,7 @@ public class THCommand implements CommandExecutor{
 				  if ((pl.hasPermission("thr.reload")) || (pl.isOp())){
 					  THPlugin.plugin.saveConfig();
 					  THPlugin.plugin.reloadConfig();
-					  sender.sendMessage(THPlugin.plugin + "Â§6 ãƒªãƒ­ãƒ¼ãƒ‰ã—ã¾ã—ãŸ.");
+					  sender.sendMessage(THPlugin.plugin + "˜6 ƒŠƒ[ƒh‚µ‚Ü‚µ‚½.");
 				  }
 			  }
 		  }else if ((commandLabel.equalsIgnoreCase("thr")) && (args[0].equalsIgnoreCase("help")) && (args.length == 1)){
@@ -40,39 +40,39 @@ public class THCommand implements CommandExecutor{
 				  Player pl = ((Player)sender).getPlayer();
 				  if ((pl.hasPermission("thr.help")) || (pl.hasPermission("thr.user"))){
 					  THPlugin.plugin.reloadConfig();
-					  sender.sendMessage(THPlugin.plugin + "Â§6å¯èƒ½ãªãƒ—ãƒ©ã‚°ã‚¤ãƒ³ä¸€è¦§");
-					  sender.sendMessage("Â§btouhouraces/thr : ãƒãƒ¼ã‚¸ãƒ§ãƒ³èª¬æ˜");
-					  sender.sendMessage("thr reload : ãƒªãƒ­ãƒ¼ãƒ‰");
-					  sender.sendMessage("thr mana : ç¾åœ¨ãƒãƒŠç¢ºèª");
-					  sender.sendMessage("thr heal-mana [num] : ãƒãƒŠã‚’numåˆ†å›å¾©ã™ã‚‹");
-					  sender.sendMessage("thr racelist : ã‚ªãƒ³ãƒ©ã‚¤ãƒ³ã§ã„ã‚‹ãƒ—ãƒ¬ã‚¤ãƒ¤ãƒ¼ã®ç¨®æ—ã®çµ±è¨ˆã‚’ã¨ã‚‹");
-					  sender.sendMessage("thr toggleskill : è¡Œå‹•ç³»ã®ã‚¹ã‚­ãƒ«ã®ç™ºå‹•ã‚’ãƒˆã‚°ãƒ«ã™ã‚‹");
-					  sender.sendMessage("thr setpoint [num] : è‡ªåˆ†ã®ãƒã‚¤ãƒ³ãƒˆï¼ˆä½¿ã„æ–¹ã¯ä»»æ„ï¼‰ã‚’è¨­å®šã™ã‚‹");
-					  sender.sendMessage("thr addpoint [num] : è‡ªåˆ†ã®ãƒã‚¤ãƒ³ãƒˆï¼ˆä½¿ã„æ–¹ã¯ä»»æ„ï¼‰ã‚’è¿½åŠ ã™ã‚‹");
-					  sender.sendMessage("thr setpoint [playername] [num] : playernameã®ãƒã‚¤ãƒ³ãƒˆï¼ˆä½¿ã„æ–¹ã¯ä»»æ„ï¼‰ã‚’è¨­å®šã™ã‚‹");
-					  sender.sendMessage("thr addpoint [playername] [num] : playernameã®ãƒã‚¤ãƒ³ãƒˆï¼ˆä½¿ã„æ–¹ã¯ä»»æ„ï¼‰ã‚’è¿½åŠ ã™ã‚‹");
-					  sender.sendMessage("thr steppoint [max] : ãƒã‚¤ãƒ³ãƒˆï¼ˆä½¿ã„æ–¹ã¯ä»»æ„ï¼‰ã‚’maxã‚’ä¸Šé™ã¨ã—ã¦1ä¸Šæ˜‡ã™ã‚‹");
-					  sender.sendMessage("thr steppoint [playername] [max] : playernameã®ãƒã‚¤ãƒ³ãƒˆï¼ˆä½¿ã„æ–¹ã¯ä»»æ„ï¼‰ã‚’maxã‚’ä¸Šé™ã¨ã—ã¦1ä¸Šæ˜‡ã™ã‚‹");
-					  sender.sendMessage("thr setrace  [å†…éƒ¨ç¨®æ—å] : è‡ªåˆ†ã®ç¨®æ—ã‚’ç¨®æ—åï¼ˆå†…éƒ¨åï¼‰ã«å¤‰æ›´ã™ã‚‹");
-					  sender.sendMessage("thr setrace [playername] [å†…éƒ¨ç¨®æ—å] : playernameã®ç¨®æ—ã‚’ç¨®æ—åï¼ˆå†…éƒ¨åï¼‰ã«å¤‰æ›´ã™ã‚‹");
-					  sender.sendMessage("thr setrace [playername] [å†…éƒ¨ç¨®æ—å] : playernameã®ç¨®æ—ã‚’ç¨®æ—åï¼ˆå†…éƒ¨åï¼‰ã«å¤‰æ›´ã™ã‚‹");
-					  sender.sendMessage("thr setrace [playername] [å†…éƒ¨ç¨®æ—å] : playernameã®ç¨®æ—ã‚’ç¨®æ—åï¼ˆå†…éƒ¨åï¼‰ã«å¤‰æ›´ã™ã‚‹");
-					  sender.sendMessage("thr setrace [playername] [å†…éƒ¨ç¨®æ—å] : playernameã®ç¨®æ—ã‚’ç¨®æ—åï¼ˆå†…éƒ¨åï¼‰ã«å¤‰æ›´ã™ã‚‹");
-					  sender.sendMessage("thr info : playernameã®ç¨®æ—ã®æƒ…å ±ã‚’è¡¨ç¤ºã™ã‚‹");
-					  sender.sendMessage("thr evolinfo [å†…éƒ¨ç¨®æ—å] : ç¨®æ—ã®æƒ…å ±ã‚’è¡¨ç¤ºã™ã‚‹");
-					  sender.sendMessage("thr evollist : playernameã®é€²åŒ–ã§ãã‚‹ç¨®æ—ã®ãƒªã‚¹ãƒˆã‚’è¡¨ç¤ºã™ã‚‹");
-					  sender.sendMessage("thr evolchange [å†…éƒ¨ç¨®æ—å] : ç¨®æ—ã®é€²åŒ–ã‚’è©¦ã¿ã‚‹");
+					  sender.sendMessage(THPlugin.plugin + "˜6‰Â”\‚Èƒvƒ‰ƒOƒCƒ“ˆê——");
+					  sender.sendMessage("˜btouhouraces/thr : ƒo[ƒWƒ‡ƒ“à–¾");
+					  sender.sendMessage("thr reload : ƒŠƒ[ƒh");
+					  sender.sendMessage("thr mana : Œ»İƒ}ƒiŠm”F");
+					  sender.sendMessage("thr heal-mana [num] : ƒ}ƒi‚ğnum•ª‰ñ•œ‚·‚é");
+					  sender.sendMessage("thr racelist : ƒIƒ“ƒ‰ƒCƒ“‚Å‚¢‚éƒvƒŒƒCƒ„[‚Ìí‘°‚Ì“Œv‚ğ‚Æ‚é");
+					  sender.sendMessage("thr toggleskill : s“®Œn‚ÌƒXƒLƒ‹‚Ì”­“®‚ğƒgƒOƒ‹‚·‚é");
+					  sender.sendMessage("thr setpoint [num] : ©•ª‚Ìƒ|ƒCƒ“ƒgig‚¢•û‚Í”CˆÓj‚ğİ’è‚·‚é");
+					  sender.sendMessage("thr addpoint [num] : ©•ª‚Ìƒ|ƒCƒ“ƒgig‚¢•û‚Í”CˆÓj‚ğ’Ç‰Á‚·‚é");
+					  sender.sendMessage("thr setpoint [playername] [num] : playername‚Ìƒ|ƒCƒ“ƒgig‚¢•û‚Í”CˆÓj‚ğİ’è‚·‚é");
+					  sender.sendMessage("thr addpoint [playername] [num] : playername‚Ìƒ|ƒCƒ“ƒgig‚¢•û‚Í”CˆÓj‚ğ’Ç‰Á‚·‚é");
+					  sender.sendMessage("thr steppoint [max] : ƒ|ƒCƒ“ƒgig‚¢•û‚Í”CˆÓj‚ğmax‚ğãŒÀ‚Æ‚µ‚Ä1ã¸‚·‚é");
+					  sender.sendMessage("thr steppoint [playername] [max] : playername‚Ìƒ|ƒCƒ“ƒgig‚¢•û‚Í”CˆÓj‚ğmax‚ğãŒÀ‚Æ‚µ‚Ä1ã¸‚·‚é");
+					  sender.sendMessage("thr setrace  [“à•”í‘°–¼] : ©•ª‚Ìí‘°‚ğí‘°–¼i“à•”–¼j‚É•ÏX‚·‚é");
+					  sender.sendMessage("thr setrace [playername] [“à•”í‘°–¼] : playername‚Ìí‘°‚ğí‘°–¼i“à•”–¼j‚É•ÏX‚·‚é");
+					  sender.sendMessage("thr setrace [playername] [“à•”í‘°–¼] : playername‚Ìí‘°‚ğí‘°–¼i“à•”–¼j‚É•ÏX‚·‚é");
+					  sender.sendMessage("thr setrace [playername] [“à•”í‘°–¼] : playername‚Ìí‘°‚ğí‘°–¼i“à•”–¼j‚É•ÏX‚·‚é");
+					  sender.sendMessage("thr setrace [playername] [“à•”í‘°–¼] : playername‚Ìí‘°‚ğí‘°–¼i“à•”–¼j‚É•ÏX‚·‚é");
+					  sender.sendMessage("thr info : playername‚Ìí‘°‚Ìî•ñ‚ğ•\¦‚·‚é");
+					  sender.sendMessage("thr evolinfo [“à•”í‘°–¼] : í‘°‚Ìî•ñ‚ğ•\¦‚·‚é");
+					  sender.sendMessage("thr evollist : playername‚Ìi‰»‚Å‚«‚éí‘°‚ÌƒŠƒXƒg‚ğ•\¦‚·‚é");
+					  sender.sendMessage("thr evolchange [“à•”í‘°–¼] : í‘°‚Ìi‰»‚ğ‚İ‚é");
 				  }else{
-					  pl.sendMessage(THPlugin.thrpre + ChatColor.RED + "æ¨©é™ãŒã‚ã‚Šã¾ã›ã‚“ï¼");
+					  pl.sendMessage(THPlugin.thrpre + ChatColor.RED + "Œ ŒÀ‚ª‚ ‚è‚Ü‚¹‚ñI");
 				  }
 			  }
 		  }else if ((commandLabel.equalsIgnoreCase("thr")) && (args[0].equalsIgnoreCase("mana")) && (args.length == 1)){
 			  if ((sender instanceof Player)){
 				  Player pl = ((Player)sender).getPlayer();
 				  if ((pl.hasPermission("thr.checkmana")) || (pl.hasPermission("thr.user"))) {
-					  pl.sendMessage(THPlugin.thrpre + ChatColor.GREEN + "éœŠåŠ›ï¼š" + ChatColor.LIGHT_PURPLE + THPlugin.plugin.getConfig().getDouble(new StringBuilder("user.").append(pl.getUniqueId()).append(".spilit").toString()));
+					  pl.sendMessage(THPlugin.thrpre + ChatColor.GREEN + "—ì—ÍF" + ChatColor.LIGHT_PURPLE + THPlugin.plugin.getConfig().getDouble(new StringBuilder("user.").append(pl.getUniqueId()).append(".spilit").toString()));
 				  } else {
-					  pl.sendMessage(THPlugin.thrpre + ChatColor.RED + "æ¨©é™ãŒã‚ã‚Šã¾ã›ã‚“ï¼");
+					  pl.sendMessage(THPlugin.thrpre + ChatColor.RED + "Œ ŒÀ‚ª‚ ‚è‚Ü‚¹‚ñI");
 				  }
 			  }
 		  }else if ((commandLabel.equalsIgnoreCase("thr")) && (args[0].equalsIgnoreCase("heal-mana")) && (args.length == 2)){
@@ -80,9 +80,9 @@ public class THCommand implements CommandExecutor{
 				  Player pl = ((Player)sender).getPlayer();
 				  if (pl.hasPermission("thr.healmana")){
 					  THPlugin.plugin.getConfig().set("user." + pl.getUniqueId() + ".spilit", Double.valueOf(THPlugin.plugin.getConfig().getDouble("user." + pl.getUniqueId() + ".spilit") + Integer.parseInt(args[1])));
-					  pl.sendMessage(THPlugin.thrpre + ChatColor.GREEN + "éœŠåŠ›ï¼š" + ChatColor.LIGHT_PURPLE + THPlugin.plugin.getConfig().getDouble(new StringBuilder("user.").append(pl.getUniqueId()).append(".spilit").toString()));
+					  pl.sendMessage(THPlugin.thrpre + ChatColor.GREEN + "—ì—ÍF" + ChatColor.LIGHT_PURPLE + THPlugin.plugin.getConfig().getDouble(new StringBuilder("user.").append(pl.getUniqueId()).append(".spilit").toString()));
 				  }else{
-					  pl.sendMessage(THPlugin.thrpre + ChatColor.RED + "æ¨©é™ãŒã‚ã‚Šã¾ã›ã‚“ï¼");
+					  pl.sendMessage(THPlugin.thrpre + ChatColor.RED + "Œ ŒÀ‚ª‚ ‚è‚Ü‚¹‚ñI");
 				  }
 			  }
 		  }else if ((commandLabel.equalsIgnoreCase("thr")) && (args[0].equalsIgnoreCase("racelist")) && (args.length == 1)){
@@ -90,7 +90,7 @@ public class THCommand implements CommandExecutor{
 				  Player pl = ((Player)sender).getPlayer();
 				  if ((pl.hasPermission("thr.racelist")) || (pl.hasPermission("thr.user"))){
 					  OfflinePlayer[] ppl = Bukkit.getOfflinePlayers();
-					  pl.sendMessage(THPlugin.plugin + "Â§a ã‚ªãƒ³ãƒ©ã‚¤ãƒ³ä¸­ã®ç¨®æ—ãƒªã‚¹ãƒˆ.");
+					  pl.sendMessage(THPlugin.plugin + "˜a ƒIƒ“ƒ‰ƒCƒ“’†‚Ìí‘°ƒŠƒXƒg.");
 					  int p = 0;
 					  while (p < ppl.length){
 						  if (ppl[p].isOnline()) {
@@ -99,7 +99,7 @@ public class THCommand implements CommandExecutor{
 						  p++;
 					  }
 				  }else{
-					  pl.sendMessage(THPlugin.thrpre + ChatColor.RED + "æ¨©é™ãŒã‚ã‚Šã¾ã›ã‚“ï¼");
+					  pl.sendMessage(THPlugin.thrpre + ChatColor.RED + "Œ ŒÀ‚ª‚ ‚è‚Ü‚¹‚ñI");
 				  }
 			  }
 		  }else if ((commandLabel.equalsIgnoreCase("thr")) && (args[0].equalsIgnoreCase("toggleskill")) && (args.length == 1)){
@@ -108,14 +108,14 @@ public class THCommand implements CommandExecutor{
 				  if ((pl.hasPermission("thr.toggleskill")) || (pl.hasPermission("thr.user"))){
 					  if (pl.hasMetadata("ignoreskill")){
 						  pl.removeMetadata("ignoreskill", THPlugin.plugin);
-						  pl.sendMessage(THPlugin.thrpre + ChatColor.DARK_AQUA + "è¡Œå‹•ã‚¹ã‚­ãƒ«ã¯å†ã³ç™ºå‹•ã—ã¾ã™");
+						  pl.sendMessage(THPlugin.thrpre + ChatColor.DARK_AQUA + "s“®ƒXƒLƒ‹‚ÍÄ‚Ñ”­“®‚µ‚Ü‚·");
 					  }else{
 						  MetadataValue ignoreskill = new FixedMetadataValue(THPlugin.plugin, Boolean.valueOf(true));
 						  pl.setMetadata("ignoreskill", ignoreskill);
-						  pl.sendMessage(THPlugin.thrpre + ChatColor.RED + "è¡Œå‹•ã‚¹ã‚­ãƒ«ã‚’å°å°ã—ã¾ã—ãŸ");
+						  pl.sendMessage(THPlugin.thrpre + ChatColor.RED + "s“®ƒXƒLƒ‹‚ğ••ˆó‚µ‚Ü‚µ‚½");
 					  }
 				  }else {
-					  pl.sendMessage(THPlugin.thrpre + ChatColor.RED + "æ¨©é™ãŒã‚ã‚Šã¾ã›ã‚“ï¼");
+					  pl.sendMessage(THPlugin.thrpre + ChatColor.RED + "Œ ŒÀ‚ª‚ ‚è‚Ü‚¹‚ñI");
 				  }
 			  }
 		  }else if ((commandLabel.equalsIgnoreCase("thr")) && (args[0].equalsIgnoreCase("setrace")) && (args.length == 2)){
@@ -124,9 +124,9 @@ public class THCommand implements CommandExecutor{
 				  if (commander.hasPermission("thr.setrace")){
 					  THPlugin.plugin.getConfig().set("user." + commander.getUniqueId() + ".race", args[1].toString());
 					  THPlugin.plugin.saveConfig();
-					  commander.sendMessage(THPlugin.thrpre + ChatColor.AQUA + "ã‚ãªãŸã¯ç¨®æ—ãŒ" + THPlugin.plugin.getConfig().getString(new StringBuilder("user.").append(commander.getUniqueId()).append(".race").toString()) + "ã«ãªã‚Šã¾ã—ãŸã€‚");
+					  commander.sendMessage(THPlugin.thrpre + ChatColor.AQUA + "‚ ‚È‚½‚Íí‘°‚ª" + THPlugin.plugin.getConfig().getString(new StringBuilder("user.").append(commander.getUniqueId()).append(".race").toString()) + "‚É‚È‚è‚Ü‚µ‚½B");
 				  }else{
-					  commander.sendMessage(THPlugin.thrpre + ChatColor.RED + "æ¨©é™ãŒã‚ã‚Šã¾ã›ã‚“ï¼");
+					  commander.sendMessage(THPlugin.thrpre + ChatColor.RED + "Œ ŒÀ‚ª‚ ‚è‚Ü‚¹‚ñI");
 				  }
 			  }
 		  }else if ((commandLabel.equalsIgnoreCase("thr")) && (args[0].equalsIgnoreCase("setrace")) && (args.length == 3)){
@@ -137,11 +137,11 @@ public class THCommand implements CommandExecutor{
 						  Player pl = Bukkit.getPlayer(args[1]);
 						  THPlugin.plugin.getConfig().set("user." + pl.getUniqueId() + ".race", args[2].toString());
 						  THPlugin.plugin.saveConfig();
-						  commander.sendMessage(THPlugin.thrpre + ChatColor.AQUA + pl.getName() + "ã®ç¨®æ—ã‚’" + THPlugin.plugin.getConfig().getString(new StringBuilder("user.").append(pl.getUniqueId()).append(".race").toString()) + "ã«ã—ã¾ã—ãŸã€‚");
-						  pl.sendMessage(THPlugin.thrpre + ChatColor.AQUA + "ã‚ãªãŸã¯ç¨®æ—ãŒ" + THPlugin.plugin.getConfig().getString(new StringBuilder("user.").append(pl.getUniqueId()).append(".race").toString()) + "ã«ãªã‚Šã¾ã—ãŸã€‚");
+						  commander.sendMessage(THPlugin.thrpre + ChatColor.AQUA + pl.getName() + "‚Ìí‘°‚ğ" + THPlugin.plugin.getConfig().getString(new StringBuilder("user.").append(pl.getUniqueId()).append(".race").toString()) + "‚É‚µ‚Ü‚µ‚½B");
+						  pl.sendMessage(THPlugin.thrpre + ChatColor.AQUA + "‚ ‚È‚½‚Íí‘°‚ª" + THPlugin.plugin.getConfig().getString(new StringBuilder("user.").append(pl.getUniqueId()).append(".race").toString()) + "‚É‚È‚è‚Ü‚µ‚½B");
 					  }
 				  }else {
-					  commander.sendMessage(THPlugin.thrpre + ChatColor.RED + "æ¨©é™ãŒã‚ã‚Šã¾ã›ã‚“ï¼");
+					  commander.sendMessage(THPlugin.thrpre + ChatColor.RED + "Œ ŒÀ‚ª‚ ‚è‚Ü‚¹‚ñI");
 				  }
 			  }
 		  }else if ((commandLabel.equalsIgnoreCase("thr")) && (args[0].equalsIgnoreCase("setpoint")) && (args.length == 2)){
@@ -152,10 +152,10 @@ public class THCommand implements CommandExecutor{
 						  int point = Integer.parseInt(args[1]);
 						  THPlugin.plugin.getConfig().set("user." + commander.getUniqueId() + ".point", Integer.valueOf(point));
 						  THPlugin.plugin.saveConfig();
-						  commander.sendMessage(THPlugin.thrpre + ChatColor.AQUA + "ã‚ãªãŸã¯ãƒã‚¤ãƒ³ãƒˆãŒ" + THPlugin.plugin.getConfig().getString(new StringBuilder("user.").append(commander.getUniqueId()).append(".point").toString()) + "ã«ãªã‚Šã¾ã—ãŸã€‚");
+						  commander.sendMessage(THPlugin.thrpre + ChatColor.AQUA + "‚ ‚È‚½‚Íƒ|ƒCƒ“ƒg‚ª" + THPlugin.plugin.getConfig().getString(new StringBuilder("user.").append(commander.getUniqueId()).append(".point").toString()) + "‚É‚È‚è‚Ü‚µ‚½B");
 					  }
 				  }else {
-					  commander.sendMessage(THPlugin.thrpre + ChatColor.RED + "æ¨©é™ãŒã‚ã‚Šã¾ã›ã‚“ï¼");
+					  commander.sendMessage(THPlugin.thrpre + ChatColor.RED + "Œ ŒÀ‚ª‚ ‚è‚Ü‚¹‚ñI");
 				  }
 			  }
 		  }else if ((commandLabel.equalsIgnoreCase("thr")) && (args[0].equalsIgnoreCase("setpoint")) && (args.length == 3)){
@@ -167,11 +167,11 @@ public class THCommand implements CommandExecutor{
 						  int point = Integer.parseInt(args[2]);
 						  THPlugin.plugin.getConfig().set("user." + pl.getUniqueId() + ".point", Integer.valueOf(point));
 						  THPlugin.plugin.saveConfig();
-						  commander.sendMessage(THPlugin.thrpre + ChatColor.AQUA + pl.getName() + "ã®ãƒã‚¤ãƒ³ãƒˆã‚’" + THPlugin.plugin.getConfig().getString(new StringBuilder("user.").append(pl.getUniqueId()).append(".point").toString()) + "ã«ã—ã¾ã—ãŸã€‚");
-						  pl.sendMessage(THPlugin.thrpre + ChatColor.AQUA + "ã‚ãªãŸã¯ãƒã‚¤ãƒ³ãƒˆãŒ" + THPlugin.plugin.getConfig().getString(new StringBuilder("user.").append(pl.getUniqueId()).append(".point").toString()) + "ã«ãªã‚Šã¾ã—ãŸã€‚");
+						  commander.sendMessage(THPlugin.thrpre + ChatColor.AQUA + pl.getName() + "‚Ìƒ|ƒCƒ“ƒg‚ğ" + THPlugin.plugin.getConfig().getString(new StringBuilder("user.").append(pl.getUniqueId()).append(".point").toString()) + "‚É‚µ‚Ü‚µ‚½B");
+						  pl.sendMessage(THPlugin.thrpre + ChatColor.AQUA + "‚ ‚È‚½‚Íƒ|ƒCƒ“ƒg‚ª" + THPlugin.plugin.getConfig().getString(new StringBuilder("user.").append(pl.getUniqueId()).append(".point").toString()) + "‚É‚È‚è‚Ü‚µ‚½B");
 					  }
 				  }else {
-					  commander.sendMessage(THPlugin.thrpre + ChatColor.RED + "æ¨©é™ãŒã‚ã‚Šã¾ã›ã‚“ï¼");
+					  commander.sendMessage(THPlugin.thrpre + ChatColor.RED + "Œ ŒÀ‚ª‚ ‚è‚Ü‚¹‚ñI");
 				  }
 			  }
 		  }else if ((commandLabel.equalsIgnoreCase("thr")) && (args[0].equalsIgnoreCase("addpoint")) && (args.length == 2)){
@@ -181,9 +181,9 @@ public class THCommand implements CommandExecutor{
 					  int point = Integer.parseInt(args[1]);
 					  THPlugin.plugin.getConfig().set("user." + commander.getUniqueId() + ".point", Integer.valueOf(THPlugin.plugin.getConfig().getInt("user." + commander.getUniqueId() + ".point") + point));
 					  THPlugin.plugin.saveConfig();
-					  commander.sendMessage(THPlugin.thrpre + ChatColor.AQUA + "ã‚ãªãŸã¯ãƒã‚¤ãƒ³ãƒˆãŒ" + THPlugin.plugin.getConfig().getString(new StringBuilder("user.").append(commander.getUniqueId()).append(".point").toString()) + "ã«ãªã‚Šã¾ã—ãŸã€‚");
+					  commander.sendMessage(THPlugin.thrpre + ChatColor.AQUA + "‚ ‚È‚½‚Íƒ|ƒCƒ“ƒg‚ª" + THPlugin.plugin.getConfig().getString(new StringBuilder("user.").append(commander.getUniqueId()).append(".point").toString()) + "‚É‚È‚è‚Ü‚µ‚½B");
 				  }else {
-					  commander.sendMessage(THPlugin.thrpre + ChatColor.RED + "æ¨©é™ãŒã‚ã‚Šã¾ã›ã‚“ï¼");
+					  commander.sendMessage(THPlugin.thrpre + ChatColor.RED + "Œ ŒÀ‚ª‚ ‚è‚Ü‚¹‚ñI");
 				  }
 			  }
 		  }else if ((commandLabel.equalsIgnoreCase("thr")) && (args[0].equalsIgnoreCase("addpoint")) && (args.length == 3)){
@@ -195,11 +195,11 @@ public class THCommand implements CommandExecutor{
 						  int point = Integer.parseInt(args[2]);
 						  THPlugin.plugin.getConfig().set("user." + pl.getUniqueId() + ".point", Integer.valueOf(THPlugin.plugin.getConfig().getInt("user." + pl.getUniqueId() + ".point") + point));
 						  THPlugin.plugin.saveConfig();
-						  commander.sendMessage(THPlugin.thrpre + ChatColor.AQUA + pl.getName() + "ã®ãƒã‚¤ãƒ³ãƒˆã‚’" + THPlugin.plugin.getConfig().getString(new StringBuilder("user.").append(pl.getUniqueId()).append(".point").toString()) + "ã«ã—ã¾ã—ãŸã€‚");
-						  pl.sendMessage(THPlugin.thrpre + ChatColor.AQUA + "ã‚ãªãŸã¯ãƒã‚¤ãƒ³ãƒˆãŒ" + THPlugin.plugin.getConfig().getString(new StringBuilder("user.").append(pl.getUniqueId()).append(".point").toString()) + "ã«ãªã‚Šã¾ã—ãŸã€‚");
+						  commander.sendMessage(THPlugin.thrpre + ChatColor.AQUA + pl.getName() + "‚Ìƒ|ƒCƒ“ƒg‚ğ" + THPlugin.plugin.getConfig().getString(new StringBuilder("user.").append(pl.getUniqueId()).append(".point").toString()) + "‚É‚µ‚Ü‚µ‚½B");
+						  pl.sendMessage(THPlugin.thrpre + ChatColor.AQUA + "‚ ‚È‚½‚Íƒ|ƒCƒ“ƒg‚ª" + THPlugin.plugin.getConfig().getString(new StringBuilder("user.").append(pl.getUniqueId()).append(".point").toString()) + "‚É‚È‚è‚Ü‚µ‚½B");
 					  }
 				  }else {
-					  commander.sendMessage(THPlugin.thrpre + ChatColor.RED + "æ¨©é™ãŒã‚ã‚Šã¾ã›ã‚“ï¼");
+					  commander.sendMessage(THPlugin.thrpre + ChatColor.RED + "Œ ŒÀ‚ª‚ ‚è‚Ü‚¹‚ñI");
 				  }
 			  }
 		  }else if ((commandLabel.equalsIgnoreCase("thr")) && (args[0].equalsIgnoreCase("steppoint")) && (args.length == 2)){
@@ -209,10 +209,10 @@ public class THCommand implements CommandExecutor{
 					  if (THPlugin.plugin.getConfig().getInt("user." + commander.getUniqueId() + ".point") < Integer.parseInt(args[1])){
 						  THPlugin.plugin.getConfig().set("user." + commander.getUniqueId() + ".point", Integer.valueOf(THPlugin.plugin.getConfig().getInt("user." + commander.getUniqueId() + ".point") + 1));
 						  THPlugin.plugin.saveConfig();
-						  commander.sendMessage(THPlugin.thrpre + ChatColor.AQUA + "ã‚ãªãŸã¯ãƒã‚¤ãƒ³ãƒˆãŒ" + THPlugin.plugin.getConfig().getString(new StringBuilder("user.").append(commander.getUniqueId()).append(".point").toString()) + "ã«ãªã‚Šã¾ã—ãŸã€‚");
+						  commander.sendMessage(THPlugin.thrpre + ChatColor.AQUA + "‚ ‚È‚½‚Íƒ|ƒCƒ“ƒg‚ª" + THPlugin.plugin.getConfig().getString(new StringBuilder("user.").append(commander.getUniqueId()).append(".point").toString()) + "‚É‚È‚è‚Ü‚µ‚½B");
 					  }
 				  }else {
-					  commander.sendMessage(THPlugin.thrpre + ChatColor.RED + "æ¨©é™ãŒã‚ã‚Šã¾ã›ã‚“ï¼");
+					  commander.sendMessage(THPlugin.thrpre + ChatColor.RED + "Œ ŒÀ‚ª‚ ‚è‚Ü‚¹‚ñI");
 				  }
 			  }
 		  }else if ((commandLabel.equalsIgnoreCase("thr")) && (args[0].equalsIgnoreCase("steppoint")) && (args.length == 3)){
@@ -224,19 +224,19 @@ public class THCommand implements CommandExecutor{
 						  if (THPlugin.plugin.getConfig().getInt("user." + commander.getUniqueId() + ".point") < Integer.parseInt(args[2])){
 							  THPlugin.plugin.getConfig().set("user." + pl.getUniqueId() + ".point", Integer.valueOf(THPlugin.plugin.getConfig().getInt("user." + pl.getUniqueId() + ".point") + 1));
 							  THPlugin.plugin.saveConfig();
-							  commander.sendMessage(THPlugin.thrpre + ChatColor.AQUA + pl.getName() + "ã®ãƒã‚¤ãƒ³ãƒˆã‚’" + THPlugin.plugin.getConfig().getString(new StringBuilder("user.").append(pl.getUniqueId()).append(".point").toString()) + "ã«ã—ã¾ã—ãŸã€‚");
-							  pl.sendMessage(THPlugin.thrpre + ChatColor.AQUA + "ã‚ãªãŸã¯ãƒã‚¤ãƒ³ãƒˆãŒ" + THPlugin.plugin.getConfig().getString(new StringBuilder("user.").append(pl.getUniqueId()).append(".point").toString()) + "ã«ãªã‚Šã¾ã—ãŸã€‚");
+							  commander.sendMessage(THPlugin.thrpre + ChatColor.AQUA + pl.getName() + "‚Ìƒ|ƒCƒ“ƒg‚ğ" + THPlugin.plugin.getConfig().getString(new StringBuilder("user.").append(pl.getUniqueId()).append(".point").toString()) + "‚É‚µ‚Ü‚µ‚½B");
+							  pl.sendMessage(THPlugin.thrpre + ChatColor.AQUA + "‚ ‚È‚½‚Íƒ|ƒCƒ“ƒg‚ª" + THPlugin.plugin.getConfig().getString(new StringBuilder("user.").append(pl.getUniqueId()).append(".point").toString()) + "‚É‚È‚è‚Ü‚µ‚½B");
 						  }
 					  }
 				  }else {
-					  commander.sendMessage(THPlugin.thrpre + ChatColor.RED + "æ¨©é™ãŒã‚ã‚Šã¾ã›ã‚“ï¼");
+					  commander.sendMessage(THPlugin.thrpre + ChatColor.RED + "Œ ŒÀ‚ª‚ ‚è‚Ü‚¹‚ñI");
 				  }
 			  }
 		  }else if ((commandLabel.equalsIgnoreCase("thr")) && (args[0].equalsIgnoreCase("evollist")) && (args.length == 1)){
 			  if ((sender instanceof Player)){
 				  Player pl = ((Player)sender).getPlayer();
 				  if ((pl.hasPermission("thr.evol.user.list")) || (pl.hasPermission("thr.user"))){
-					  pl.sendMessage(THPlugin.thrpre + ChatColor.AQUA + pl.getName() + "ã®é€²åŒ–ã§ãã‚‹å…ˆãƒªã‚¹ãƒˆ");
+					  pl.sendMessage(THPlugin.thrpre + ChatColor.AQUA + pl.getName() + "‚Ìi‰»‚Å‚«‚éæƒŠƒXƒg");
 					  List<String> evolraces = new ArrayList<String>();
 					  for (String race : THPlugin.plugin.getConfig().getConfigurationSection("race").getKeys(false)) {
 						  if (THPlugin.plugin.getConfig().getString("race." + race + ".racetype.root").contains(THPlugin.plugin.getConfig().getString("user." + pl.getUniqueId() + ".race"))) {
@@ -244,10 +244,10 @@ public class THCommand implements CommandExecutor{
 						  }
 					  }
 					  for (String evolrace : evolraces) {
-						  pl.sendMessage(THPlugin.plugin.getConfig().getString(new StringBuilder("race.").append(evolrace).append(".display.real").toString()) + "ï¼šå†…éƒ¨nameï¼" + evolrace);
+						  pl.sendMessage(THPlugin.plugin.getConfig().getString(new StringBuilder("race.").append(evolrace).append(".display.real").toString()) + "F“à•”name„" + evolrace);
 					  }
 				  }else	{
-					  pl.sendMessage(THPlugin.thrpre + ChatColor.RED + "æ¨©é™ãŒã‚ã‚Šã¾ã›ã‚“ã€‚");
+					  pl.sendMessage(THPlugin.thrpre + ChatColor.RED + "Œ ŒÀ‚ª‚ ‚è‚Ü‚¹‚ñB");
 				  }
 			  }
 		  }else if ((commandLabel.equalsIgnoreCase("thr")) && (args[0].equalsIgnoreCase("evolinfo")) && (args.length == 2)){
@@ -264,19 +264,19 @@ public class THCommand implements CommandExecutor{
 						  }
 					  }
 					  if (existrace){
-						  pl.sendMessage(THPlugin.plugin.getConfig().getString(new StringBuilder("race.").append(inforace).append(".display.real").toString()) + "ï¼šå†…éƒ¨nameï¼" + inforace + "ï¼ˆ" + THPlugin.plugin.getConfig().getString(new StringBuilder("race.").append(inforace).append(".display.tag").toString()) + "ï¼‰ã®æƒ…å ±");
-						  pl.sendMessage("å…ƒç¨®æ—ï¼š" + THPlugin.plugin.getConfig().getString(new StringBuilder("race.").append(inforace).append(".racetype.root").toString()));
-						  pl.sendMessage("ãƒ©ãƒ³ã‚¯ï¼š" + THPlugin.plugin.getConfig().getString(new StringBuilder("race.").append(inforace).append(".racetype.rank").toString()));
-						  pl.sendMessage("é€²åŒ–ã«å¿…è¦ãªé€²åŒ–ã®æ¬ ç‰‡ï¼š" + THPlugin.plugin.getConfig().getString(new StringBuilder("race.").append(inforace).append(".evol.evolpoint.shard").toString()));
-						  pl.sendMessage("é€²åŒ–ã«å¿…è¦ãªé€²åŒ–ã®å®çŸ³ï¼š" + THPlugin.plugin.getConfig().getString(new StringBuilder("race.").append(inforace).append(".evol.evolpoint.crystal").toString()));
-						  pl.sendMessage("é€²åŒ–ã«å¿…è¦ãªç¨®æ—ç´ æï¼š" + THPlugin.plugin.getConfig().getInt(new StringBuilder("race.").append(inforace).append(".evol.raceitem.amount").toString()) + "å€‹ã®" + Material.getMaterial(THPlugin.plugin.getConfig().getInt(new StringBuilder("race.").append(inforace).append(".evol.raceitem.typeid").toString())) + "(ãƒ¡ã‚¿" + THPlugin.plugin.getConfig().getInt(new StringBuilder("race.").append(inforace).append(".evol.raceitem.meta").toString()) + "ï¼‰");
+						  pl.sendMessage(THPlugin.plugin.getConfig().getString(new StringBuilder("race.").append(inforace).append(".display.real").toString()) + "F“à•”name„" + inforace + "i" + THPlugin.plugin.getConfig().getString(new StringBuilder("race.").append(inforace).append(".display.tag").toString()) + "j‚Ìî•ñ");
+						  pl.sendMessage("Œ³í‘°F" + THPlugin.plugin.getConfig().getString(new StringBuilder("race.").append(inforace).append(".racetype.root").toString()));
+						  pl.sendMessage("ƒ‰ƒ“ƒNF" + THPlugin.plugin.getConfig().getString(new StringBuilder("race.").append(inforace).append(".racetype.rank").toString()));
+						  pl.sendMessage("i‰»‚É•K—v‚Èi‰»‚ÌŒ‡•ĞF" + THPlugin.plugin.getConfig().getString(new StringBuilder("race.").append(inforace).append(".evol.evolpoint.shard").toString()));
+						  pl.sendMessage("i‰»‚É•K—v‚Èi‰»‚Ì•óÎF" + THPlugin.plugin.getConfig().getString(new StringBuilder("race.").append(inforace).append(".evol.evolpoint.crystal").toString()));
+						  pl.sendMessage("i‰»‚É•K—v‚Èí‘°‘fŞF" + THPlugin.plugin.getConfig().getInt(new StringBuilder("race.").append(inforace).append(".evol.raceitem.amount").toString()) + "ŒÂ‚Ì" + Material.getMaterial(THPlugin.plugin.getConfig().getInt(new StringBuilder("race.").append(inforace).append(".evol.raceitem.typeid").toString())) + "(ƒƒ^" + THPlugin.plugin.getConfig().getInt(new StringBuilder("race.").append(inforace).append(".evol.raceitem.meta").toString()) + "j");
 						  pl.sendMessage(THPlugin.plugin.getConfig().getString("race." + inforace + ".intro.story"));
 						  pl.sendMessage(THPlugin.plugin.getConfig().getString("race." + inforace + ".intro.skills"));
 					  }else	{
-						  pl.sendMessage(THPlugin.thrpre + ChatColor.RED + "ãã®ç¨®æ—å†…éƒ¨nameã¯å­˜åœ¨ã—ã¾ã›ã‚“ã€‚");
+						  pl.sendMessage(THPlugin.thrpre + ChatColor.RED + "‚»‚Ìí‘°“à•”name‚Í‘¶İ‚µ‚Ü‚¹‚ñB");
 					  }
 				  }else	{
-					  pl.sendMessage(THPlugin.thrpre + ChatColor.RED + "æ¨©é™ãŒã‚ã‚Šã¾ã›ã‚“ã€‚");
+					  pl.sendMessage(THPlugin.thrpre + ChatColor.RED + "Œ ŒÀ‚ª‚ ‚è‚Ü‚¹‚ñB");
 				  }
 			  }
 		  }else if ((commandLabel.equalsIgnoreCase("thr")) && (args[0].equalsIgnoreCase("info")) && (args.length == 1)){
@@ -293,19 +293,19 @@ public class THCommand implements CommandExecutor{
 						  }
 					  }
 					  if (existrace){
-						  pl.sendMessage(THPlugin.plugin.getConfig().getString(new StringBuilder("race.").append(inforace).append(".display.real").toString()) + "ï¼šå†…éƒ¨nameï¼" + inforace + "ï¼ˆ" + THPlugin.plugin.getConfig().getString(new StringBuilder("race.").append(inforace).append(".display.tag").toString()) + "ï¼‰ã®æƒ…å ±");
-						  pl.sendMessage("å…ƒç¨®æ—ï¼š" + THPlugin.plugin.getConfig().getString(new StringBuilder("race.").append(inforace).append(".racetype.root").toString()));
-						  pl.sendMessage("ãƒ©ãƒ³ã‚¯ï¼š" + THPlugin.plugin.getConfig().getString(new StringBuilder("race.").append(inforace).append(".racetype.rank").toString()));
-						  pl.sendMessage("é€²åŒ–ã«å¿…è¦ãªé€²åŒ–ã®æ¬ ç‰‡ï¼š" + THPlugin.plugin.getConfig().getString(new StringBuilder("race.").append(inforace).append(".evol.evolpoint.shard").toString()));
-						  pl.sendMessage("é€²åŒ–ã«å¿…è¦ãªé€²åŒ–ã®å®çŸ³ï¼š" + THPlugin.plugin.getConfig().getString(new StringBuilder("race.").append(inforace).append(".evol.evolpoint.crystal").toString()));
-						  pl.sendMessage("é€²åŒ–ã«å¿…è¦ãªç¨®æ—ç´ æï¼š" + THPlugin.plugin.getConfig().getInt(new StringBuilder("race.").append(inforace).append(".evol.raceitem.amount").toString()) + "å€‹ã®" + Material.getMaterial(THPlugin.plugin.getConfig().getInt(new StringBuilder("race.").append(inforace).append(".evol.raceitem.typeid").toString())) + "(ãƒ¡ã‚¿" + THPlugin.plugin.getConfig().getInt(new StringBuilder("race.").append(inforace).append(".evol.raceitem.meta").toString()) + "ï¼‰");
+						  pl.sendMessage(THPlugin.plugin.getConfig().getString(new StringBuilder("race.").append(inforace).append(".display.real").toString()) + "F“à•”name„" + inforace + "i" + THPlugin.plugin.getConfig().getString(new StringBuilder("race.").append(inforace).append(".display.tag").toString()) + "j‚Ìî•ñ");
+						  pl.sendMessage("Œ³í‘°F" + THPlugin.plugin.getConfig().getString(new StringBuilder("race.").append(inforace).append(".racetype.root").toString()));
+						  pl.sendMessage("ƒ‰ƒ“ƒNF" + THPlugin.plugin.getConfig().getString(new StringBuilder("race.").append(inforace).append(".racetype.rank").toString()));
+						  pl.sendMessage("i‰»‚É•K—v‚Èi‰»‚ÌŒ‡•ĞF" + THPlugin.plugin.getConfig().getString(new StringBuilder("race.").append(inforace).append(".evol.evolpoint.shard").toString()));
+						  pl.sendMessage("i‰»‚É•K—v‚Èi‰»‚Ì•óÎF" + THPlugin.plugin.getConfig().getString(new StringBuilder("race.").append(inforace).append(".evol.evolpoint.crystal").toString()));
+						  pl.sendMessage("i‰»‚É•K—v‚Èí‘°‘fŞF" + THPlugin.plugin.getConfig().getInt(new StringBuilder("race.").append(inforace).append(".evol.raceitem.amount").toString()) + "ŒÂ‚Ì" + Material.getMaterial(THPlugin.plugin.getConfig().getInt(new StringBuilder("race.").append(inforace).append(".evol.raceitem.typeid").toString())) + "(ƒƒ^" + THPlugin.plugin.getConfig().getInt(new StringBuilder("race.").append(inforace).append(".evol.raceitem.meta").toString()) + "j");
 						  pl.sendMessage(THPlugin.plugin.getConfig().getString("race." + inforace + ".intro.story"));
 						  pl.sendMessage(THPlugin.plugin.getConfig().getString("race." + inforace + ".intro.skills"));
 					  }else {
-						  pl.sendMessage(THPlugin.thrpre + ChatColor.RED + "ãã®ç¨®æ—å†…éƒ¨nameã¯å­˜åœ¨ã—ã¾ã›ã‚“ã€‚");
+						  pl.sendMessage(THPlugin.thrpre + ChatColor.RED + "‚»‚Ìí‘°“à•”name‚Í‘¶İ‚µ‚Ü‚¹‚ñB");
 					  }
 				  }else	{
-					  pl.sendMessage(THPlugin.thrpre + ChatColor.RED + "æ¨©é™ãŒã‚ã‚Šã¾ã›ã‚“ã€‚");
+					  pl.sendMessage(THPlugin.thrpre + ChatColor.RED + "Œ ŒÀ‚ª‚ ‚è‚Ü‚¹‚ñB");
 				  }
 			  }
 		  }else if ((commandLabel.equalsIgnoreCase("thr")) && (args[0].equalsIgnoreCase("evolchange")) && (args.length == 2)){
@@ -357,7 +357,7 @@ public class THCommand implements CommandExecutor{
 								  }
 							  }
 							  if ((ok_shard == 2) || (ok_crystal == 2) || (ok_raceitem == 2)){
-								  pl.sendMessage(THPlugin.thrpre + ChatColor.RED + "ãã®ç¨®æ—ã«é€²åŒ–ã™ã‚‹ç‚ºã®ã‚¢ã‚¤ãƒ†ãƒ ãŒã‚ã‚Šã¾ã›ã‚“ï¼");
+								  pl.sendMessage(THPlugin.thrpre + ChatColor.RED + "‚»‚Ìí‘°‚Éi‰»‚·‚éˆ×‚ÌƒAƒCƒeƒ€‚ª‚ ‚è‚Ü‚¹‚ñI");
 							  }else {
 								  pl.playSound(pl.getLocation(), Sound.PORTAL_TRAVEL, 1.0F, 1.0F);
 								  if (ok_shard == 1) {
@@ -371,7 +371,7 @@ public class THCommand implements CommandExecutor{
 								  }
 								  THPlugin.plugin.getConfig().set("user." + pl.getUniqueId() + ".race", inforace);
 								  THPlugin.plugin.saveConfig();
-								  Bukkit.broadcastMessage(THPlugin.thrpre + ChatColor.BLUE + pl.getName() + "ã¯" + THPlugin.plugin.getConfig().getString(new StringBuilder("race.").append(inforace).append(".racetype.root").toString()) + "ã‹ã‚‰" + THPlugin.plugin.getConfig().getString(new StringBuilder("race.").append(inforace).append(".display.real").toString()) + "ã«é€²åŒ–ã—ãŸï¼ï¼");
+								  Bukkit.broadcastMessage(THPlugin.thrpre + ChatColor.BLUE + pl.getName() + "‚Í" + THPlugin.plugin.getConfig().getString(new StringBuilder("race.").append(inforace).append(".racetype.root").toString()) + "‚©‚ç" + THPlugin.plugin.getConfig().getString(new StringBuilder("race.").append(inforace).append(".display.real").toString()) + "‚Éi‰»‚µ‚½II");
 
 								  ItemStack rewarditem = null;
 								  if (THPlugin.plugin.getConfig().getInt("race." + inforace + ".evol.rewarditem.amount") != 0){
@@ -382,17 +382,17 @@ public class THCommand implements CommandExecutor{
 								  }
 							  }
 						  }else {
-							  pl.sendMessage(THPlugin.thrpre + ChatColor.RED + "é€²åŒ–ã§ãã‚‹ç¨®æ—ã§ã¯ã‚ã‚Šã¾ã›ã‚“ï¼");
+							  pl.sendMessage(THPlugin.thrpre + ChatColor.RED + "i‰»‚Å‚«‚éí‘°‚Å‚Í‚ ‚è‚Ü‚¹‚ñI");
 						  }
 					  }else {
-						  pl.sendMessage(THPlugin.thrpre + ChatColor.RED + "ãã®ç¨®æ—å†…éƒ¨nameã¯å­˜åœ¨ã—ã¾ã›ã‚“ã€‚");
+						  pl.sendMessage(THPlugin.thrpre + ChatColor.RED + "‚»‚Ìí‘°“à•”name‚Í‘¶İ‚µ‚Ü‚¹‚ñB");
 					  }
 				  }else {
-					  pl.sendMessage(THPlugin.thrpre + ChatColor.RED + "æ¨©é™ãŒã‚ã‚Šã¾ã›ã‚“ã€‚");
+					  pl.sendMessage(THPlugin.thrpre + ChatColor.RED + "Œ ŒÀ‚ª‚ ‚è‚Ü‚¹‚ñB");
 				  }
 			  }
 		  }else if ((commandLabel.equalsIgnoreCase("thr")) && (args.length >= 1)){
-			  sender.sendMessage(THPlugin.plugin + "Â§c ã‚³ãƒãƒ³ãƒ‰ãŒé–“é•ã£ã¦ã„ã‚‹ã‚ˆ.");
+			  sender.sendMessage(THPlugin.plugin + "˜c ƒRƒ}ƒ“ƒh‚ªŠÔˆá‚Á‚Ä‚¢‚é‚æ.");
 		  }
 		  return true;
 	  }

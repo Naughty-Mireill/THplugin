@@ -1,8 +1,6 @@
-ï»¿package org.noteusoft.mireiyu.thplugin.race.skill;
+package org.noteusoft.mireiyu.thplugin.race.skill;
 
 import java.util.List;
-
-import net.minecraft.server.v1_8_R3.MathHelper;
 
 import org.bukkit.ChatColor;
 import org.bukkit.Effect;
@@ -15,12 +13,8 @@ import org.bukkit.entity.Player;
 import org.bukkit.entity.TNTPrimed;
 import org.bukkit.event.Listener;
 import org.bukkit.event.entity.EntityDamageByBlockEvent;
-<<<<<<< HEAD
 import org.bukkit.event.entity.EntityDamageEvent.DamageCause;
 import org.bukkit.event.player.PlayerInteractEvent;
-=======
-import org.bukkit.event.player.PlayerMoveEvent;
->>>>>>> origin/master
 import org.bukkit.event.player.PlayerRespawnEvent;
 import org.bukkit.event.player.PlayerToggleSneakEvent;
 import org.bukkit.metadata.FixedMetadataValue;
@@ -28,39 +22,29 @@ import org.bukkit.metadata.MetadataValue;
 import org.bukkit.plugin.Plugin;
 import org.bukkit.util.Vector;
 public class THSkillYUM  implements Listener {
-	////ã‚¢ã‚¯ãƒ†ã‚£ãƒ–ã‚¹ã‚­ãƒ«ç³»
-	///ç§»å‹•ã‚¹ã‚­ãƒ«ç³»
-<<<<<<< HEAD
+	////ƒAƒNƒeƒBƒuƒXƒLƒ‹Œn
+	///ˆÚ“®ƒXƒLƒ‹Œn
 	public static void tenngu_kamikaze(Player pl, final Plugin plugin, final String pluginpre,PlayerInteractEvent event, int boost) 
-=======
-	public static void tenngu_kamikaze(Player pl, final Plugin plugin, final String pluginpre,PlayerMoveEvent event, int boost) 
->>>>>>> origin/master
 	{
 		if (boost > 0 && boost < 15)
 		{
 		    pl.getWorld().playSound(pl.getLocation(), Sound.ENDERDRAGON_WINGS, 1.0F, 1.0F);
 		    pl.getWorld().playSound(pl.getLocation(), Sound.ENDERDRAGON_WINGS, 1.0F, 0.0F); 
 		    pl.setVelocity(pl.getLocation().getDirection().multiply(8.0D));
-<<<<<<< HEAD
 		    pl.setFallDistance(-30F);
-=======
->>>>>>> origin/master
 		}
 		else
 		{
 		    pl.getWorld().playSound(pl.getLocation(), Sound.ENDERDRAGON_WINGS, 1.0F, 0.0F);
 		    pl.getWorld().playSound(pl.getLocation(), Sound.ENDERDRAGON_WINGS, 1.0F, -1.0F);   
 		    pl.setVelocity(pl.getLocation().getDirection().multiply(14.0D));
-<<<<<<< HEAD
 		    pl.setFallDistance(-10F);
-=======
->>>>>>> origin/master
 		}
 	}
-	///æ”»æ’ƒã‚¹ã‚­ãƒ«ç³»
+	///UŒ‚ƒXƒLƒ‹Œn
 	public static void youma_golden_shockwave(Player pl, final Plugin plugin, String pluginpre, final PlayerToggleSneakEvent event)
 	{
-	    pl.sendMessage(pluginpre + ChatColor.YELLOW + "é‡‘ã®æ–§ã§å…¨ã¦ã‚’å¹ãé£›ã°ã™ï¼ï¼");
+	    pl.sendMessage(pluginpre + ChatColor.YELLOW + "‹à‚Ì•€‚Å‘S‚Ä‚ğ‚«”ò‚Î‚·II");
 	    pl.getWorld().playSound(pl.getLocation(), Sound.ZOMBIE_WOODBREAK, 1.0F, 0.0F);
 	    pl.getWorld().playSound(pl.getLocation(), Sound.EXPLODE, 1.0F, 0.0F);
 	    pl.getWorld().playEffect(pl.getLocation(), Effect.EXPLOSION_HUGE, 1, 1);
@@ -75,14 +59,14 @@ public class THSkillYUM  implements Listener {
 	}
 	public static void kappa_stone_tnt(Player pl, final Plugin plugin, String pluginpre, final PlayerToggleSneakEvent event)
 	{
-		pl.sendMessage(pluginpre + ChatColor.GRAY + "çŸ³ã®æ–§ã§TNTã‚’æŠ•ã’ãŸï¼ï¼");
+		pl.sendMessage(pluginpre + ChatColor.GRAY + "Î‚Ì•€‚ÅTNT‚ğ“Š‚°‚½II");
 	    pl.getWorld().playSound(pl.getLocation(), Sound.FIRE_IGNITE, 1.0F, 0.0F);
 	    Location location = pl.getEyeLocation();
 	    float pitch = location.getPitch() / 180.0F * 3.1415927F;
 	    float yaw = location.getYaw() / 180.0F * 3.1415927F;
-	    double motX = -MathHelper.sin(yaw) * MathHelper.cos(pitch);
-	    double motZ = MathHelper.cos(yaw) * MathHelper.cos(pitch);
-	    double motY = -MathHelper.sin(pitch);
+	    double motX = -Math.sin(yaw) * Math.cos(pitch);
+	    double motZ = Math.cos(yaw) * Math.cos(pitch);
+	    double motY = -Math.sin(pitch);
 	    Vector velocity = new Vector(motX, motY, motZ).multiply(1.3D);
 	    TNTPrimed tnt = (TNTPrimed)pl.getWorld().spawnEntity(location, EntityType.PRIMED_TNT);
 	    MetadataValue shooter = new FixedMetadataValue(plugin, pl.getName());
@@ -95,7 +79,7 @@ public class THSkillYUM  implements Listener {
 	}
 	public static void youma_wooden_upper(Player pl, final Plugin plugin, String pluginpre, final PlayerToggleSneakEvent event)
 	{
-		pl.sendMessage(pluginpre + ChatColor.GOLD + "æœ¨ã®æ–§ã§åœ°é¢ã‚’å©ãä¸Šã’ãŸï¼ï¼");
+		pl.sendMessage(pluginpre + ChatColor.GOLD + "–Ø‚Ì•€‚Å’n–Ê‚ğ’@‚«ã‚°‚½II");
 		pl.getWorld().playSound(pl.getLocation(), Sound.ZOMBIE_WOODBREAK, 2.0F, 0.0F);
 		pl.getWorld().playEffect(pl.getLocation(), Effect.EXPLOSION_LARGE, 1, 1);
 		List<Entity> enemys = pl.getNearbyEntities(7.0D, 7.0D, 7.0D);
@@ -107,8 +91,8 @@ public class THSkillYUM  implements Listener {
 		  }
 		}
 	}
-	////ãƒ‘ãƒƒã‚·ãƒ–ã‚¹ã‚­ãƒ«ç³»
-	///ãƒªã‚¹ãƒãƒ¼ãƒ³
+	////ƒpƒbƒVƒuƒXƒLƒ‹Œn
+	///ƒŠƒXƒ|[ƒ“
 	public static void youma_respawnhealth(Player pl, final Plugin plugin,String pluginpre, final PlayerToggleSneakEvent event)
 	{
 		pl.setMaxHealth(120.0D);
@@ -121,13 +105,9 @@ public class THSkillYUM  implements Listener {
 	{
 		pl.setMaxHealth(150.0D);
 	}
-	///è€æ€§
+	///‘Ï«
 	public static void kappa_anti_drawn(Player pl, final Plugin plugin, String pluginpre, final EntityDamageByBlockEvent event)
 	{
-<<<<<<< HEAD
 		if (event.getCause() == DamageCause.DROWNING) event.setCancelled(true);
-=======
-		event.setCancelled(true);
->>>>>>> origin/master
 	}
 }

@@ -17,14 +17,10 @@ import org.bukkit.potion.PotionEffect;
 import org.bukkit.potion.PotionEffectType;
 
 public class THSkillYUZ  implements Listener  {
-<<<<<<< HEAD
-	////ã‚¢ã‚¯?ï¿½ï¿½?ã‚£ãƒ–ã‚¹ã‚­ãƒ«ç³»
-=======
-	////ã‚¢ã‚¯?¿½?ã‚£ãƒ–ã‚¹ã‚­ãƒ«ç³»
->>>>>>> origin/master
+	////ƒAƒNƒuƒXƒLƒ‹Œn
 	public static void ninngyo_swimming(Player pl, final Plugin plugin, final PlayerMoveEvent event, int boost)
 	{
-		///ç§»å‹•ã‚¹ã‚­ãƒ«ç³»
+		///ˆÚ“®ƒXƒLƒ‹Œn
 		if (pl.getLocation().getBlock().getType() == Material.WATER || pl.getLocation().getBlock().getType() == Material.STATIONARY_WATER)
 		{
 			if (boost == 1)
@@ -37,31 +33,18 @@ public class THSkillYUZ  implements Listener  {
 			}
 		}
 	}
-	///å¬å–šã‚¹ã‚­ãƒ«ç³»
-	//ç‹¼å¬(å¦–ç£ç³»)
-<<<<<<< HEAD
+	///¢Š«ƒXƒLƒ‹Œn
+	//˜T¢(—dbŒn)
 	public static void youzyuu_summon_wolf(final Player pl, final Plugin plugin, final String pluginpre,final PlayerInteractEvent event){
 	    MetadataValue usingmagic = new FixedMetadataValue(plugin, Boolean.valueOf(true));
 	    pl.setMetadata("using-magic", usingmagic);
-		pl.sendMessage(pluginpre + ChatColor.GRAY + "ç‹¼ã®ç¾¤ã‚Œã‚’å‘¼ã³å‡ºã™ã‚¦ã‚ªã‚ªã‚ªãƒ¼ãƒ³");
-=======
-	public static void youzyuu_summon_wolf(Player pl, final Plugin plugin, final String pluginpre,final PlayerInteractEvent event){
-		MetadataValue casting = new FixedMetadataValue(plugin, Boolean.valueOf(true));
-		pl.setMetadata("casting", casting);
-		pl.sendMessage(pluginpre + ChatColor.GRAY + "ç‹¼ã®ç¾¤ã‚Œã‚’å‘¼ã³å‡ºã? ã‚¦ã‚ªã‚ªã‚ªãƒ¼ãƒ³");
->>>>>>> origin/master
+		pl.sendMessage(pluginpre + ChatColor.GRAY + "˜T‚ÌŒQ‚ê‚ğŒÄ‚Ño‚·ƒEƒIƒIƒI[ƒ“");
 		pl.getWorld().playSound(pl.getLocation(), Sound.WOLF_WHINE, 4.0F, -1.0F);
 		pl.getWorld().playEffect(pl.getLocation(), Effect.BLAZE_SHOOT, 1, 1);
 		Bukkit.getServer().getScheduler().scheduleSyncDelayedTask(plugin, new Runnable(){
 			public void run(){
-<<<<<<< HEAD
 			    MetadataValue usingmagic = new FixedMetadataValue(plugin, Boolean.valueOf(false));
 			    pl.setMetadata("using-magic", usingmagic);
-=======
-				Player pl = event.getPlayer();
-				MetadataValue casted = new FixedMetadataValue(plugin, Boolean.valueOf(false));
-       		  pl.setMetadata("casting", casted);
->>>>>>> origin/master
        		  int n = 0;
        		  while (n < 3){
        			  Entity wolf = pl.getWorld().spawnEntity(pl.getLocation(), EntityType.WOLF);
@@ -72,38 +55,20 @@ public class THSkillYUZ  implements Listener  {
        			  n++;
        		  }
        		  pl.getWorld().playSound(pl.getLocation(), Sound.WOLF_BARK, 1.0F, 1.0F);
-<<<<<<< HEAD
-       		  pl.sendMessage(pluginpre + ChatColor.GOLD + "ã€Œã‚¦ã‚ªãƒ³ã€ã€Œã‚¦ã‚ªãƒ³ã€ã€Œã‚¦ã‚ªãƒ³ã€");
+       		  pl.sendMessage(pluginpre + ChatColor.GOLD + "uƒEƒIƒ“vuƒEƒIƒ“vuƒEƒIƒ“v");
        	  }
          }, 40L);
 	}
-	//çŒ«å¬(ï¿½?)
+	//”L¢()
 	public static void siki_summon_ocerot(final Player pl, final Plugin plugin, final String pluginpre,final PlayerInteractEvent event){
 	    MetadataValue usingmagic = new FixedMetadataValue(plugin, Boolean.valueOf(true));
 	    pl.setMetadata("using-magic", usingmagic);
-		  pl.sendMessage(pluginpre + ChatColor.GRAY + "æ„›ãã‚‹ã—ã„çŒ«ã‚’å‘¼ã³å‡ºã™ãƒ‹ãƒ£ã‚¢");
+		  pl.sendMessage(pluginpre + ChatColor.GRAY + "ˆ¤‚­‚é‚µ‚¢”L‚ğŒÄ‚Ño‚·ƒjƒƒƒA");
 		  pl.getWorld().playSound(pl.getLocation(), Sound.CAT_MEOW, 4.0F, -1.0F);
 		  Bukkit.getServer().getScheduler().scheduleSyncDelayedTask(plugin, new Runnable(){
 			  public void run(){
 				    MetadataValue usingmagic = new FixedMetadataValue(plugin, Boolean.valueOf(false));
 				    pl.setMetadata("using-magic", usingmagic);
-=======
-       		  pl.sendMessage(pluginpre + ChatColor.GOLD + "ã€Œã‚¦ã‚ªãƒ³ã€ã?Œã‚¦ã‚ªãƒ³ã€ã?Œã‚¦ã‚ªãƒ³ã€?");
-       	  }
-         }, 40L);
-	}
-	//çŒ«å¬(å¼?)
-	public static void siki_summon_ocerot(Player pl, final Plugin plugin, final String pluginpre,final PlayerInteractEvent event){
-		  MetadataValue casting = new FixedMetadataValue(plugin, Boolean.valueOf(true));
-		  pl.setMetadata("casting", casting);
-		  pl.sendMessage(pluginpre + ChatColor.GRAY + "æ„›ãã‚‹ã—ã?çŒ«ã‚’å‘¼ã³å‡ºã? ãƒ‹ãƒ£ã‚¢");
-		  pl.getWorld().playSound(pl.getLocation(), Sound.CAT_MEOW, 4.0F, -1.0F);
-		  Bukkit.getServer().getScheduler().scheduleSyncDelayedTask(plugin, new Runnable(){
-			  public void run(){
-				  Player pl = event.getPlayer();
-				  MetadataValue casted = new FixedMetadataValue(plugin, Boolean.valueOf(false));
-				  pl.setMetadata("casting", casted);
->>>>>>> origin/master
 				  int n = 0;
 				  while (n < 3){
 					  Entity cat = pl.getWorld().spawnEntity(pl.getLocation(), EntityType.OCELOT);
@@ -114,90 +79,48 @@ public class THSkillYUZ  implements Listener  {
 					  n++;
 				  }
 				  pl.getWorld().playSound(pl.getLocation(), Sound.CAT_PURREOW, 1.0F, 1.0F);
-<<<<<<< HEAD
-				  pl.sendMessage(pluginpre + ChatColor.GOLD + "ã€Œãƒ‹ãƒ£ã‚¢ã€ã€Œãƒ‹ãƒ£ã‚¢ã€ã€Œãƒ‹ãƒ£ã‚¢ã€");
-=======
-				  pl.sendMessage(pluginpre + ChatColor.GOLD + "ã€Œãƒ‹ãƒ£ã‚¢ã€ã?Œãƒ‹ãƒ£ã‚¢ã€ã?Œãƒ‹ãƒ£ã‚¢ã€?");
->>>>>>> origin/master
+				  pl.sendMessage(pluginpre + ChatColor.GOLD + "uƒjƒƒƒAvuƒjƒƒƒAvuƒjƒƒƒAv");
 			  }
 		  }, 40L);
 	}
-	///å¼·åŒ–ã‚¹ã‚­ãƒ«ç³»
-<<<<<<< HEAD
-	//éœŠåŠ›æ¶ˆè²»ã§å¼·ï¿½?
+	///‹­‰»ƒXƒLƒ‹Œn
+	//—ì—ÍÁ”ï‚Å‹­
 	public static void youzyu_gainenergy(Player pl, final Plugin plugin, final String pluginpre,final PlayerInteractEvent event){
-		pl.sendMessage(pluginpre + ChatColor.GREEN + "éœŠåŠ›ã§è‡ªèº«ã®èƒ½åŠ›å¢—å¼·ã‚’å›³ã£ãŸï¼");
-=======
-	//éœŠåŠ›æ¶ˆè²»ã§å¼·åŒ?
-	public static void youzyu_gainenergy(Player pl, final Plugin plugin, final String pluginpre,final PlayerInteractEvent event){
-		pl.sendMessage(pluginpre + ChatColor.GREEN + "éœŠåŠ›ã§è‡ªèº«ã®èƒ½åŠ›å¢—å¼·ã‚’å›³ã£ãŸï¼?¼?");
->>>>>>> origin/master
+		pl.sendMessage(pluginpre + ChatColor.GREEN + "—ì—Í‚Å©g‚Ì”\—Í‘‹­‚ğ}‚Á‚½I");
 		pl.getWorld().playSound(pl.getLocation(), Sound.BLAZE_BREATH, 1.0F, 1.0F);
 		pl.getWorld().playEffect(pl.getLocation(), Effect.MOBSPAWNER_FLAMES, 1, 1);
 		double ram = Math.random();
 		pl.sendMessage(pluginpre + ChatColor.GREEN + ram);
 		if (ram < 0.1D){
-<<<<<<< HEAD
-			pl.sendMessage(pluginpre + ChatColor.GRAY + "å¤±æ•—ï¼");
+			pl.sendMessage(pluginpre + ChatColor.GRAY + "¸”sI");
 		}else if (ram < 0.2D){
-			pl.sendMessage(pluginpre + ChatColor.GREEN + "ç§»å‹•ã®é€Ÿåº¦ãŒã•ã‚‰ã«ä¸ŠãŒã£ãŸï¼");
+			pl.sendMessage(pluginpre + ChatColor.GREEN + "ˆÚ“®‚Ì‘¬“x‚ª‚³‚ç‚Éã‚ª‚Á‚½I");
 			pl.removePotionEffect(PotionEffectType.SPEED);
 			pl.addPotionEffect(new PotionEffect(PotionEffectType.SPEED, 200, 1));
 		}else if (ram < 0.3D){
-			pl.sendMessage(pluginpre + ChatColor.GREEN + "è·³èºåŠ›ãŒä¸ŠãŒã£ãŸï¼");
+			pl.sendMessage(pluginpre + ChatColor.GREEN + "’µ–ô—Í‚ªã‚ª‚Á‚½I");
 			pl.removePotionEffect(PotionEffectType.JUMP);
 			pl.addPotionEffect(new PotionEffect(PotionEffectType.JUMP, 300, 0));
 		}else if (ram < 0.4D){
-			pl.sendMessage(pluginpre + ChatColor.GOLD + "æŒ¯ã‚Šã®é€Ÿã•ãŒä¸ŠãŒã£ãŸï¼");
+			pl.sendMessage(pluginpre + ChatColor.GOLD + "U‚è‚Ì‘¬‚³‚ªã‚ª‚Á‚½I");
 			pl.removePotionEffect(PotionEffectType.FAST_DIGGING);
 			pl.addPotionEffect(new PotionEffect(PotionEffectType.FAST_DIGGING, 250, 0));
 		}else if (ram < 0.5D){
-			pl.sendMessage(pluginpre + ChatColor.LIGHT_PURPLE + "è»½ã„å†ç”Ÿèƒ½åŠ›ã‚’å¾—ãŸï¼");
+			pl.sendMessage(pluginpre + ChatColor.LIGHT_PURPLE + "Œy‚¢Ä¶”\—Í‚ğ“¾‚½I");
 			pl.removePotionEffect(PotionEffectType.REGENERATION);
 			pl.addPotionEffect(new PotionEffect(PotionEffectType.REGENERATION, 300, 0));
 		}else if (ram < 0.6D){
-			pl.sendMessage(pluginpre + ChatColor.RED + "ãƒã‚¾ãªç²¾ç¥ã‚’å¾—ãŸ?ã®?");
+			pl.sendMessage(pluginpre + ChatColor.RED + "ƒ}ƒ]‚È¸_‚ğ“¾‚½?‚Ì?");
 			pl.removePotionEffect(PotionEffectType.DAMAGE_RESISTANCE);
 			pl.addPotionEffect(new PotionEffect(PotionEffectType.DAMAGE_RESISTANCE, 250, 1));
 		}else if (ram < 0.7D){
-			pl.sendMessage(pluginpre + ChatColor.RED + "ã‚µã‚¾ãªç²¾ç¥ã‚’å¾—ãŸï¼");
+			pl.sendMessage(pluginpre + ChatColor.RED + "ƒTƒ]‚È¸_‚ğ“¾‚½I");
 			pl.removePotionEffect(PotionEffectType.INCREASE_DAMAGE);
 			pl.addPotionEffect(new PotionEffect(PotionEffectType.INCREASE_DAMAGE, 250, 0));
 		}else if (ram < 0.8D){
-			pl.sendMessage(pluginpre + ChatColor.AQUA + "å¤©ç©ºã®åŠ›ã‚’å¾—ãŸï¼");
+			pl.sendMessage(pluginpre + ChatColor.AQUA + "“V‹ó‚Ì—Í‚ğ“¾‚½I");
 			if (pl.getWorld().isThundering()){
-				pl.sendMessage(pluginpre + ChatColor.YELLOW + "å¤©ã¯é›·å…‰ã®å¦‚ãåŠ›ã‚’æˆã‘ã¦ä¸‹ã•ã£ãŸï¼");
-=======
-			pl.sendMessage(pluginpre + ChatColor.GRAY + "å¤±æ•—ï¼?");
-		}else if (ram < 0.2D){
-			pl.sendMessage(pluginpre + ChatColor.GREEN + "ç§»å‹•é?Ÿåº¦ãŒã•ã‚‰ã«ä¸ŠãŒã£ãŸï¼?");
-			pl.removePotionEffect(PotionEffectType.SPEED);
-			pl.addPotionEffect(new PotionEffect(PotionEffectType.SPEED, 200, 1));
-		}else if (ram < 0.3D){
-			pl.sendMessage(pluginpre + ChatColor.GREEN + "è·³èºåŠ›ãŒä¸ŠãŒã£ãŸï¼?");
-			pl.removePotionEffect(PotionEffectType.JUMP);
-			pl.addPotionEffect(new PotionEffect(PotionEffectType.JUMP, 300, 0));
-		}else if (ram < 0.4D){
-			pl.sendMessage(pluginpre + ChatColor.GOLD + "æŒ¯ã‚Šã?®é€Ÿã•ãŒä¸ŠãŒã£ãŸï¼?");
-			pl.removePotionEffect(PotionEffectType.FAST_DIGGING);
-			pl.addPotionEffect(new PotionEffect(PotionEffectType.FAST_DIGGING, 250, 0));
-		}else if (ram < 0.5D){
-			pl.sendMessage(pluginpre + ChatColor.LIGHT_PURPLE + "è»½ã?å†ç”Ÿèƒ½åŠ›ã‚’å¾—ãŸ?¼?");
-			pl.removePotionEffect(PotionEffectType.REGENERATION);
-			pl.addPotionEffect(new PotionEffect(PotionEffectType.REGENERATION, 300, 0));
-		}else if (ram < 0.6D){
-			pl.sendMessage(pluginpre + ChatColor.RED + "ãƒã‚¾ãªç²¾ç¥ã‚’å¾—ãŸ?¼?¼?");
-			pl.removePotionEffect(PotionEffectType.DAMAGE_RESISTANCE);
-			pl.addPotionEffect(new PotionEffect(PotionEffectType.DAMAGE_RESISTANCE, 250, 1));
-		}else if (ram < 0.7D){
-			pl.sendMessage(pluginpre + ChatColor.RED + "ã‚µã‚¾ãªç²¾ç¥ã‚’å¾—ãŸ?¼?¼?");
-			pl.removePotionEffect(PotionEffectType.INCREASE_DAMAGE);
-			pl.addPotionEffect(new PotionEffect(PotionEffectType.INCREASE_DAMAGE, 250, 0));
-		}else if (ram < 0.8D){
-			pl.sendMessage(pluginpre + ChatColor.AQUA + "å¤©ç©ºã®åŠ›ã‚’å¾—ãŸ?¼?¼?");
-			if (pl.getWorld().isThundering()){
-				pl.sendMessage(pluginpre + ChatColor.YELLOW + "å¤©ã¯é›·å…‰ã?®å¦‚ãåŠ›ã‚’æˆã‘ã¦ä¸‹ã•ã£ãŸï¼?¼?");
->>>>>>> origin/master
+				pl.sendMessage(pluginpre + ChatColor.YELLOW + "“V‚Í—‹Œõ‚Ì”@‚«—Í‚ğö‚¯‚Ä‰º‚³‚Á‚½I");
 				pl.removePotionEffect(PotionEffectType.SPEED);
 				pl.addPotionEffect(new PotionEffect(PotionEffectType.SPEED, 200, 2));
 				pl.removePotionEffect(PotionEffectType.INCREASE_DAMAGE);
@@ -205,11 +128,7 @@ public class THSkillYUZ  implements Listener  {
 				pl.removePotionEffect(PotionEffectType.FAST_DIGGING);
 				pl.addPotionEffect(new PotionEffect(PotionEffectType.FAST_DIGGING, 200, 1));
 			}else if (pl.getWorld().hasStorm()){
-<<<<<<< HEAD
-				pl.sendMessage(pluginpre + ChatColor.DARK_BLUE + "å¤©ã¯é›¨ã®å°Šã„æµã¿ã‚’æˆã‘ã¦ä¸‹ã•ã£ãŸï¼");
-=======
-				pl.sendMessage(pluginpre + ChatColor.DARK_BLUE + "å¤©ã¯é›¨ã®å°Šã„æµã¿ã‚’æˆã‘ã¦ä¸‹ã•ã£ãŸï¼?¼?");
->>>>>>> origin/master
+				pl.sendMessage(pluginpre + ChatColor.DARK_BLUE + "“V‚Í‰J‚Ì‘¸‚¢Œb‚İ‚ğö‚¯‚Ä‰º‚³‚Á‚½I");
 				pl.removePotionEffect(PotionEffectType.JUMP);
 				pl.addPotionEffect(new PotionEffect(PotionEffectType.JUMP, 200, 1));
 				pl.removePotionEffect(PotionEffectType.DAMAGE_RESISTANCE);
@@ -217,11 +136,7 @@ public class THSkillYUZ  implements Listener  {
 				pl.removePotionEffect(PotionEffectType.REGENERATION);
 				pl.addPotionEffect(new PotionEffect(PotionEffectType.REGENERATION, 200, 0));
 			}else{
-<<<<<<< HEAD
-				pl.sendMessage(pluginpre + ChatColor.GOLD + "å¤©ã¯æ™´å¤©ã®è¼ãå¼·ã•ã‚’æˆã‘ã¦ä¸‹ã•ã£ãŸï¼");
-=======
-				pl.sendMessage(pluginpre + ChatColor.GOLD + "å¤©ã¯æ™´å¤©ã®è¼ãå¼·ã•ã‚’æˆã‘ã¦ä¸‹ã•ã£ãŸï¼?¼?");
->>>>>>> origin/master
+				pl.sendMessage(pluginpre + ChatColor.GOLD + "“V‚Í°“V‚Ì‹P‚­‹­‚³‚ğö‚¯‚Ä‰º‚³‚Á‚½I");
 				pl.removePotionEffect(PotionEffectType.FIRE_RESISTANCE);
 				pl.addPotionEffect(new PotionEffect(PotionEffectType.FIRE_RESISTANCE, 400, 0));
 				pl.removePotionEffect(PotionEffectType.HEAL);
@@ -230,36 +145,20 @@ public class THSkillYUZ  implements Listener  {
 				pl.addPotionEffect(new PotionEffect(PotionEffectType.NIGHT_VISION, 400, 0));
 			}
 		}else if (ram < 0.9D){
-<<<<<<< HEAD
-			pl.sendMessage(pluginpre + ChatColor.UNDERLINE + "æ™‚ã®åŠ›ã‚’å¾—ãŸï¼");
+			pl.sendMessage(pluginpre + ChatColor.UNDERLINE + "‚Ì—Í‚ğ“¾‚½I");
 			if (pl.getWorld().getTime() < 14000L){
-				pl.sendMessage(pluginpre + ChatColor.GOLD + "å¤ªé™½ã®ã‚¨ãƒŠã‚¸ãƒ¼ã¯è²´æ–¹ã«ã™ã–ã¾ã—ãå†ç”ŸåŠ›ã‚’ä¸ãˆã‚‹ï¼");
+				pl.sendMessage(pluginpre + ChatColor.GOLD + "‘¾—z‚ÌƒGƒiƒW[‚Í‹M•û‚É‚·‚´‚Ü‚µ‚«Ä¶—Í‚ğ—^‚¦‚éI");
 				pl.removePotionEffect(PotionEffectType.REGENERATION);
 				pl.addPotionEffect(new PotionEffect(PotionEffectType.REGENERATION, 100, 2));
 			}else{
-				pl.sendMessage(pluginpre + ChatColor.YELLOW + "æœˆã®ç…Œãã¯ã‚ãªãŸã®å¿ƒã‚’ç‹‚ã‚ã™ã§ã‚ã‚ã†");
-=======
-			pl.sendMessage(pluginpre + ChatColor.UNDERLINE + "æ™‚ã?®åŠ›ã‚’å¾—ãŸ?¼?¼?");
-			if (pl.getWorld().getTime() < 14000L){
-				pl.sendMessage(pluginpre + ChatColor.GOLD + "å¤ªé™½ã®ã‚¨ãƒŠã‚¸ãƒ¼ã¯è²´æ–¹ã«ã™ã–ã¾ã—ãå†ç”ŸåŠ›ã‚’ä¸ãˆã‚‹ï¼?¼?");
-				pl.removePotionEffect(PotionEffectType.REGENERATION);
-				pl.addPotionEffect(new PotionEffect(PotionEffectType.REGENERATION, 100, 2));
-			}else{
-				pl.sendMessage(pluginpre + ChatColor.YELLOW + "æœˆã?®ç…Œãã¯ã‚ãªãŸã?®å¿?ã‚’ç‹‚ã‚ã™ã§ã‚ã‚?¼?¼?");
->>>>>>> origin/master
+				pl.sendMessage(pluginpre + ChatColor.YELLOW + "Œ‚ÌàŠ‚«‚Í‚ ‚È‚½‚ÌS‚ğ‹¶‚í‚·‚Å‚ ‚ë‚¤");
 				pl.removePotionEffect(PotionEffectType.CONFUSION);
 				pl.addPotionEffect(new PotionEffect(PotionEffectType.CONFUSION, 300, 1));
 			}
 		}else if (ram < 1.0D){
-<<<<<<< HEAD
-			pl.sendMessage(pluginpre + ChatColor.GRAY + "å¤±æ•—ï¼");
+			pl.sendMessage(pluginpre + ChatColor.GRAY + "¸”sI");
 		}else{
-			pl.sendMessage(pluginpre + ChatColor.GRAY + "å¤±æ•—ï¼");
-=======
-			pl.sendMessage(pluginpre + ChatColor.GRAY + "å¤±æ•—ï¼?");
-		}else{
-			pl.sendMessage(pluginpre + ChatColor.GRAY + "å¤±æ•—ï¼?");
->>>>>>> origin/master
+			pl.sendMessage(pluginpre + ChatColor.GRAY + "¸”sI");
 		}
 		Object casting = new FixedMetadataValue(plugin, Boolean.valueOf(false));
 		pl.setMetadata("casting", (MetadataValue)casting);
@@ -270,11 +169,7 @@ public class THSkillYUZ  implements Listener  {
 				Player pl = event.getPlayer();
 				MetadataValue usingmagic = new FixedMetadataValue(plugin, Boolean.valueOf(false));
 				pl.setMetadata("using-magic", usingmagic);
-<<<<<<< HEAD
-				pl.sendMessage(pluginpre + ChatColor.RED + "è© å”±ã®ã‚¯ãƒ¼ãƒ«ãƒ€ã‚¦ãƒ³ãŒè§£ã‘ã¾ã—ãŸ");
-=======
-				pl.sendMessage(pluginpre + ChatColor.RED + "è©?å”±ã‚¯ãƒ¼ãƒ«ãƒ?ã‚¦ãƒ³ãŒè§£ã‘ã¾ã—ãŸ");
->>>>>>> origin/master
+				pl.sendMessage(pluginpre + ChatColor.RED + "‰r¥‚ÌƒN[ƒ‹ƒ_ƒEƒ“‚ª‰ğ‚¯‚Ü‚µ‚½");
 			}
 		}, 300L);
 	}

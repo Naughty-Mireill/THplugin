@@ -1,4 +1,4 @@
-Ôªøpackage org.noteusoft.mireiyu.thplugin.race.skill;
+package org.noteusoft.mireiyu.thplugin.race.skill;
 
 import java.util.List;
 
@@ -23,9 +23,9 @@ import org.bukkit.util.Vector;
 
 
 public class THSkillSIR implements Listener  {
-	//ÁßªÂãï„Çπ„Ç≠„É´Á≥ª
+	//à⁄ìÆÉXÉLÉãån
 
-	//Âè¨Âñö„Çπ„Ç≠„É´Á≥ª
+	//è¢ä´ÉXÉLÉãån
 	public static void seirei_summon(Player pl, final Plugin plugin,final String pluginpre, final PlayerInteractEvent event)
 	{
 	    double type = Math.random();
@@ -42,7 +42,7 @@ public class THSkillSIR implements Listener  {
 	        n++;
 	      }
 	      pl.getWorld().playSound(pl.getLocation(), Sound.IRONGOLEM_HIT, 2.0F, 1.0F);
-	      pl.sendMessage(pluginpre + ChatColor.AQUA + "Èõ™„ÅÆÈúä„ÇíÂè¨Âñö„Åó„ÅüÔºÅ");
+	      pl.sendMessage(pluginpre + ChatColor.AQUA + "ê·ÇÃóÏÇè¢ä´ÇµÇΩÅI");
 	    }
 	    else
 	    {
@@ -57,7 +57,7 @@ public class THSkillSIR implements Listener  {
 	        n++;
 	      }
 	      pl.getWorld().playSound(pl.getLocation(), Sound.IRONGOLEM_HIT, 2.0F, -1.0F);
-	      pl.sendMessage(pluginpre + ChatColor.GOLD + "Â≤©„ÅÆÈúä„ÇíÂè¨Âñö„Åó„Åü");
+	      pl.sendMessage(pluginpre + ChatColor.GOLD + "ä‚ÇÃóÏÇè¢ä´ÇµÇΩ");
 	    }
         MetadataValue usingmagic = new FixedMetadataValue(plugin, Boolean.valueOf(true));
         pl.setMetadata("using-magic", usingmagic);
@@ -68,11 +68,11 @@ public class THSkillSIR implements Listener  {
             Player pl = event.getPlayer();
             MetadataValue usingmagic = new FixedMetadataValue(plugin, Boolean.valueOf(false));
             pl.setMetadata("using-magic", usingmagic);
-            pl.sendMessage(pluginpre + ChatColor.BLUE + "Ë©†Âî±„ÅÆ„ÇØ„Éº„É´„ÉÄ„Ç¶„É≥„ÅåÁµÇ„Çè„Çä„Åæ„Åó„Åü");
+            pl.sendMessage(pluginpre + ChatColor.BLUE + "ârè•ÇÃÉNÅ[ÉãÉ_ÉEÉìÇ™èIÇÌÇËÇ‹ÇµÇΩ");
           }
         }, 400L);
 	}
-	//ÊîªÊíÉ„Çπ„Ç≠„É´Á≥ª
+	//çUåÇÉXÉLÉãån
 	public static void hannrei_hannrei_ball(Player pl, final Plugin plugin, final PlayerInteractEvent event)
 	{
 	    pl.getWorld().playSound(pl.getLocation(), Sound.DIG_SAND, 2.0F, 2.0F);
@@ -101,7 +101,7 @@ public class THSkillSIR implements Listener  {
 	        if ((enemy instanceof Player))
 	        {
 	          ((Player)enemy).addPotionEffect(new PotionEffect(PotionEffectType.SLOW, 200, 5));
-	          ((Player)enemy).sendMessage(pluginpre + ChatColor.DARK_BLUE + "È¨±„Å†„Éª„Éª");
+	          ((Player)enemy).sendMessage(pluginpre + ChatColor.DARK_BLUE + "üTÇæÅEÅE");
 	        }
 	      }
 	    }
@@ -112,7 +112,7 @@ public class THSkillSIR implements Listener  {
 	        if ((enemy instanceof Player))
 	        {
 	          ((Player)enemy).addPotionEffect(new PotionEffect(PotionEffectType.CONFUSION, 400, 2));
-	          ((Player)enemy).sendMessage(pluginpre + ChatColor.DARK_RED + "Ë∫Å„Å†‚òÜ");
+	          ((Player)enemy).sendMessage(pluginpre + ChatColor.DARK_RED + "ÁNÇæÅô");
 	        }
 	      }
 	    }
@@ -122,7 +122,7 @@ public class THSkillSIR implements Listener  {
 	      for (Entity enemy : enemys) {
 	        if ((enemy instanceof Player))
 	        {
-	          ((Player)enemy).sendMessage(pluginpre + ChatColor.GREEN + "È®íÈü≥„Å†ÔºÅÔºÅ");
+	          ((Player)enemy).sendMessage(pluginpre + ChatColor.GREEN + "ëõâπÇæÅIÅI");
 	          if (((Player)enemy).getHealth() - 15.0D >= 0.0D) {
 	            ((Player)enemy).setHealth(((Player)enemy).getHealth() - 15.0D);
 	          } else {
@@ -162,11 +162,11 @@ public class THSkillSIR implements Listener  {
 	    if (rand > 0.6D)
 	    {
 	      pl.setHealth(50.0D);
-	      pl.sendMessage(pluginpre + ChatColor.DARK_RED + "Ê∂à„Åà„Åü„Åè„Å™„ÅÑ„Éª„Éª„Éª„Å£");
+	      pl.sendMessage(pluginpre + ChatColor.DARK_RED + "è¡Ç¶ÇΩÇ≠Ç»Ç¢ÅEÅEÅEÇ¡");
 	      if ((event.getDamager() instanceof Player))
 	      {
 	        Player dpl = (Player)event.getDamager();
-	        dpl.sendMessage(pluginpre + ChatColor.DARK_RED + "Ê∂à„Åà„Åü„Åè„Å™„ÅÑ„Éª„Éª„Éª„Å£");
+	        dpl.sendMessage(pluginpre + ChatColor.DARK_RED + "è¡Ç¶ÇΩÇ≠Ç»Ç¢ÅEÅEÅEÇ¡");
 	        dpl.addPotionEffect(new PotionEffect(PotionEffectType.WITHER, 100, 4));
 	      }
 	      pl.getWorld().playSound(pl.getLocation(), Sound.GHAST_CHARGE, 2.0F, 2.0F);
