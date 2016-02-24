@@ -1,4 +1,4 @@
-ï»¿package org.noteusoft.mireiyu.thplugin.race.schedule;
+package org.noteusoft.mireiyu.thplugin.race.schedule;
 
 /**
  * Changed by noteumaple on 16/02/12.
@@ -48,7 +48,7 @@ public class THSchedule
                                             MetadataValue usingmagic = new FixedMetadataValue(this.manager, Boolean.valueOf(false));
                                             player.setMetadata("using-magic", usingmagic);
                                             player.removeMetadata("batman", this.manager);
-                                            player.sendMessage(thrpre0 + ChatColor.RED + "ãƒãƒ³ãƒ—ã‚«ãƒ¢ãƒ•ãƒ©ãƒ¼ã‚¸ãƒ¥ã®åŠ¹æžœãŒåˆ‡ã‚Œã¾ã—ãŸ");
+                                            player.sendMessage(thrpre0 + ChatColor.RED + "ƒoƒ“ƒvƒJƒ‚ƒtƒ‰[ƒWƒ…‚ÌŒø‰Ê‚ªØ‚ê‚Ü‚µ‚½");
                                             bat.removeMetadata("invincible", this.manager);
                                             bat.damage(1000.0D);
                                         }
@@ -67,16 +67,16 @@ public class THSchedule
                         plugin0.getConfig().set("user." + player.getUniqueId() + ".spilit", Double.valueOf(plugin0.getConfig().getDouble("user." + player.getUniqueId() + ".spilit") - ((MetadataValue)player.getMetadata("spilituse").get(0)).asDouble()));
                     }
                     if (player.isSneaking()) {
-                        player.sendMessage(thrpre0 + ChatColor.GREEN + "éœŠåŠ›ï¼š" + ChatColor.LIGHT_PURPLE + plugin0.getConfig().getDouble(new StringBuilder("user.").append(player.getUniqueId()).append(".spilit").toString()));
+                        player.sendMessage(thrpre0 + ChatColor.GREEN + "—ì—ÍF" + ChatColor.LIGHT_PURPLE + plugin0.getConfig().getDouble(new StringBuilder("user.").append(player.getUniqueId()).append(".spilit").toString()));
                     }
                     if (player.hasPermission("thr.skill")){
                         if (!player.hasMetadata("ignoreskill")) {
                             if ((player.hasMetadata("satorin0")) && (player.isSneaking())){
                                 Player dpl = Bukkit.getPlayer(((MetadataValue)player.getMetadata("satorin0").get(0)).asString());
                                 if (dpl != null){
-                                    player.sendMessage("åå‰:" + ((MetadataValue)player.getMetadata("satorin0").get(0)).asString());
-                                    player.sendMessage("ä½“åŠ›:" + dpl.getHealth());
-                                    player.sendMessage("åº§æ¨™:" + dpl.getLocation().getBlockX() + "," + dpl.getLocation().getBlockY() + "," + dpl.getLocation().getBlockZ());
+                                    player.sendMessage("–¼‘O:" + ((MetadataValue)player.getMetadata("satorin0").get(0)).asString());
+                                    player.sendMessage("‘Ì—Í:" + dpl.getHealth());
+                                    player.sendMessage("À•W:" + dpl.getLocation().getBlockX() + "," + dpl.getLocation().getBlockY() + "," + dpl.getLocation().getBlockZ());
                                 }
                             }
                         }
@@ -149,7 +149,7 @@ public class THSchedule
                         player.addPotionEffect(new PotionEffect(PotionEffectType.REGENERATION, 2000, 0));
                     }
                     if ((plugin0.getConfig().getString("user." + player.getUniqueId() + ".race").toString().contains("zyuuzin")) && (player.getWorld().getTime() >= 16000L) && (player.getWorld().getTime() < 16100L)){
-                        player.sendMessage(thrpre0 + ChatColor.RED + "ã‚ãªãŸã¯ç£ã®è¡€ã‚’å‘¼ã³è¦šã¾ã—ãŸï¼ï¼");
+                        player.sendMessage(thrpre0 + ChatColor.RED + "‚ ‚È‚½‚Íb‚ÌŒŒ‚ðŒÄ‚ÑŠo‚Ü‚µ‚½II");
                         player.playSound(player.getLocation(), Sound.WOLF_DEATH, 1.0F, -1.0F);
                     }
                     if ((plugin0.getConfig().getString("user." + player.getUniqueId() + ".race").toString().contains("kyuuketuki")) && (player.getWorld().getTime() >= 14000L)){

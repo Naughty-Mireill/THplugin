@@ -1,4 +1,4 @@
-ï»¿package org.noteusoft.mireiyu.thplugin;
+package org.noteusoft.mireiyu.thplugin;
 
 /**
  * Created by noteumaple on 16/02/11.
@@ -43,8 +43,8 @@ public class THPlugin extends JavaPlugin implements Listener
 
     public void onEnable()
     {
-    	//åŸºæœ¬è¨­å®š
-        logger.info(thrpre + pdfFile.getVersion() + "ã¯æ­£ã—ãèµ·å‹•ã—ã¾ã—ãŸ");
+    	//Šî–{İ’è
+        logger.info(thrpre + pdfFile.getVersion() + "‚Í³‚µ‚­‹N“®‚µ‚Ü‚µ‚½");
         PluginManager pm = getServer().getPluginManager();
         pm.registerEvents(this, this);
         saveDefaultConfig();
@@ -57,13 +57,13 @@ public class THPlugin extends JavaPlugin implements Listener
         schedule.run2(plugin0,thpre0);
         schedule.run3(plugin0,thpre0);
         
-    	//ãƒ•ãƒƒã‚¯è¨­å®š
+    	//ƒtƒbƒNİ’è
         if (this.getConfig().getBoolean("enable-CrackShot-shooter-hook"))
         {
         	if (Bukkit.getPluginManager().getPlugin("CrackShot") != null)
         	{
         		crackshot_hook = true;
-        		logger.info(thrpre + pdfFile.getVersion() + "ã¯æ­£ã—ãCrackShotã¨é€£æºã—ã¾ã—ãŸ");
+        		logger.info(thrpre + pdfFile.getVersion() + "‚Í³‚µ‚­CrackShot‚Æ˜AŒg‚µ‚Ü‚µ‚½");
 
         	}
         }
@@ -72,7 +72,7 @@ public class THPlugin extends JavaPlugin implements Listener
         	if (Bukkit.getPluginManager().getPlugin("NametagEdit") != null)
         	{
         		nametagedit_hook = true;
-        		logger.info(thrpre + pdfFile.getVersion() + "ã¯æ­£ã—ãNametagEditã¨é€£æºã—ã¾ã—ãŸ");
+        		logger.info(thrpre + pdfFile.getVersion() + "‚Í³‚µ‚­NametagEdit‚Æ˜AŒg‚µ‚Ü‚µ‚½");
 
         	}
         }
@@ -81,7 +81,7 @@ public class THPlugin extends JavaPlugin implements Listener
         	if (Bukkit.getPluginManager().getPlugin("ScoreboardAPI") != null)
         	{
         		scoreboardapi_hook = true;
-        		logger.info(thrpre + pdfFile.getVersion() + "ã¯æ­£ã—ãScoreboardAPIã¨é€£æºã—ã¾ã—ãŸ");
+        		logger.info(thrpre + pdfFile.getVersion() + "‚Í³‚µ‚­ScoreboardAPI‚Æ˜AŒg‚µ‚Ü‚µ‚½");
 
         	}
         }
@@ -90,7 +90,7 @@ public class THPlugin extends JavaPlugin implements Listener
         	if (Bukkit.getPluginManager().getPlugin("BarAPI") != null)
         	{
         		barapi_hook = true;
-        		logger.info(thrpre + pdfFile.getVersion() + "ã¯æ­£ã—ãBarAPIã¨é€£æºã—ã¾ã—ãŸ");
+        		logger.info(thrpre + pdfFile.getVersion() + "‚Í³‚µ‚­BarAPI‚Æ˜AŒg‚µ‚Ü‚µ‚½");
 
         	}
         }

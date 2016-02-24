@@ -1,4 +1,4 @@
-ï»¿package org.noteusoft.mireiyu.thplugin.race.skill;
+package org.noteusoft.mireiyu.thplugin.race.skill;
 
 import java.util.List;
 
@@ -23,9 +23,9 @@ import org.bukkit.plugin.Plugin;
 import org.bukkit.util.Vector;
 
 public class THSkillNNG implements Listener {
-	////ã‚¢ã‚¯ãƒ†ã‚£ãƒ–ã‚¹ã‚­ãƒ«ç³»
-	///ç§»å‹•ã‚¹ã‚­ãƒ«ç³»
-	//ä»™äººã®å£æŠœã‘
+	////ƒAƒNƒeƒBƒuƒXƒLƒ‹Œn
+	///ˆÚ“®ƒXƒLƒ‹Œn
+	//ål‚Ì•Ç”²‚¯
 	public static void sennnin_passthough(Player pl, final Plugin plugin, final PlayerToggleSneakEvent event)
 	{
 		float pitch = pl.getLocation().getPitch();
@@ -46,9 +46,9 @@ public class THSkillNNG implements Listener {
 			plugin.saveConfig();
 		}
 	}
-	//é¢¨é­”æ³•
+	//•—–‚–@
 	public static void mazyo_wind(Player pl, final Plugin plugin,final String pluginpre, final PlayerInteractEvent event){
-		pl.sendMessage(pluginpre + ChatColor.GREEN + "é¢¨ã®é­”æ³•ã‚’å”±ãˆãŸï¼");
+		pl.sendMessage(pluginpre + ChatColor.GREEN + "•—‚Ì–‚–@‚ğ¥‚¦‚½I");
 		pl.getLocation().getWorld().playSound(pl.getLocation(), Sound.ENDERDRAGON_WINGS, 1.0F, 1.0F);
 		pl.setVelocity(pl.getVelocity().add(new Vector(0.5D, 3.0D, 0.5D)));
 		pl.setFallDistance(-40.0F);
@@ -60,14 +60,14 @@ public class THSkillNNG implements Listener {
 				Player pl = event.getPlayer();
 				MetadataValue usingmagic = new FixedMetadataValue(plugin, Boolean.valueOf(false));
 				pl.setMetadata("using-magic", usingmagic);
-				pl.sendMessage(pluginpre + ChatColor.BLUE + "è© å”±ã®ã‚¯ãƒ¼ãƒ«ãƒ€ã‚¦ãƒ³ãŒçµ‚ã‚ã‚Šã¾ã—ãŸ");
+				pl.sendMessage(pluginpre + ChatColor.BLUE + "‰r¥‚ÌƒN[ƒ‹ƒ_ƒEƒ“‚ªI‚í‚è‚Ü‚µ‚½");
 			}
 		}, 100L);
 	}
-	///æ”»æ’ƒã‚¹ã‚­ãƒ«ç³»
-	//åœŸé­”æ³•
+	///UŒ‚ƒXƒLƒ‹Œn
+	//“y–‚–@
 	public static void mazyo_dirt(Player pl,final Plugin plugin,final String pluginpre, final PlayerInteractEvent event){
-		pl.sendMessage(pluginpre + ChatColor.YELLOW + "åœŸã®é­”æ³•ã‚’å”±ãˆãŸï¼");
+		pl.sendMessage(pluginpre + ChatColor.YELLOW + "“y‚Ì–‚–@‚ğ¥‚¦‚½I");
 		pl.getLocation().getWorld().playSound(pl.getLocation(), Sound.PISTON_EXTEND, 1.0F, -1.0F);
 		List<Entity> enemys = pl.getNearbyEntities(12.0D, 12.0D, 12.0D);
 		for (Entity enemy : enemys) {
@@ -84,14 +84,14 @@ public class THSkillNNG implements Listener {
 				Player pl = event.getPlayer();
 				MetadataValue usingmagic = new FixedMetadataValue(plugin, Boolean.valueOf(false));
 				pl.setMetadata("using-magic", usingmagic);
-				pl.sendMessage(pluginpre + ChatColor.BLUE + "è© å”±ã®ã‚¯ãƒ¼ãƒ«ãƒ€ã‚¦ãƒ³ãŒçµ‚ã‚ã‚Šã¾ã—ãŸ");
+				pl.sendMessage(pluginpre + ChatColor.BLUE + "‰r¥‚ÌƒN[ƒ‹ƒ_ƒEƒ“‚ªI‚í‚è‚Ü‚µ‚½");
 			}
 		}, 60L);
 	}
-	//ç«é­”æ³•
+	//‰Î–‚–@
 	public static void mazyo_fire(Player pl,final Plugin plugin,final String pluginpre, final PlayerInteractEvent event)
 	{
-		pl.sendMessage(pluginpre + ChatColor.RED + "ç«ã®é­”æ³•ã‚’å”±ãˆãŸï¼");
+		pl.sendMessage(pluginpre + ChatColor.RED + "‰Î‚Ì–‚–@‚ğ¥‚¦‚½I");
 		pl.getLocation().getWorld().playSound(pl.getLocation(), Sound.FIRE, 1, 0);
 		Location location =pl.getEyeLocation();
 		float pitch=location.getPitch() / 180.0F * 3.1415927F;
@@ -118,14 +118,14 @@ public class THSkillNNG implements Listener {
 			  Player pl = event.getPlayer();
 			  MetadataValue usingmagic = new FixedMetadataValue(plugin, false) ;
 			  pl.setMetadata("using-magic", usingmagic);
-			  pl.sendMessage(pluginpre + ChatColor.BLUE + "è© å”±ã®ã‚¯ãƒ¼ãƒ«ãƒ€ã‚¦ãƒ³ãŒçµ‚ã‚ã‚Šã¾ã—ãŸ");
+			  pl.sendMessage(pluginpre + ChatColor.BLUE + "‰r¥‚ÌƒN[ƒ‹ƒ_ƒEƒ“‚ªI‚í‚è‚Ü‚µ‚½");
 			}
 		}
 		, 80L);
 	}
 	public static void mazyo_thunder(Player pl, final Plugin plugin,final String pluginpre, final PlayerInteractEvent event)
 	{
-		pl.sendMessage(pluginpre + ChatColor.DARK_PURPLE + "é›·ã®é­”æ³•ã‚’å”±ãˆãŸï¼");
+		pl.sendMessage(pluginpre + ChatColor.DARK_PURPLE + "—‹‚Ì–‚–@‚ğ¥‚¦‚½I");
 		Entity lightning1 = pl.getWorld().spawnEntity(event.getClickedBlock().getLocation().add(4D,0,0), EntityType.LIGHTNING);
 		Entity lightning2 = pl.getWorld().spawnEntity(event.getClickedBlock().getLocation().add(-4D,0,0), EntityType.LIGHTNING);
 		Entity lightning3 = pl.getWorld().spawnEntity(event.getClickedBlock().getLocation().add(0,0,4D), EntityType.LIGHTNING);
@@ -150,18 +150,18 @@ public class THSkillNNG implements Listener {
 			  Player pl = event.getPlayer();
 			  MetadataValue usingmagic = new FixedMetadataValue(plugin, false) ;
 			  pl.setMetadata("using-magic", usingmagic);
-			  pl.sendMessage(pluginpre + ChatColor.BLUE + "è© å”±ã®ã‚¯ãƒ¼ãƒ«ãƒ€ã‚¦ãƒ³ãŒçµ‚ã‚ã‚Šã¾ã—ãŸ");
+			  pl.sendMessage(pluginpre + ChatColor.BLUE + "‰r¥‚ÌƒN[ƒ‹ƒ_ƒEƒ“‚ªI‚í‚è‚Ü‚µ‚½");
 			}
 		}
 		, 180L);
 	}
-	///å›å¾©é­”æ³•
-	//äººé–“å…±é€šãƒ»æ£’ã§è‡ªå·±å›å¾©//
+	///‰ñ•œ–‚–@
+	//lŠÔ‹¤’ÊE–_‚Å©ŒÈ‰ñ•œ//
 	public static void mazyo_heal(Player pl, final Plugin plugin, final String pluginpre, final PlayerInteractEvent event)
 	{
 		MetadataValue casting = new FixedMetadataValue(plugin, true) ;
 		pl.setMetadata("casting", casting);
-		pl.sendMessage(pluginpre + ChatColor.RED + "æ£’ã‚’æ§‹ãˆãŸï¼");
+		pl.sendMessage(pluginpre + ChatColor.RED + "–_‚ğ\‚¦‚½I");
 		pl.getWorld().playSound(pl.getLocation(), Sound.ANVIL_LAND, 1, 1);
 		pl.getWorld().playEffect(pl.getLocation(), Effect.WITCH_MAGIC, 1, 1);
 		plugin.getServer().getScheduler().scheduleSyncDelayedTask(plugin, new Runnable()
@@ -170,7 +170,7 @@ public class THSkillNNG implements Listener {
 			public void run() 
 			{
 				Player pl = event.getPlayer() ;
-				pl.sendMessage(pluginpre + ChatColor.YELLOW + "è‡ªå·±æ²»ç™’ã‚’ä½¿ã£ãŸï¼");
+				pl.sendMessage(pluginpre + ChatColor.YELLOW + "©ŒÈ¡–ü‚ğg‚Á‚½I");
 				pl.getLocation().getWorld().playSound(pl.getLocation(), Sound.ORB_PICKUP, 1, 1);
 				if (pl.getHealth() + 8D > pl.getMaxHealth()) 
 				{
@@ -191,7 +191,7 @@ public class THSkillNNG implements Listener {
 					  Player pl = event.getPlayer();
 					  MetadataValue usingmagic = new FixedMetadataValue(plugin, false) ;
 					  pl.setMetadata("using-magic", usingmagic);
-					  pl.sendMessage(pluginpre + ChatColor.BLUE + "è© å”±ã®ã‚¯ãƒ¼ãƒ«ãƒ€ã‚¦ãƒ³ãŒçµ‚ã‚ã‚Šã¾ã—ãŸ");
+					  pl.sendMessage(pluginpre + ChatColor.BLUE + "‰r¥‚ÌƒN[ƒ‹ƒ_ƒEƒ“‚ªI‚í‚è‚Ü‚µ‚½");
 					}
 				}, 20L);
 				MetadataValue casted = new FixedMetadataValue(plugin, false) ;
@@ -201,7 +201,7 @@ public class THSkillNNG implements Listener {
 	}
 	public static void mazyo_water(Player pl, final Plugin plugin,final String pluginpre, final PlayerInteractEvent event)
 	{
-		pl.sendMessage(pluginpre + ChatColor.GREEN + "æ°´ã®é­”æ³•ã‚’å”±ãˆãŸï¼");
+		pl.sendMessage(pluginpre + ChatColor.GREEN + "…‚Ì–‚–@‚ğ¥‚¦‚½I");
 		pl.getLocation().getWorld().playSound(pl.getLocation(), Sound.MAGMACUBE_JUMP, 1, 0);
 		List<Entity> enemys=pl.getNearbyEntities(8D, 8D, 8D);
 		enemys.add(pl);
@@ -231,13 +231,13 @@ public class THSkillNNG implements Listener {
 			  Player pl = event.getPlayer();
 			  MetadataValue usingmagic = new FixedMetadataValue(plugin, false) ;
 			  pl.setMetadata("using-magic", usingmagic);
-			  pl.sendMessage(pluginpre + ChatColor.BLUE + "è© å”±ã®ã‚¯ãƒ¼ãƒ«ãƒ€ã‚¦ãƒ³ãŒçµ‚ã‚ã‚Šã¾ã—ãŸ");
+			  pl.sendMessage(pluginpre + ChatColor.BLUE + "‰r¥‚ÌƒN[ƒ‹ƒ_ƒEƒ“‚ªI‚í‚è‚Ü‚µ‚½");
 			}
 		}
 		, 180L);
 	}
-	////ãƒ‘ãƒƒã‚·ãƒ–ã‚¹ã‚­ãƒ«ç³»
-	///ã‚¨ãƒ³ãƒ†ã‚£ãƒ†ã‚£å°‚ç”¨
+	////ƒpƒbƒVƒuƒXƒLƒ‹Œn
+	///ƒGƒ“ƒeƒBƒeƒBê—p
 	public static void sibito_deadattack(Player pl, final Plugin plugin, final EntityDamageByEntityEvent event)
 	{
 		if (pl.getHealth() <= 20D)
@@ -256,7 +256,7 @@ public class THSkillNNG implements Listener {
 			pl.getWorld().playSound(pl.getLocation(), Sound.SUCCESSFUL_HIT, 1, 1);
 		}
 	}
-	///ã‚¨ãƒ³ãƒ†ã‚£ãƒ†ã‚£ãƒ»ãƒ–ãƒ­ãƒƒã‚¯å…¼ç”¨
+	///ƒGƒ“ƒeƒBƒeƒBEƒuƒƒbƒNŒ“—p
 	public static void houraizin_reverselife_Entity(Player pl, final Plugin plugin, final String pluginpre, final EntityDamageByEntityEvent event)
 	{
 		double reverse = Math.random();
@@ -264,7 +264,7 @@ public class THSkillNNG implements Listener {
 		{
 			plugin.getConfig().set(plugin.getConfig().getString("user." + pl.getUniqueId() + ".spilit"),plugin.getConfig().getInt("user." + pl.getUniqueId() + ".spilit") - 30D);
 			pl.setHealth(pl.getMaxHealth());
-			pl.sendMessage(pluginpre + ChatColor.AQUA + "è²´æ–¹ã¯ä¸æ­»ã®åŠ›ã‚’ä½¿ã„è˜‡ã£ãŸï¼ï¼");
+			pl.sendMessage(pluginpre + ChatColor.AQUA + "‹M•û‚Í•s€‚Ì—Í‚ğg‚¢‘h‚Á‚½II");
 			pl.getWorld().playSound(pl.getLocation(), Sound.BLAZE_BREATH, 1, -1);
 			event.setDamage(0D);
 		}
@@ -276,7 +276,7 @@ public class THSkillNNG implements Listener {
 		{
 			plugin.getConfig().set(plugin.getConfig().getString("user." + pl.getUniqueId() + ".spilit"),plugin.getConfig().getInt("user." + pl.getUniqueId() + ".spilit") - 30D);
 			pl.setHealth(pl.getMaxHealth());
-			pl.sendMessage(pluginpre + ChatColor.AQUA + "è²´æ–¹ã¯ä¸æ­»ã®åŠ›ã‚’ä½¿ã„è˜‡ã£ãŸï¼ï¼");
+			pl.sendMessage(pluginpre + ChatColor.AQUA + "‹M•û‚Í•s€‚Ì—Í‚ğg‚¢‘h‚Á‚½II");
 			pl.getWorld().playSound(pl.getLocation(), Sound.BLAZE_BREATH, 1, -1);
 			event.setDamage(0D);
 		}

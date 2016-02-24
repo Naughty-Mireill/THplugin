@@ -2,7 +2,6 @@ package org.noteusoft.mireiyu.thplugin.race;
 
 import java.io.File;
 import java.io.IOException;
-<<<<<<< HEAD
 import java.util.UUID;
 
 import org.bukkit.ChatColor;
@@ -14,13 +13,6 @@ import org.bukkit.entity.Player;
 import org.bukkit.entity.Villager;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.EventPriority;
-=======
-
-import org.bukkit.ChatColor;
-import org.bukkit.Material;
-import org.bukkit.configuration.file.FileConfiguration;
-import org.bukkit.entity.Player;
->>>>>>> origin/master
 import org.bukkit.event.Listener;
 import org.bukkit.event.block.Action;
 import org.bukkit.event.entity.EntityDamageByBlockEvent;
@@ -35,7 +27,6 @@ import org.bukkit.event.player.PlayerRespawnEvent;
 import org.bukkit.event.player.PlayerToggleSneakEvent;
 import org.bukkit.plugin.Plugin;
 import org.noteusoft.mireiyu.thplugin.THPlugin;
-<<<<<<< HEAD
 import org.noteusoft.mireiyu.thplugin.race.skill.THSkillAKM;
 import org.noteusoft.mireiyu.thplugin.race.skill.THSkillGlobal;
 import org.noteusoft.mireiyu.thplugin.race.skill.THSkillKAM;
@@ -43,47 +34,39 @@ import org.noteusoft.mireiyu.thplugin.race.skill.THSkillNNG;
 import org.noteusoft.mireiyu.thplugin.race.skill.THSkillSIR;
 import org.noteusoft.mireiyu.thplugin.race.skill.THSkillYUM;
 import org.noteusoft.mireiyu.thplugin.race.skill.THSkillYUS;
-=======
-import org.noteusoft.mireiyu.thplugin.race.skill.THSkillGlobal;
-import org.noteusoft.mireiyu.thplugin.race.skill.THSkillNNG;
-import org.noteusoft.mireiyu.thplugin.race.skill.THSkillYUM;
->>>>>>> origin/master
 import org.noteusoft.mireiyu.thplugin.race.skill.THSkillYUZ;
 import org.bukkit.metadata.MetadataValue;
 import org.bukkit.metadata.FixedMetadataValue;
 
-<<<<<<< HEAD
 @SuppressWarnings("unused")
-=======
->>>>>>> origin/master
 public class THRaces implements Listener 
 {
     static Plugin plugin = THPlugin.plugin;
     static String pluginpre = THPlugin.thrpre;
     static FileConfiguration conf = THPlugin.conf;
     static File file = THPlugin.configfile;
-    ////„Ç¢„ÇØ„Ç∑„Éß„É≥
-    ///Èùû„ÇØ„É™„ÇØÁ≥ª
+    ////ÉAÉNÉVÉáÉì
+    ///îÒÉNÉäÉNån
     public void chat(final AsyncPlayerChatEvent event) {
-        //ÂâçÁΩÆË©û„Å´Á®ÆÊóèÂêç„ÇíÂä†„Åà„Çã
+        //ëOíuéåÇ…éÌë∞ñºÇâ¡Ç¶ÇÈ
         Player pl = event.getPlayer();
         THSkillGlobal.global_chat(pl, plugin, event);
     }
 
     public void quit(final PlayerQuitEvent event) {
-        //„É°„ÇøÂâäÈô§Âá¶
+        //ÉÅÉ^çÌèúèà
         Player pl = event.getPlayer();
         THSkillGlobal.global_quit(pl, plugin, event);
     }
 
     public void join(final PlayerJoinEvent event) {
-        //ÂàùÊúü„Éº„ÇøÁîü
+        //èâä˙Å[É^ê∂
         Player pl = event.getPlayer();
         THSkillGlobal.global_join(pl, plugin, event);
     }
 
     public void respawn(final PlayerRespawnEvent event) {
-        //„É™„Çπ„Éù„É≥„Çí„Éà„É™„Ç¨„Éº„Å®„Åó„Å¶Â§ß‰ΩìÂäõË™øÊï¥
+        //ÉäÉXÉ|ÉìÇÉgÉäÉKÅ[Ç∆ÇµÇƒëÂëÃóÕí≤êÆ
         Player pl = event.getPlayer();
         String race = conf.getString("user." + pl.getUniqueId() + ".race").toString();
         if (race.equalsIgnoreCase("youma") || race.equalsIgnoreCase("kappa") || race.equalsIgnoreCase("tenngu"))
@@ -105,7 +88,7 @@ public class THRaces implements Listener
         Player pl = event.getPlayer();
         String race = conf.getString("user." + pl.getUniqueId() + ".race").toString();
         int mana = 0;
-        //‰∫∫È≠öÈ´òÊ∞¥Ê≥≥Êõ∏„ÅçËæº„ÅøÊúâÔºâÔºà„Éñ„Éº„Çπ„Çø„ÉºÂá¶Êúâ
+        //êlãõçÇêÖâjèëÇ´çûÇ›óLÅjÅiÉuÅ[ÉXÉ^Å[èàóL
         mana = 1;
         if (race.equalsIgnoreCase("ninngen") && conf.getDouble("user." + pl.getUniqueId() + ".spilit") > mana) {
             int boost = 0;
@@ -121,7 +104,6 @@ public class THRaces implements Listener
 	    		}
 			}
         }
-<<<<<<< HEAD
     }
     
     @SuppressWarnings("deprecation")
@@ -129,34 +111,23 @@ public class THRaces implements Listener
         Player pl = event.getPlayer();
         String race = conf.getString("user." + pl.getUniqueId() + ".race").toString();
         int mana = 0;
-	    //Â¶ñÁ≤æÁæΩ„Å∞„Åü„Åç
+	    //ódê∏âHÇŒÇΩÇ´
 	    mana = 5;
 	    if (race.equalsIgnoreCase("yousei") || race.equalsIgnoreCase("kobito") || race.equalsIgnoreCase("kibito") || race.equalsIgnoreCase("satori")&& conf.getDouble("user." + pl.getUniqueId() + ".spilit") > mana)
 	    {
 	        if (!pl.isOnGround() && pl.isSneaking())
 	        {
         		THSkillYUS.yousei_feather(pl, plugin, event);
-=======
-        //Â§©ÁãóÁ•ûÈ¢®Êõ∏„ÅçËæº„ÅøÊúâÔºâÔºàÂâçÁΩÆË©ûÊúâÔºà„Éñ„Éº„Çπ„Çø„ÉºÂá¶Êúâ
-        mana = 40;
-        if (race.equalsIgnoreCase("tenngu") && conf.getDouble("user." + pl.getUniqueId() + ".spilit") > mana) {
-            int boost = 0;
-            if (pl.getMetadata("spilituse").get(0).asInt() > 0)
-            {
-            	boost = pl.getMetadata("spilituse").get(0).asInt();
-            	THSkillYUM.tenngu_kamikaze(pl, plugin,pluginpre, event , boost);
->>>>>>> origin/master
 	            conf.set("user." + pl.getUniqueId() + ".spilit", conf.getDouble("user." + pl.getUniqueId() + ".spilit") - mana);
 	            try {
 	    			conf.save(file);
 	    		} catch (IOException e) {
 	    			e.printStackTrace();
 	    		}
-        		pl.sendMessage(pluginpre + ChatColor.GREEN + "ÈúäÂäõ" + ChatColor.LIGHT_PURPLE + conf.getDouble(new StringBuilder("user.").append(pl.getUniqueId()).append(".spilit").toString()));
-<<<<<<< HEAD
+        		pl.sendMessage(pluginpre + ChatColor.GREEN + "óÏóÕ" + ChatColor.LIGHT_PURPLE + conf.getDouble(new StringBuilder("user.").append(pl.getUniqueId()).append(".spilit").toString()));
 	        }
 	    }
-        //‰ªô‰∫∫„ÅÆÂ£ÅÊäú
+        //êÂêlÇÃï«î≤
 	    mana = 10;
         if (race.equalsIgnoreCase("sennnin")) {
             if ((!pl.isOnGround()) && (pl.isSneaking()) && conf.getDouble("user." + pl.getUniqueId() + ".spilit") >= mana) {
@@ -167,28 +138,14 @@ public class THRaces implements Listener
 	    		} catch (IOException e) {
 	    			e.printStackTrace();
 	    		}
-        		pl.sendMessage(pluginpre + ChatColor.GREEN + "ÈúäÂäõ" + ChatColor.LIGHT_PURPLE + conf.getDouble(new StringBuilder("user.").append(pl.getUniqueId()).append(".spilit").toString()));
-=======
+        		pl.sendMessage(pluginpre + ChatColor.GREEN + "óÏóÕ" + ChatColor.LIGHT_PURPLE + conf.getDouble(new StringBuilder("user.").append(pl.getUniqueId()).append(".spilit").toString()));
             }
         }
     }
     
-    @SuppressWarnings("deprecation")
-    public void togglesneak(final PlayerToggleSneakEvent event) {
-        Player pl = event.getPlayer();
-        //‰ªô‰∫∫„ÅÆÂ£ÅÊäú
-        if (conf.getString("user." + pl.getUniqueId() + ".race").toString().contains("sennnin")) {
-            if ((!pl.isOnGround()) && (pl.isSneaking()) && conf.getDouble("user." + pl.getUniqueId() + ".spilit") >= 20.0D) {
-                THSkillNNG.sennnin_passthough(pl, plugin,event);
->>>>>>> origin/master
-            }
-        }
-    }
-    
-    ///„ÇØ„É™„ÇØÁ≥ª
+    ///ÉNÉäÉNån
     public void interactentity(final PlayerInteractEntityEvent event) {
-        //Èùû‰∫∫ÈñìÊùë‰∫∫Ë¶èÂà∂ÂâçÁΩÆË©ûÊúâ
-<<<<<<< HEAD
+        //îÒêlä‘ë∫êlãKêßëOíuéåóL
     	int mana = 0;
         final String pluginpre = THPlugin.thrpre;
         final Player pl = event.getPlayer();
@@ -197,11 +154,11 @@ public class THRaces implements Listener
         if (race.equalsIgnoreCase("ninngen") == false && race.equalsIgnoreCase("mazyo") == false && race.equalsIgnoreCase("houraizin") == false && race.equalsIgnoreCase("gennzinnsin") == false && race.equalsIgnoreCase("sibito") == false && race.equalsIgnoreCase("sennninn") == false) {
         	if (event.getRightClicked() instanceof Villager) THSkillGlobal.global_no_ninngen(pl, plugin, pluginpre, event);
         }
-        //È¨º„ÅÆÊÄ™ÂäõÔºàÊõ∏„ÅçËæº„ÅøÊúâÔºâÔºàÂâçÁΩÆË©ûÊúâ(Ë©†Âî±Êúâ)
+        //ãSÇÃâˆóÕÅièëÇ´çûÇ›óLÅjÅiëOíuéåóL(ârè•óL)
     	mana = 30;
         if (race.equalsIgnoreCase("oni")) 
         {
-        	if(magic_iscastable(pl , mana,"Êã≥„ÇíÊßã„Åà„ÅüÔºÅ") && handitem == Material.IRON_PICKAXE && event.getRightClicked() instanceof LivingEntity)
+        	if(magic_iscastable(pl , mana,"åùÇç\Ç¶ÇΩÅI") && handitem == Material.IRON_PICKAXE && event.getRightClicked() instanceof LivingEntity)
         	{
         		final LivingEntity entity = (LivingEntity) event.getRightClicked();
                 MetadataValue casting = new FixedMetadataValue(plugin, Boolean.valueOf(true));
@@ -213,7 +170,7 @@ public class THRaces implements Listener
         			e.printStackTrace();
         		}
                 pl.getWorld().playSound(pl.getLocation(), Sound.ANVIL_LAND, 1, 2);
-        		pl.sendMessage(pluginpre + ChatColor.GREEN + "ÈúäÂäõ" + ChatColor.LIGHT_PURPLE + conf.getDouble(new StringBuilder("user.").append(pl.getUniqueId()).append(".spilit").toString()));
+        		pl.sendMessage(pluginpre + ChatColor.GREEN + "óÏóÕ" + ChatColor.LIGHT_PURPLE + conf.getDouble(new StringBuilder("user.").append(pl.getUniqueId()).append(".spilit").toString()));
         		plugin.getServer().getScheduler().scheduleSyncDelayedTask(plugin, new Runnable() {                	
                     public void run() {
                         THSkillAKM.oni_kairiki(pl, plugin, pluginpre, event, entity);
@@ -223,11 +180,11 @@ public class THRaces implements Listener
                 }, 20L);
             }
         }
-        //Âê∏Ë°ÄÈ¨º„ÅÆÂê∏Ë°ÄÔºàÊõ∏„ÅçËæº„ÅøÊúâÔºâÔºàÂâçÁΩÆË©ûÊúâ(Ë©†Âî±Êúâ)
+        //ãzååãSÇÃãzååÅièëÇ´çûÇ›óLÅjÅiëOíuéåóL(ârè•óL)
     	mana = 45;
         if (race.equalsIgnoreCase("kyuuketuki")) 
         {
-        	if(magic_iscastable(pl , mana,"Áâô„ÇíÊßã„Åà„ÅüÔºÅ") && handitem == Material.WOOD_PICKAXE && event.getRightClicked() instanceof LivingEntity)
+        	if(magic_iscastable(pl , mana,"âÂÇç\Ç¶ÇΩÅI") && handitem == Material.WOOD_PICKAXE && event.getRightClicked() instanceof LivingEntity)
         	{
         		final LivingEntity entity = (LivingEntity) event.getRightClicked();
                 MetadataValue casting = new FixedMetadataValue(plugin, Boolean.valueOf(true));
@@ -239,7 +196,7 @@ public class THRaces implements Listener
         			e.printStackTrace();
         		}
                 pl.getWorld().playSound(pl.getLocation(), Sound.ANVIL_LAND, 1, 2);
-        		pl.sendMessage(pluginpre + ChatColor.GREEN + "ÈúäÂäõ" + ChatColor.LIGHT_PURPLE + conf.getDouble(new StringBuilder("user.").append(pl.getUniqueId()).append(".spilit").toString()));
+        		pl.sendMessage(pluginpre + ChatColor.GREEN + "óÏóÕ" + ChatColor.LIGHT_PURPLE + conf.getDouble(new StringBuilder("user.").append(pl.getUniqueId()).append(".spilit").toString()));
         		plugin.getServer().getScheduler().scheduleSyncDelayedTask(plugin, new Runnable() {                	
                     public void run() {
                         THSkillAKM.kyuuketuki_drain(pl, plugin, pluginpre, event, entity);
@@ -248,13 +205,6 @@ public class THRaces implements Listener
                     }
                 }, 50L);
             }
-=======
-        String pluginpre = THPlugin.thrpre;
-        Player pl = event.getPlayer();
-        String race = conf.getString("user." + pl.getUniqueId() + ".race").toString();
-        if (race.equalsIgnoreCase("ninngen") == false && race.equalsIgnoreCase("mazyo") == false && race.equalsIgnoreCase("houraizin") == false && race.equalsIgnoreCase("gennzinnsin") == false && race.equalsIgnoreCase("sibito") == false && race.equalsIgnoreCase("sennninn") == false) {
-            THSkillGlobal.global_no_ninngen(pl, plugin, pluginpre, event);
->>>>>>> origin/master
         }
     }
 
@@ -263,27 +213,18 @@ public class THRaces implements Listener
         Material handitem = pl.getItemInHand().getType();
         String race = conf.getString("user." + pl.getUniqueId() + ".race").toString();
     	int mana = 0;
-<<<<<<< HEAD
-        ///Âè≥„ÇØ„É™
+        ///âEÉNÉä
         if (event.getAction() == Action.RIGHT_CLICK_AIR || event.getAction() == Action.RIGHT_CLICK_BLOCK) {
-        	///„Ç∞„É≠„Éº„Éê„É´
+        	///ÉOÉçÅ[ÉoÉã
     		Material dust_is_ok = pl.getItemInHand().getType() ; 
     		if (dust_is_ok == Material.SUGAR || dust_is_ok == Material.SULPHUR || dust_is_ok == Material.GLOWSTONE_DUST)
     		{
     			THSkillGlobal.global_charge_mana(pl,plugin,pluginpre,event);
     		}
-            //‰∫∫ÈñìÈ≠îÂ•≥„ÅÆÂõûÂæ©È≠îÊ≥ïÔºàÊõ∏„ÅçËæº„ÅøÊúâÔºâÔºàÂâçÁΩÆË©ûÊúâ(Ë©†Âî±Êúâ)
+            //êlä‘ñÇèóÇÃâÒïúñÇñ@ÅièëÇ´çûÇ›óLÅjÅiëOíuéåóL(ârè•óL)
             if (race.equalsIgnoreCase("mazyo")||race.equalsIgnoreCase("ninngen") ) {
             	mana = 25;
-            	if(magic_iscastable(pl , mana,"Ë©†Âî±ÔºÅ") && handitem == Material.STICK)
-=======
-        ///È≠îÂ•≥È≠îÊ≥ï„Ç∑„É™„Éº„Ç∫ÊúÄÂàù„ÅØ‰∫∫Èñì„ÇÇ
-        if (event.getAction() == Action.RIGHT_CLICK_AIR || event.getAction() == Action.RIGHT_CLICK_BLOCK) {
-            //‰∫∫ÈñìÈ≠îÂ•≥„ÅÆÂõûÂæ©È≠îÊ≥ïÔºàÊõ∏„ÅçËæº„ÅøÊúâÔºâÔºàÂâçÁΩÆË©ûÊúâ
-            if (race.equalsIgnoreCase("mazyo")||race.equalsIgnoreCase("ninngen") ) {
-            	mana = 25;
-            	if(magic_iscastable(pl , mana) && handitem == Material.STICK)
->>>>>>> origin/master
+            	if(magic_iscastable(pl , mana,"ârè•ÅI") && handitem == Material.STICK)
             	{
 	                MetadataValue casting = new FixedMetadataValue(plugin, Boolean.valueOf(true));
 	                pl.setMetadata("casting", casting);
@@ -293,11 +234,8 @@ public class THRaces implements Listener
 	        		} catch (IOException e) {
 	        			e.printStackTrace();
 	        		}
-<<<<<<< HEAD
 	                pl.getWorld().playSound(pl.getLocation(), Sound.BLAZE_BREATH, 1, 2);
-=======
->>>>>>> origin/master
-	        		pl.sendMessage(pluginpre + ChatColor.GREEN + "ÈúäÂäõ" + ChatColor.LIGHT_PURPLE + conf.getDouble(new StringBuilder("user.").append(pl.getUniqueId()).append(".spilit").toString()));
+	        		pl.sendMessage(pluginpre + ChatColor.GREEN + "óÏóÕ" + ChatColor.LIGHT_PURPLE + conf.getDouble(new StringBuilder("user.").append(pl.getUniqueId()).append(".spilit").toString()));
 	                plugin.getServer().getScheduler().scheduleSyncDelayedTask(plugin, new Runnable() {                	
 	                    public void run() {
 	                        THSkillNNG.mazyo_heal(pl, plugin,pluginpre, event);
@@ -306,15 +244,9 @@ public class THRaces implements Listener
 	                    }
 	                }, 20L);
                 }
-<<<<<<< HEAD
-                //È≠îÂ•≥„ÅÆÈ¢®È≠îÊ≥ïÔºàÊõ∏„ÅçËæº„ÅøÊúâÔºâÔºàÂâçÁΩÆË©ûÊúâ(Ë©†Âî±Êúâ)
+                //ñÇèóÇÃïóñÇñ@ÅièëÇ´çûÇ›óLÅjÅiëOíuéåóL(ârè•óL)
             	mana = 30;
-            	if(magic_iscastable(pl , mana,"Ë©†Âî±ÔºÅ") && handitem == Material.WOOD_SWORD) {
-=======
-                //‰∫∫ÈñìÈ≠îÂ•≥„ÅÆÈ¢®È≠îÊ≥ïÔºàÊõ∏„ÅçËæº„ÅøÊúâÔºâÔºàÂâçÁΩÆË©ûÊúâ
-            	mana = 30;
-            	if(magic_iscastable(pl , mana) && handitem == Material.WOOD_SWORD) {
->>>>>>> origin/master
+            	if(magic_iscastable(pl , mana,"ârè•ÅI") && handitem == Material.WOOD_SWORD) {
                         MetadataValue casting = new FixedMetadataValue(plugin, Boolean.valueOf(true));
                         pl.setMetadata("casting", casting);
     	                conf.set("user." + pl.getUniqueId() + ".spilit", conf.getDouble("user." + pl.getUniqueId() + ".spilit") - mana);
@@ -323,11 +255,8 @@ public class THRaces implements Listener
     	        		} catch (IOException e) {
     	        			e.printStackTrace();
     	        		}
-<<<<<<< HEAD
     	                pl.getWorld().playSound(pl.getLocation(), Sound.BLAZE_BREATH, 1, 2);
-=======
->>>>>>> origin/master
-    	        		pl.sendMessage(pluginpre + ChatColor.GREEN + "ÈúäÂäõ" + ChatColor.LIGHT_PURPLE + conf.getDouble(new StringBuilder("user.").append(pl.getUniqueId()).append(".spilit").toString()));
+    	        		pl.sendMessage(pluginpre + ChatColor.GREEN + "óÏóÕ" + ChatColor.LIGHT_PURPLE + conf.getDouble(new StringBuilder("user.").append(pl.getUniqueId()).append(".spilit").toString()));
                         plugin.getServer().getScheduler().scheduleSyncDelayedTask(plugin, new Runnable() {
     	                	
                             public void run() {
@@ -337,14 +266,9 @@ public class THRaces implements Listener
                             }
                         }, 10L);
             	}
-<<<<<<< HEAD
-                //È≠îÂ•≥„ÅÆÂúüÈ≠îÊ≥ïÔºàÊõ∏„ÅçËæº„ÅøÊúâÔºâÔºàÂâçÁΩÆË©ûÊúâ(Ë©†Âî±Êúâ)
+                //ñÇèóÇÃìyñÇñ@ÅièëÇ´çûÇ›óLÅjÅiëOíuéåóL(ârè•óL)
             	mana = 45;
-                if (magic_iscastable(pl , mana,"Ë©†Âî±ÔºÅ") && handitem == Material.STONE_SWORD) {
-=======
-            	mana = 45;
-                if (magic_iscastable(pl , mana) && handitem == Material.STONE_SWORD) {
->>>>>>> origin/master
+                if (magic_iscastable(pl , mana,"ârè•ÅI") && handitem == Material.STONE_SWORD) {
                         MetadataValue casting = new FixedMetadataValue(plugin, Boolean.valueOf(true));
                         pl.setMetadata("casting", casting);
     	                conf.set("user." + pl.getUniqueId() + ".spilit", conf.getDouble("user." + pl.getUniqueId() + ".spilit") - mana);
@@ -353,11 +277,8 @@ public class THRaces implements Listener
     	        		} catch (IOException e) {
     	        			e.printStackTrace();
     	        		}
-<<<<<<< HEAD
     	                pl.getWorld().playSound(pl.getLocation(), Sound.BLAZE_BREATH, 1, 2);
-=======
->>>>>>> origin/master
-    	        		pl.sendMessage(pluginpre + ChatColor.GREEN + "ÈúäÂäõ" + ChatColor.LIGHT_PURPLE + conf.getDouble(new StringBuilder("user.").append(pl.getUniqueId()).append(".spilit").toString()));
+    	        		pl.sendMessage(pluginpre + ChatColor.GREEN + "óÏóÕ" + ChatColor.LIGHT_PURPLE + conf.getDouble(new StringBuilder("user.").append(pl.getUniqueId()).append(".spilit").toString()));
                         plugin.getServer().getScheduler().scheduleSyncDelayedTask(plugin, new Runnable() {
                             public void run() {
                                 THSkillNNG.mazyo_dirt(pl, plugin,pluginpre, event);
@@ -366,14 +287,9 @@ public class THRaces implements Listener
                             }
                         }, 60L);
                 }
-<<<<<<< HEAD
-                //È≠îÂ•≥„ÅÆÁÅ´È≠îÊ≥ïÔºàÊõ∏„ÅçËæº„ÅøÊúâÔºâÔºàÂâçÁΩÆË©ûÊúâ(Ë©†Âî±Êúâ)
+                //ñÇèóÇÃâŒñÇñ@ÅièëÇ´çûÇ›óLÅjÅiëOíuéåóL(ârè•óL)
             	mana = 30;
-                if (magic_iscastable(pl , mana,"Ë©†Âî±ÔºÅ") && handitem == Material.IRON_SWORD) {
-=======
-            	mana = 30;
-                if (magic_iscastable(pl , mana) && handitem == Material.IRON_SWORD) {
->>>>>>> origin/master
+                if (magic_iscastable(pl , mana,"ârè•ÅI") && handitem == Material.IRON_SWORD) {
                         MetadataValue casting = new FixedMetadataValue(plugin, Boolean.valueOf(true));
                         pl.setMetadata("casting", casting);
     	                conf.set("user." + pl.getUniqueId() + ".spilit", conf.getDouble("user." + pl.getUniqueId() + ".spilit") - mana);
@@ -382,11 +298,8 @@ public class THRaces implements Listener
     	        		} catch (IOException e) {
     	        			e.printStackTrace();
     	        		}
-<<<<<<< HEAD
     	                pl.getWorld().playSound(pl.getLocation(), Sound.BLAZE_BREATH, 1, 2);
-=======
->>>>>>> origin/master
-    	        		pl.sendMessage(pluginpre + ChatColor.GREEN + "ÈúäÂäõ" + ChatColor.LIGHT_PURPLE + conf.getDouble(new StringBuilder("user.").append(pl.getUniqueId()).append(".spilit").toString()));
+    	        		pl.sendMessage(pluginpre + ChatColor.GREEN + "óÏóÕ" + ChatColor.LIGHT_PURPLE + conf.getDouble(new StringBuilder("user.").append(pl.getUniqueId()).append(".spilit").toString()));
                         plugin.getServer().getScheduler().scheduleSyncDelayedTask(plugin, new Runnable() {
     	                	
                             public void run() {
@@ -396,14 +309,9 @@ public class THRaces implements Listener
                             }
                         }, 20L);
                 }
-<<<<<<< HEAD
-                //È≠îÂ•≥„ÅÆÊ∞¥È≠îÊ≥ïÔºàÊõ∏„ÅçËæº„ÅøÊúâÔºâÔºàÂâçÁΩÆË©ûÊúâ(Ë©†Âî±Êúâ)
+                //ñÇèóÇÃêÖñÇñ@ÅièëÇ´çûÇ›óLÅjÅiëOíuéåóL(ârè•óL)
             	mana = 60;
-                if (magic_iscastable(pl , mana,"Ë©†Âî±ÔºÅ") && handitem == Material.DIAMOND_SWORD) {
-=======
-            	mana = 60;
-                if (magic_iscastable(pl , mana) && handitem == Material.DIAMOND_SWORD) {
->>>>>>> origin/master
+                if (magic_iscastable(pl , mana,"ârè•ÅI") && handitem == Material.DIAMOND_SWORD) {
                         MetadataValue casting = new FixedMetadataValue(plugin, Boolean.valueOf(true));
                         pl.setMetadata("casting", casting);
     	                conf.set("user." + pl.getUniqueId() + ".spilit", conf.getDouble("user." + pl.getUniqueId() + ".spilit") - mana);
@@ -412,11 +320,8 @@ public class THRaces implements Listener
     	        		} catch (IOException e) {
     	        			e.printStackTrace();
     	        		}
-<<<<<<< HEAD
     	                pl.getWorld().playSound(pl.getLocation(), Sound.BLAZE_BREATH, 1, 2);
-=======
->>>>>>> origin/master
-    	        		pl.sendMessage(pluginpre + ChatColor.GREEN + "ÈúäÂäõ" + ChatColor.LIGHT_PURPLE + conf.getDouble(new StringBuilder("user.").append(pl.getUniqueId()).append(".spilit").toString()));
+    	        		pl.sendMessage(pluginpre + ChatColor.GREEN + "óÏóÕ" + ChatColor.LIGHT_PURPLE + conf.getDouble(new StringBuilder("user.").append(pl.getUniqueId()).append(".spilit").toString()));
                         plugin.getServer().getScheduler().scheduleSyncDelayedTask(plugin, new Runnable() {
     	                	
                             public void run() {
@@ -427,14 +332,9 @@ public class THRaces implements Listener
                         }, 50L);
                             
                 }
-<<<<<<< HEAD
-                //È≠îÂ•≥„ÅÆÈõ∑È≠îÊ≥ïÔºàÊõ∏„ÅçËæº„ÅøÊúâÔºâÔºàÂâçÁΩÆË©ûÊúâ(Ë©†Âî±Êúâ)
+                //ñÇèóÇÃóãñÇñ@ÅièëÇ´çûÇ›óLÅjÅiëOíuéåóL(ârè•óL)
             	mana = 70;
-                if (magic_iscastable(pl , mana,"Ë©†Âî±ÔºÅ") && handitem == Material.GOLD_SWORD) {
-=======
-            	mana = 70;
-                if (magic_iscastable(pl , mana) && handitem == Material.GOLD_SWORD) {
->>>>>>> origin/master
+                if (magic_iscastable(pl , mana,"ârè•ÅI") && handitem == Material.GOLD_SWORD) {
                         MetadataValue casting = new FixedMetadataValue(plugin, Boolean.valueOf(true));
                         pl.setMetadata("casting", casting);
     	                conf.set("user." + pl.getUniqueId() + ".spilit", conf.getDouble("user." + pl.getUniqueId() + ".spilit") - mana);
@@ -443,11 +343,8 @@ public class THRaces implements Listener
     	        		} catch (IOException e) {
     	        			e.printStackTrace();
     	        		}
-<<<<<<< HEAD
     	                pl.getWorld().playSound(pl.getLocation(), Sound.BLAZE_BREATH, 1, 2);
-=======
->>>>>>> origin/master
-    	        		pl.sendMessage(pluginpre + ChatColor.GREEN + "ÈúäÂäõ" + ChatColor.LIGHT_PURPLE + conf.getDouble(new StringBuilder("user.").append(pl.getUniqueId()).append(".spilit").toString()));
+    	        		pl.sendMessage(pluginpre + ChatColor.GREEN + "óÏóÕ" + ChatColor.LIGHT_PURPLE + conf.getDouble(new StringBuilder("user.").append(pl.getUniqueId()).append(".spilit").toString()));
                         plugin.getServer().getScheduler().scheduleSyncDelayedTask(plugin, new Runnable() {
                             public void run() {
                                 THSkillNNG.mazyo_thunder(pl, plugin,pluginpre, event);
@@ -457,8 +354,7 @@ public class THRaces implements Listener
                         }, 70L);
                 }
             }
-<<<<<<< HEAD
-            ///Â§©ÁãóÁ•ûÈ¢®Êõ∏„ÅçËæº„ÅøÊúâÔºâÔºàÂâçÁΩÆË©ûÊúâÔºà„Éñ„Éº„Çπ„Çø„ÉºÂá¶Êúâ
+            ///ìVãÁê_ïóèëÇ´çûÇ›óLÅjÅiëOíuéåóLÅiÉuÅ[ÉXÉ^Å[èàóL
             mana = 40;
             if (race.equalsIgnoreCase("tenngu") && conf.getDouble("user." + pl.getUniqueId() + ".spilit") > mana) {
                 int boost = 0;
@@ -472,14 +368,14 @@ public class THRaces implements Listener
     	    		} catch (IOException e) {
     	    			e.printStackTrace();
     	    		}
-            		pl.sendMessage(pluginpre + ChatColor.GREEN + "ÈúäÂäõ" + ChatColor.LIGHT_PURPLE + conf.getDouble(new StringBuilder("user.").append(pl.getUniqueId()).append(".spilit").toString()));
+            		pl.sendMessage(pluginpre + ChatColor.GREEN + "óÏóÕ" + ChatColor.LIGHT_PURPLE + conf.getDouble(new StringBuilder("user.").append(pl.getUniqueId()).append(".spilit").toString()));
                 }
             }
-            ///Â¶ñÁ≤æ„ÅÆ„Ç§„É™„É•„Éº„Ç∏„Éß„É≥ÔºàÊõ∏„ÅçËæº„ÅøÊúâÔºâÔºàÂâçÁΩÆË©ûÊúâ(Ë©†Âî±Êúâ)
+            ///ódê∏ÇÃÉCÉäÉÖÅ[ÉWÉáÉìÅièëÇ´çûÇ›óLÅjÅiëOíuéåóL(ârè•óL)
             mana = 20;
             if (race.equalsIgnoreCase("yousei") || race.equalsIgnoreCase("kobito") || race.equalsIgnoreCase("kibito") || race.equalsIgnoreCase("satori")) 
             {
-            	if(magic_iscastable(pl , mana,"Èáë„ÅÆÊßç„ÇíÊé≤„Åí„ÅüÔºÅ") && handitem == Material.GOLD_SPADE)
+            	if(magic_iscastable(pl , mana,"ã‡ÇÃëÑÇåfÇ∞ÇΩÅI") && handitem == Material.GOLD_SPADE)
                 {
     	            conf.set("user." + pl.getUniqueId() + ".spilit", conf.getDouble("user." + pl.getUniqueId() + ".spilit") - mana);
     	            try {
@@ -488,7 +384,7 @@ public class THRaces implements Listener
     	    			e.printStackTrace();
     	    		}
 	                pl.getWorld().playSound(pl.getLocation(), Sound.SUCCESSFUL_HIT, 1, 1);
-            		pl.sendMessage(pluginpre + ChatColor.GREEN + "ÈúäÂäõ" + ChatColor.LIGHT_PURPLE + conf.getDouble(new StringBuilder("user.").append(pl.getUniqueId()).append(".spilit").toString()));
+            		pl.sendMessage(pluginpre + ChatColor.GREEN + "óÏóÕ" + ChatColor.LIGHT_PURPLE + conf.getDouble(new StringBuilder("user.").append(pl.getUniqueId()).append(".spilit").toString()));
             		plugin.getServer().getScheduler().scheduleSyncDelayedTask(plugin, new Runnable() {                	
 	                    public void run() {
 	                    	THSkillYUS.yousei_illusion(pl, plugin,pluginpre, event);
@@ -498,11 +394,11 @@ public class THRaces implements Listener
 	                }, 30L);
                 }
             }
-            ///Ê®π‰∫∫„ÅÆÊØíÊï£Â∏ÉÔºàÊõ∏„ÅçËæº„ÅøÊúâÔºâÔºàÂâçÁΩÆË©ûÊúâ(Ë©†Âî±Êúâ)
+            ///é˜êlÇÃì≈éUïzÅièëÇ´çûÇ›óLÅjÅiëOíuéåóL(ârè•óL)
             mana = 35;
             if (race.equalsIgnoreCase("kibito")) 
             {
-            	if(magic_iscastable(pl , mana,"Ëä±„ÅØÈñã„Åç„Å§„Å§„ÅÇ„ÇãÔºÅ") && handitem == Material.STONE_SPADE)
+            	if(magic_iscastable(pl , mana,"â‘ÇÕäJÇ´Ç¬Ç¬Ç†ÇÈÅI") && handitem == Material.STONE_SPADE)
                 {
     	            conf.set("user." + pl.getUniqueId() + ".spilit", conf.getDouble("user." + pl.getUniqueId() + ".spilit") - mana);
     	            try {
@@ -511,7 +407,7 @@ public class THRaces implements Listener
     	    			e.printStackTrace();
     	    		}
 	                pl.getWorld().playSound(pl.getLocation(), Sound.SILVERFISH_WALK, 1, -1);
-            		pl.sendMessage(pluginpre + ChatColor.GREEN + "ÈúäÂäõ" + ChatColor.LIGHT_PURPLE + conf.getDouble(new StringBuilder("user.").append(pl.getUniqueId()).append(".spilit").toString()));
+            		pl.sendMessage(pluginpre + ChatColor.GREEN + "óÏóÕ" + ChatColor.LIGHT_PURPLE + conf.getDouble(new StringBuilder("user.").append(pl.getUniqueId()).append(".spilit").toString()));
             		plugin.getServer().getScheduler().scheduleSyncDelayedTask(plugin, new Runnable() {                	
 	                    public void run() {
 	                    	THSkillYUS.kibito_venom(pl, plugin,pluginpre, event);
@@ -521,11 +417,11 @@ public class THRaces implements Listener
 	                }, 45L);
                 }
             }
-            ///Âê∏Ë°ÄÈ¨º„ÅÆ„Ç´„É¢„Éï„É©„Éº„Ç∏„É•ÔºàÊõ∏„ÅçËæº„ÅøÊúâÔºâÔºàÂâçÁΩÆË©ûÊúâ(Ë©†Âî±Êúâ)
+            ///ãzååãSÇÃÉJÉÇÉtÉâÅ[ÉWÉÖÅièëÇ´çûÇ›óLÅjÅiëOíuéåóL(ârè•óL)
             mana = 25;
             if (race.equalsIgnoreCase("kyuuketuki")) 
             {
-            	if(magic_iscastable(pl , mana,"Âßø„ÇíÂ§â„Åà„Å§„Å§„ÅÇ„ÇãÔºÅ") && handitem == Material.WOOD_PICKAXE)
+            	if(magic_iscastable(pl , mana,"épÇïœÇ¶Ç¬Ç¬Ç†ÇÈÅI") && handitem == Material.WOOD_PICKAXE)
                 {
     	            conf.set("user." + pl.getUniqueId() + ".spilit", conf.getDouble("user." + pl.getUniqueId() + ".spilit") - mana);
     	            try {
@@ -534,7 +430,7 @@ public class THRaces implements Listener
     	    			e.printStackTrace();
     	    		}
 	                pl.getWorld().playSound(pl.getLocation(), Sound.BAT_HURT, 1, 0);
-            		pl.sendMessage(pluginpre + ChatColor.GREEN + "ÈúäÂäõ" + ChatColor.LIGHT_PURPLE + conf.getDouble(new StringBuilder("user.").append(pl.getUniqueId()).append(".spilit").toString()));
+            		pl.sendMessage(pluginpre + ChatColor.GREEN + "óÏóÕ" + ChatColor.LIGHT_PURPLE + conf.getDouble(new StringBuilder("user.").append(pl.getUniqueId()).append(".spilit").toString()));
 	                plugin.getServer().getScheduler().scheduleSyncDelayedTask(plugin, new Runnable() {                	
 	                    public void run() {
 	                    	THSkillAKM.kyuuketuki_vamp(pl, plugin,pluginpre, event);
@@ -545,9 +441,9 @@ public class THRaces implements Listener
                 }
             }
         	mana = 40;
-        	//Á¥ÖÈ≠îÊ≥ïÔºàÊõ∏„ÅçËæº„ÅøÊúâÔºâÔºàÂâçÁΩÆË©ûÊúâ(Ë©†Âî±Êúâ)
+        	//çgñÇñ@ÅièëÇ´çûÇ›óLÅjÅiëOíuéåóL(ârè•óL)
             if (race.equalsIgnoreCase("akuma")||race.equalsIgnoreCase("oni")||race.equalsIgnoreCase("kyuuketuki") ) {
-            	if(magic_iscastable(pl , mana,"Ë©†Âî±ÔºÅ") && handitem == Material.STONE_PICKAXE)
+            	if(magic_iscastable(pl , mana,"ârè•ÅI") && handitem == Material.STONE_PICKAXE)
             	{
 	                MetadataValue casting = new FixedMetadataValue(plugin, Boolean.valueOf(true));
 	                pl.setMetadata("casting", casting);
@@ -558,7 +454,7 @@ public class THRaces implements Listener
 	        			e.printStackTrace();
 	        		}
 	                pl.getWorld().playSound(pl.getLocation(), Sound.BLAZE_BREATH, 1, 2);
-	        		pl.sendMessage(pluginpre + ChatColor.GREEN + "ÈúäÂäõ" + ChatColor.LIGHT_PURPLE + conf.getDouble(new StringBuilder("user.").append(pl.getUniqueId()).append(".spilit").toString()));
+	        		pl.sendMessage(pluginpre + ChatColor.GREEN + "óÏóÕ" + ChatColor.LIGHT_PURPLE + conf.getDouble(new StringBuilder("user.").append(pl.getUniqueId()).append(".spilit").toString()));
 	                plugin.getServer().getScheduler().scheduleSyncDelayedTask(plugin, new Runnable() {                	
 	                    public void run() {
 	                        THSkillAKM.akuma_red_magic(pl, plugin,pluginpre, event);
@@ -569,9 +465,9 @@ public class THRaces implements Listener
                 }
             }
             mana = 40;
-            //Á≤æÈúä„ÅÆÂè¨ÂñöÔºàÊõ∏„ÅçËæº„ÅøÊúâÔºâÔºàÂâçÁΩÆË©ûÊúâ(Ë©†Âî±Êúâ)
+            //ê∏óÏÇÃè¢ä´ÅièëÇ´çûÇ›óLÅjÅiëOíuéåóL(ârè•óL)
             if (race.equalsIgnoreCase("seirei")||race.equalsIgnoreCase("hannrei")||race.equalsIgnoreCase("sourei")||race.equalsIgnoreCase("onnryou") ) {
-            	if(magic_iscastable(pl , mana,"Âè¨ÂñöÔºÅ") && handitem == Material.STONE_HOE)
+            	if(magic_iscastable(pl , mana,"è¢ä´ÅI") && handitem == Material.STONE_HOE)
             	{
 	                MetadataValue casting = new FixedMetadataValue(plugin, Boolean.valueOf(true));
 	                pl.setMetadata("casting", casting);
@@ -582,7 +478,7 @@ public class THRaces implements Listener
 	        			e.printStackTrace();
 	        		}
 	                pl.getWorld().playSound(pl.getLocation(), Sound.BLAZE_BREATH, 1, 2);
-	        		pl.sendMessage(pluginpre + ChatColor.GREEN + "ÈúäÂäõ" + ChatColor.LIGHT_PURPLE + conf.getDouble(new StringBuilder("user.").append(pl.getUniqueId()).append(".spilit").toString()));
+	        		pl.sendMessage(pluginpre + ChatColor.GREEN + "óÏóÕ" + ChatColor.LIGHT_PURPLE + conf.getDouble(new StringBuilder("user.").append(pl.getUniqueId()).append(".spilit").toString()));
 	                plugin.getServer().getScheduler().scheduleSyncDelayedTask(plugin, new Runnable() {                	
 	                    public void run() {
 	                        THSkillSIR.seirei_summon(pl, plugin,pluginpre, event);
@@ -593,9 +489,9 @@ public class THRaces implements Listener
                 }
             }
             mana = 5;
-            //Á≤æÈúä„ÅÆÂÖâÂºæÔºàÊõ∏„ÅçËæº„ÅøÊúâÔºâ(Ë©†Âî±Êúâ)
+            //ê∏óÏÇÃåıíeÅièëÇ´çûÇ›óLÅj(ârè•óL)
             if (race.equalsIgnoreCase("seirei")||race.equalsIgnoreCase("hannrei")||race.equalsIgnoreCase("sourei")||race.equalsIgnoreCase("onnryou") ) {
-            	if(magic_iscastable(pl , mana,"Ë©†Âî±ÔºÅ") && handitem == Material.WOOD_HOE)
+            	if(magic_iscastable(pl , mana,"ârè•ÅI") && handitem == Material.WOOD_HOE)
             	{
 	                MetadataValue casting = new FixedMetadataValue(plugin, Boolean.valueOf(true));
 	                pl.setMetadata("casting", casting);
@@ -606,7 +502,7 @@ public class THRaces implements Listener
 	        			e.printStackTrace();
 	        		}
 	                pl.getWorld().playSound(pl.getLocation(), Sound.BLAZE_BREATH, 1, 2);
-	        		pl.sendMessage(pluginpre + ChatColor.GREEN + "ÈúäÂäõ" + ChatColor.LIGHT_PURPLE + conf.getDouble(new StringBuilder("user.").append(pl.getUniqueId()).append(".spilit").toString()));
+	        		pl.sendMessage(pluginpre + ChatColor.GREEN + "óÏóÕ" + ChatColor.LIGHT_PURPLE + conf.getDouble(new StringBuilder("user.").append(pl.getUniqueId()).append(".spilit").toString()));
 	                plugin.getServer().getScheduler().scheduleSyncDelayedTask(plugin, new Runnable() {                	
 	                    public void run() {
 	                        THSkillSIR.seirei_lightball(pl, plugin,event);
@@ -617,9 +513,9 @@ public class THRaces implements Listener
                 }
             }
             mana = 50;
-            //ÂçäÈúä„ÅÆÂè¨ÂñöÔºàÊõ∏„ÅçËæº„ÅøÊúâÔºâ(Ë©†Âî±Êúâ)
+            //îºóÏÇÃè¢ä´ÅièëÇ´çûÇ›óLÅj(ârè•óL)
             if (race.equalsIgnoreCase("hannrei")) {
-            	if(magic_iscastable(pl , mana,"Ë°å„ÅëÔºÅÂçäÈúäÔºÅ") && handitem == Material.GOLD_HOE)
+            	if(magic_iscastable(pl , mana,"çsÇØÅIîºóÏÅI") && handitem == Material.GOLD_HOE)
             	{
 	                MetadataValue casting = new FixedMetadataValue(plugin, Boolean.valueOf(true));
 	                pl.setMetadata("casting", casting);
@@ -630,7 +526,7 @@ public class THRaces implements Listener
 	        			e.printStackTrace();
 	        		}
 	                pl.getWorld().playSound(pl.getLocation(), Sound.GHAST_CHARGE, 1, 1);
-	        		pl.sendMessage(pluginpre + ChatColor.GREEN + "ÈúäÂäõ" + ChatColor.LIGHT_PURPLE + conf.getDouble(new StringBuilder("user.").append(pl.getUniqueId()).append(".spilit").toString()));
+	        		pl.sendMessage(pluginpre + ChatColor.GREEN + "óÏóÕ" + ChatColor.LIGHT_PURPLE + conf.getDouble(new StringBuilder("user.").append(pl.getUniqueId()).append(".spilit").toString()));
 	                plugin.getServer().getScheduler().scheduleSyncDelayedTask(plugin, new Runnable() {                	
 	                    public void run() {
 	                        THSkillSIR.hannrei_hannrei_ball(pl, plugin, event);
@@ -641,9 +537,9 @@ public class THRaces implements Listener
                 }
             }
             mana = 60;
-            //È®íÈúä„ÅÆ„Ç™„Éº„Ç±„Çπ„Éà„É©ÔºàÊõ∏„ÅçËæº„ÅøÊúâÔºâÔºàÂâçÁΩÆË©ûÊúâ(Ë©†Âî±Êúâ)
+            //ëõóÏÇÃÉIÅ[ÉPÉXÉgÉâÅièëÇ´çûÇ›óLÅjÅiëOíuéåóL(ârè•óL)
             if (race.equalsIgnoreCase("sourei")) {
-            	if(magic_iscastable(pl , mana,"„É¨„ÉÉ„ÉÑ„Ç™„Éº„Ç±„Çπ„Éà„É©ÔºÅÔºÅ") && handitem == Material.IRON_HOE)
+            	if(magic_iscastable(pl , mana,"ÉåÉbÉcÉIÅ[ÉPÉXÉgÉâÅIÅI") && handitem == Material.IRON_HOE)
             	{
 	                MetadataValue casting = new FixedMetadataValue(plugin, Boolean.valueOf(true));
 	                pl.setMetadata("casting", casting);
@@ -654,7 +550,7 @@ public class THRaces implements Listener
 	        			e.printStackTrace();
 	        		}
 	                pl.getWorld().playSound(pl.getLocation(), Sound.NOTE_SNARE_DRUM, 1, 0);
-	        		pl.sendMessage(pluginpre + ChatColor.GREEN + "ÈúäÂäõ" + ChatColor.LIGHT_PURPLE + conf.getDouble(new StringBuilder("user.").append(pl.getUniqueId()).append(".spilit").toString()));
+	        		pl.sendMessage(pluginpre + ChatColor.GREEN + "óÏóÕ" + ChatColor.LIGHT_PURPLE + conf.getDouble(new StringBuilder("user.").append(pl.getUniqueId()).append(".spilit").toString()));
 	                plugin.getServer().getScheduler().scheduleSyncDelayedTask(plugin, new Runnable() {                	
 	                    public void run() {
 	                        THSkillSIR.hannrei_hannrei_ball(pl, plugin, event);
@@ -666,19 +562,11 @@ public class THRaces implements Listener
             }
         }
         if (event.getAction() == Action.LEFT_CLICK_AIR || event.getAction() == Action.LEFT_CLICK_BLOCK) {
-            ///Â¶ñÁç£‰∫∫È≠öÁç£‰∫∫
+            ///ódèbêlãõèbêl
             if (race.equalsIgnoreCase("youzuu") || race.equalsIgnoreCase("ninngyo") || race.equalsIgnoreCase("zyuuzin")) {
-            	 //Â¶ñÁç£„ÅÆÁãºÂè¨ÂñöÔºàÊõ∏„ÅçËæº„ÅøÊúâÔºâÔºàÂâçÁΩÆË©ûÊúâ(Ë©†Âî±Êúâ)
+            	 //ódèbÇÃòTè¢ä´ÅièëÇ´çûÇ›óLÅjÅiëOíuéåóL(ârè•óL)
                 mana = 15;
-                if (magic_iscastable(pl , mana,"Âè¨ÂñöÔºÅÔºÅ") && handitem == Material.FISHING_ROD) {
-=======
-        }
-        if (event.getAction() == Action.LEFT_CLICK_AIR || event.getAction() == Action.LEFT_CLICK_BLOCK) {
-            //Â¶ñÁç£‰∫∫È≠öÁç£‰∫∫
-            if (race.equalsIgnoreCase("youzuu") || race.equalsIgnoreCase("ninngyo") || race.equalsIgnoreCase("zyuuzin")) {
-                mana = 15;
-                if (magic_iscastable(pl , mana) && handitem == Material.FISHING_ROD) {
->>>>>>> origin/master
+                if (magic_iscastable(pl , mana,"è¢ä´ÅIÅI") && handitem == Material.FISHING_ROD) {
                         MetadataValue casting = new FixedMetadataValue(plugin, Boolean.valueOf(true));
                         pl.setMetadata("casting", casting);
     	                conf.set("user." + pl.getUniqueId() + ".spilit", conf.getDouble("user." + pl.getUniqueId() + ".spilit") - mana);
@@ -687,11 +575,8 @@ public class THRaces implements Listener
     	        		} catch (IOException e) {
     	        			e.printStackTrace();
     	        		}
-<<<<<<< HEAD
     	                pl.getWorld().playSound(pl.getLocation(), Sound.BLAZE_BREATH, 1, 2);
-=======
->>>>>>> origin/master
-    	        		pl.sendMessage(pluginpre + ChatColor.GREEN + "ÈúäÂäõ" + ChatColor.LIGHT_PURPLE + conf.getDouble(new StringBuilder("user.").append(pl.getUniqueId()).append(".spilit").toString()));
+    	        		pl.sendMessage(pluginpre + ChatColor.GREEN + "óÏóÕ" + ChatColor.LIGHT_PURPLE + conf.getDouble(new StringBuilder("user.").append(pl.getUniqueId()).append(".spilit").toString()));
                         plugin.getServer().getScheduler().scheduleSyncDelayedTask(plugin, new Runnable() {
     	                	
                             public void run() {
@@ -702,11 +587,10 @@ public class THRaces implements Listener
                         }, 30L);
                 }
             }
-<<<<<<< HEAD
-          //Âºè„ÅÆ„Éç„Ç≥Âè¨ÂñöÔºàÊõ∏„ÅçËæº„ÅøÊúâÔºâÔºàÂâçÁΩÆË©ûÊúâ(Ë©†Âî±Êúâ)
+          //éÆÇÃÉlÉRè¢ä´ÅièëÇ´çûÇ›óLÅjÅiëOíuéåóL(ârè•óL)
             if (race.equalsIgnoreCase("siki") && conf.getDouble("user." + pl.getUniqueId() + ".spilit") > 20.0 ) {
                 mana = 15;
-                if (magic_iscastable(pl , mana ,"Âè¨ÂñöÔºÅÔºÅ") && handitem == Material.FISHING_ROD) 
+                if (magic_iscastable(pl , mana ,"è¢ä´ÅIÅI") && handitem == Material.FISHING_ROD) 
             		{
                     MetadataValue casting = new FixedMetadataValue(plugin, Boolean.valueOf(true));
                     pl.setMetadata("casting", casting);
@@ -717,17 +601,7 @@ public class THRaces implements Listener
 	        			e.printStackTrace();
 	        		}
 	                pl.getWorld().playSound(pl.getLocation(), Sound.BLAZE_BREATH, 1, 2);
-	        		pl.sendMessage(pluginpre + ChatColor.GREEN + "ÈúäÂäõ" + ChatColor.LIGHT_PURPLE + conf.getDouble(new StringBuilder("user.").append(pl.getUniqueId()).append(".spilit").toString()));
-=======
-            //
-            if (race.equalsIgnoreCase("siki") && conf.getDouble("user." + pl.getUniqueId() + ".spilit") > 20.0 ) {
-                mana = 15;
-                if (magic_iscastable(pl , mana ) && handitem == Material.FISHING_ROD) 
-            		{
-	                    MetadataValue casting = new FixedMetadataValue(plugin, Boolean.valueOf(true));
-	                    pl.setMetadata("casting", casting);
-	                    conf.set("user." + pl.getUniqueId() + ".spilit", conf.getDouble("user." + pl.getUniqueId() + ".spilit") - 20);
->>>>>>> origin/master
+	        		pl.sendMessage(pluginpre + ChatColor.GREEN + "óÏóÕ" + ChatColor.LIGHT_PURPLE + conf.getDouble(new StringBuilder("user.").append(pl.getUniqueId()).append(".spilit").toString()));
 	                    plugin.getServer().getScheduler().scheduleSyncDelayedTask(plugin, new Runnable() {
 		                	
 	                        public void run() {
@@ -739,11 +613,10 @@ public class THRaces implements Listener
             		}
  
             }
-<<<<<<< HEAD
-            //Â¶ñÁç£„ÅÆÂº∑ÂåñÔºàÊõ∏„ÅçËæº„ÅøÊúâÔºâÔºàÂâçÁΩÆË©ûÊúâ(Ë©†Âî±Êúâ)
+            //ódèbÇÃã≠âªÅièëÇ´çûÇ›óLÅjÅiëOíuéåóL(ârè•óL)
             if (race.equalsIgnoreCase("youzyuu") || race.equalsIgnoreCase("zyuuzin") || race.equalsIgnoreCase("ninngyo") || race.equalsIgnoreCase("siki")) {
                 mana = 35;
-                if (magic_iscastable(pl , mana ,"Âº∑ÂåñÈ≠îÊ≥ïÔºÅ") && handitem == Material.BOW) 
+                if (magic_iscastable(pl , mana ,"ã≠âªñÇñ@ÅI") && handitem == Material.BOW) 
             		{
                     MetadataValue casting = new FixedMetadataValue(plugin, Boolean.valueOf(true));
                     pl.setMetadata("casting", casting);
@@ -754,35 +627,20 @@ public class THRaces implements Listener
 	        			e.printStackTrace();
 	        		}
 	                pl.getWorld().playSound(pl.getLocation(), Sound.DONKEY_ANGRY, 1, 1);
-	        		pl.sendMessage(pluginpre + ChatColor.GREEN + "ÈúäÂäõ" + ChatColor.LIGHT_PURPLE + conf.getDouble(new StringBuilder("user.").append(pl.getUniqueId()).append(".spilit").toString()));
-=======
-            //Â¶ñÁç£ÂÖ®„Å¶
-            if (race.equalsIgnoreCase("youzyuu") || race.equalsIgnoreCase("zyuuzin") || race.equalsIgnoreCase("ninngyo") || race.equalsIgnoreCase("siki")) {
-                if (magic_iscastable(pl , mana ) && handitem == Material.BOW) 
-            		{
-                        MetadataValue casting = new FixedMetadataValue(plugin, Boolean.valueOf(true));
-                        pl.setMetadata("casting", casting);
-                        conf.set("user." + pl.getUniqueId() + ".spilit", conf.getDouble("user." + pl.getUniqueId() + ".spilit") - 30);
->>>>>>> origin/master
+	        		pl.sendMessage(pluginpre + ChatColor.GREEN + "óÏóÕ" + ChatColor.LIGHT_PURPLE + conf.getDouble(new StringBuilder("user.").append(pl.getUniqueId()).append(".spilit").toString()));
                         plugin.getServer().getScheduler().scheduleSyncDelayedTask(plugin, new Runnable() {
     	                	
                             public void run() {
                                 THSkillYUZ.youzyu_gainenergy(pl, plugin,pluginpre, event);
-<<<<<<< HEAD
 	                            MetadataValue casting = new FixedMetadataValue(plugin, Boolean.valueOf(false));
 	                            pl.setMetadata("casting", casting);
                             }
                         }, 15L);
-=======
-                            }
-                        }, 0L);
->>>>>>> origin/master
             		}
             }
         }
     }
-<<<<<<< HEAD
-    //TODO Êñ∞„ÇØ„É©„É≥„Éó„É©„Ç∞„Ç§„É≥ÂæÖ„Å°
+    //TODO êVÉNÉâÉìÉvÉâÉOÉCÉìë“Çø
     /*
 	@EventHandler(priority=EventPriority.HIGH)
   	public void on_simpleclans_crackshot_hook(WeaponDamageEntityEvent event,Newclanplugin clans)
@@ -813,28 +671,28 @@ public class THRaces implements Listener
             Player pl = (Player) event.getDamager();
             int boost = pl.getMetadata("spilituse").get(0).asInt();
             String race = conf.getString("user." + pl.getUniqueId() + ".race").toString();
-            //Ê≠ª‰∫∫
+            //éÄêl
             if (race.equalsIgnoreCase("sibito") && conf.getInt("user." + pl.getUniqueId() + ".split") > mana)
                 THSkillNNG.sibito_deadattack(pl, plugin, event);
-            //Áèæ‰∫∫Á•û
+            //åªêlê_
             if (race.equalsIgnoreCase("gennzinnsin") && conf.getInt("user." + pl.getUniqueId() + ".split") > mana)
                 THSkillNNG.gennzinnsin_luckyattack(pl, plugin,pluginpre, event);
-            //ÊÇ™È≠î
+            //à´ñÇ
             if (race.equalsIgnoreCase("akuma") && conf.getInt("user." + pl.getUniqueId() + ".split") > mana)
                 THSkillAKM.akuma_dark_attack(pl, plugin, event);
-            //È¨º
+            //ãS
             if (race.equalsIgnoreCase("oni") && conf.getInt("user." + pl.getUniqueId() + ".split") > mana)
                 THSkillAKM.oni_closed_attack(pl, plugin, event);
-            //Âê∏Ë°ÄÈ¨º
+            //ãzååãS
             if (race.equalsIgnoreCase("kyuuketuki") && conf.getInt("user." + pl.getUniqueId() + ".split") > mana)
                 THSkillAKM.kyuuketuki_shadow_attack(pl, plugin, event);
-            //Á•û
+            //ê_
             if (race.equalsIgnoreCase("kami") || race.equalsIgnoreCase("houzyousin") || race.equalsIgnoreCase("yakusin") && conf.getInt("user." + pl.getUniqueId() + ".split") > mana)
                 THSkillKAM.kami_faith_attack(pl, plugin, event, boost, conf);
-            //Ë±äÁ©£Á•û
+            //ñLèıê_
             if (race.equalsIgnoreCase("houzyousin") && conf.getInt("user." + pl.getUniqueId() + ".split") > mana)
                 THSkillKAM.houzyousin_potato(pl, plugin, race, event, boost);
-            //„Ç∞„É≠„Éº„Éê„É´
+            //ÉOÉçÅ[ÉoÉã
             if (conf.getInt("user." + pl.getUniqueId() + ".split") <= mana)
                 THSkillGlobal.global_no_mana_attack(pl, plugin,pluginpre, event);
         }
@@ -843,108 +701,68 @@ public class THRaces implements Listener
             Player pl = (Player) event.getEntity();
             int boost = pl.getMetadata("spilituse").get(0).asInt();
             String race = conf.getString("user." + pl.getUniqueId() + ".race").toString();
-            //Ëì¨Ëé±‰∫∫
+            //ñHóâêl
             if (race.equalsIgnoreCase("houraizin") && conf.getInt("user." + pl.getUniqueId() + ".split") > mana) THSkillNNG.houraizin_reverselife_Entity(pl, plugin,pluginpre, event);
-            //Â¶ñÁ≤æ (Â∞è‰∫∫Èô§„Åè)
+            //ódê∏ (è¨êlèúÇ≠)
             if (race.equalsIgnoreCase("yousei") || race.equalsIgnoreCase("satori") || race.equalsIgnoreCase("kibito") && conf.getInt("user." + pl.getUniqueId() + ".split") <= mana) THSkillYUS.yousei_glaze(pl, plugin, event);
-            //Â∞è‰∫∫
+            //è¨êl
             if (race.equalsIgnoreCase("kobito")&& conf.getInt("user." + pl.getUniqueId() + ".split") <= mana) THSkillYUS.kobito_glaze(pl, plugin, event);
-            //„Çµ„Éà„É™
+            //ÉTÉgÉä
             if (race.equalsIgnoreCase("satori")&& conf.getInt("user." + pl.getUniqueId() + ".split") <= 50) THSkillYUS.satori_satori(pl, plugin,pluginpre, event);
-            //Á≤æÈúä
+            //ê∏óÏ
             if (race.equalsIgnoreCase("seirei")|| race.equalsIgnoreCase("hannrei")|| race.equalsIgnoreCase("sourei")|| race.equalsIgnoreCase("onnryou")&& conf.getInt("user." + pl.getUniqueId() + ".split") <= mana) THSkillSIR.seirei_mighty_guard(pl, plugin, event, boost);
-            //ÊÄ®Èúä
+            //âÖóÏ
             if (race.equalsIgnoreCase("onnryou")&& conf.getInt("user." + pl.getUniqueId() + ".split") <= 20) THSkillSIR.onnryou_never_vanish(pl, plugin, race, event, boost);
-            //Á•û
+            //ê_
             if (race.equalsIgnoreCase("kami") || race.equalsIgnoreCase("houzyousin") || race.equalsIgnoreCase("yakusin") && conf.getInt("user." + pl.getUniqueId() + ".split") > mana)
                 THSkillKAM.kami_faith_defence(pl, plugin, event, boost, conf);
-            //ÂéÑÁ•û
+            //ñÔê_
             if (race.equalsIgnoreCase("yakusin") && conf.getInt("user." + pl.getUniqueId() + ".split") > mana)
                 THSkillKAM.yakusin_darkside(pl, plugin, race, event);
-            //„Ç∞„É≠„Éº„Éê„É´
+            //ÉOÉçÅ[ÉoÉã
             if (conf.getInt("user." + pl.getUniqueId() + ".split") <= mana) THSkillGlobal.global_no_mana_damaged(pl, plugin,pluginpre, event);
-=======
-
-    public void damagebyentity(final EntityDamageByEntityEvent event) {
-        if (event.getDamager() instanceof Player) {
-            Player pl = (Player) event.getDamager();
-            String race = conf.getString("user." + pl.getUniqueId() + ".race").toString();
-            //Ê≠ª‰∫∫
-            if (race.equalsIgnoreCase("sibito") && conf.getInt("user." + pl.getUniqueId() + ".split") > 20)
-                THSkillNNG.sibito_deadattack(pl, plugin, event);
-            if (race.equalsIgnoreCase("gennzinnsin") && conf.getInt("user." + pl.getUniqueId() + ".split") > 20)
-                THSkillNNG.gennzinnsin_luckyattack(pl, plugin,pluginpre, event);
-            //„Ç∞„É≠„Éº„Éê„É´
-            if (conf.getInt("user." + pl.getUniqueId() + ".split") <= 20)
-                THSkillGlobal.global_no_mana_attack(pl, plugin,pluginpre, event);
-        }
-        if (event.getEntity() instanceof Player) {
-            Player pl = (Player) event.getEntity();
-            String race = conf.getString("user." + pl.getUniqueId() + ".race").toString();
-            //Ëì¨Ëé±‰∫∫
-            if (race.equalsIgnoreCase("houraizin") && conf.getInt("user." + pl.getUniqueId() + ".split") > 20)
-                THSkillNNG.houraizin_reverselife_Entity(pl, plugin,pluginpre, event);
-            //„Ç∞„É≠„Éº„Éê„É´
-            if (conf.getInt("user." + pl.getUniqueId() + ".split") <= 20)
-                THSkillGlobal.global_no_mana_damaged(pl, plugin,pluginpre, event);
->>>>>>> origin/master
         }
     }
 
     public void damagebyblock(final EntityDamageByBlockEvent event) {
-<<<<<<< HEAD
         int mana = 25;
         Player pl = (Player) event.getDamager();
         int boost = pl.getMetadata("spilituse").get(0).asInt();
         String race = conf.getString("user." + pl.getUniqueId() + ".race").toString();
-        //Ëì¨Ëé±‰∫∫
+        //ñHóâêl
         if (race.equalsIgnoreCase("houraizin") && conf.getInt("user." + pl.getUniqueId() + ".split") > mana) THSkillNNG.houraizin_reverselife_block(pl, plugin,pluginpre, event);
-        //Ê≤≥Á´•
+        //âÕì∂
         if (race.equalsIgnoreCase("kappa") && conf.getInt("user." + pl.getUniqueId() + ".split") > mana) THSkillYUM.kappa_anti_drawn(pl, plugin,pluginpre, event);
-        //Â¶ñÁ≤æ
+        //ódê∏
         if (race.equalsIgnoreCase("yousei") || race.equalsIgnoreCase("satori") || race.equalsIgnoreCase("kibito") || race.equalsIgnoreCase("kobito") && conf.getInt("user." + pl.getUniqueId() + ".split") > mana) THSkillYUS.yousei_fall_protection(pl, plugin, event);
-        //ÊÇ™È≠î
+        //à´ñÇ
         if (race.equalsIgnoreCase("akuma")|| race.equalsIgnoreCase("oni")|| race.equalsIgnoreCase("kyuuketuki")&& conf.getInt("user." + pl.getUniqueId() + ".split") <= mana) THSkillAKM.akuma_antiheat_body(pl, plugin, event);
-        //Âê∏Ë°ÄÈ¨º
+        //ãzååãS
         if (race.equalsIgnoreCase("kyuuketuki")&& conf.getInt("user." + pl.getUniqueId() + ".split") <= mana) THSkillAKM.kyuuketuki_antiallfire_body(pl, plugin, event);
-        //Á≤æÈúä
+        //ê∏óÏ
         if (race.equalsIgnoreCase("seirei")|| race.equalsIgnoreCase("hannrei")|| race.equalsIgnoreCase("sourei")|| race.equalsIgnoreCase("onnryou")&& conf.getInt("user." + pl.getUniqueId() + ".split") <= mana) THSkillSIR.seirei_mighty_guard(pl, plugin, event, boost);
-        //Ë±äÁ©£Á•û
+        //ñLèıê_
         if (race.equalsIgnoreCase("houzyousin")&& conf.getInt("user." + pl.getUniqueId() + ".split") <= mana) THSkillKAM.houzyousin_feed(pl, plugin, event);
     }
     
-    ////ÂÜóÈï∑Èò≤Ê≠¢
+    ////èÁí∑ñhé~
     boolean magic_iscastable(Player pl, int mana,String string)
-=======
-        Player pl = (Player) event.getDamager();
-        String race = conf.getString("user." + pl.getUniqueId() + ".race").toString();
-        //Ëì¨Ëé±‰∫∫
-        if (race.equalsIgnoreCase("houraizin") && conf.getInt("user." + pl.getUniqueId() + ".split") > 20)
-            THSkillNNG.houraizin_reverselife_block(pl, plugin,pluginpre, event);
-    }
-    
-    ////ÂÜóÈï∑Èò≤Ê≠¢
-    boolean magic_iscastable(Player pl, int mana)
->>>>>>> origin/master
     {
 	        if (((MetadataValue) pl.getMetadata("casting").get(0)).asBoolean()) {
-	            pl.sendMessage(THPlugin.thrpre + ChatColor.RED + "‰ªñ„ÅÆÈ≠îÊ≥ï„ÇíË©†Âî±‰∏≠„Åß„Åô");
+	            pl.sendMessage(THPlugin.thrpre + ChatColor.RED + "ëºÇÃñÇñ@Çârè•íÜÇ≈Ç∑");
 	            return false;
 	        } else if (((MetadataValue) pl.getMetadata("using-magic").get(0)).asBoolean()) {
-	            pl.sendMessage(THPlugin.thrpre + ChatColor.RED + "‰ªñ„ÅÆÈ≠îÊ≥ï„Çí‰ΩøÁî®‰∏≠„Åß„Åô");
+	            pl.sendMessage(THPlugin.thrpre + ChatColor.RED + "ëºÇÃñÇñ@ÇégópíÜÇ≈Ç∑");
 	            return false;
 	        } else {
 	    	    if (conf.getDouble("user." + pl.getUniqueId() + ".spilit") > mana) 
 	    	    {
-<<<<<<< HEAD
 	        		pl.sendMessage(pluginpre + ChatColor.LIGHT_PURPLE + string);
-=======
->>>>>>> origin/master
 		        	return true;
 	    	    }
 	    	    else
 	    	    {
-		            pl.sendMessage(THPlugin.thrpre + ChatColor.RED + "ÈúäÂäõ„Åå‰∏çË∂≥„Åó„Å¶„ÅÑ„Åæ„Åô");
+		            pl.sendMessage(THPlugin.thrpre + ChatColor.RED + "óÏóÕÇ™ïsë´ÇµÇƒÇ¢Ç‹Ç∑");
 	    	    	return false;
 	    	    }
 	        }
